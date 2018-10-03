@@ -1,0 +1,22 @@
+.navbar {
+    background-color: #dbdbdb;
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-size: 18px;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  background-color: #4a4a4a;
+  margin: 5px;
+
+  border-radius: 50%;
+  display: inline-block;
+}

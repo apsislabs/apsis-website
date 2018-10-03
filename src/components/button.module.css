@@ -1,0 +1,21 @@
+.herobutton {
+  border-radius: 4px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.01);
+  border: solid 1px #979797;
+  padding: 7px 40px;
+  margin: 0px 15px 0px 0px;
+  background-color: #dbdbdb;
+}
+
+.herobuttoncontainer {
+  margin-left: 120px;
+  margin-top: 50px;
+}
+
+.navbutton {
+  border-radius: 4px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.01);
+  border: solid 1px #979797;
+  padding: 7px;
+  background-color: #dbdbdb;
+}
