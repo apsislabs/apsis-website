@@ -1,5 +1,7 @@
 # Apsis Website
 ## Running in development
-Starter with the bare essentials needed for a [Gatsby](https://www.gatsbyjs.org/).
+This site uses [Gatsby](https://www.gatsbyjs.org/).
 
-`gatsby develop`
+Requires Node, NPM, and the Gatsby CLI.
+
+To run: `gatsby develop`
