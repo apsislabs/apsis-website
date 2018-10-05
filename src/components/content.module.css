@@ -1,0 +1,15 @@
+.content {
+  padding: 185px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.contentText {
+  margin-bottom: 20px;
+}
+
+.contentTextContainer {
+  flex-direction: column;
+  padding-left: 80px;
+}

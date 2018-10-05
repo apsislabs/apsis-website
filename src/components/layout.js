@@ -6,7 +6,7 @@ import Footer from "./footer"
   export default props => (
     <Container>
       <Navbar />
-      {props.children}
+        {props.children}
       <Footer />
     </Container>
   )
