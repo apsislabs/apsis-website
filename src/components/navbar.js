@@ -22,9 +22,9 @@ export default props => (
             <ListLink to="/team">Team</ListLink>
             <ListLink to="/portfolio">Portfolio</ListLink>
             <ListLink to="/blog">Blog</ListLink>
-            <ListLink to="/hire">
+            <li style={{ display: `inline-block`, marginRight: `1rem` }}>
                 <Button className={buttonStyles.navbutton} to="/hire" text="Hire Us."/>
-            </ListLink>
+            </li>
         </ul>
     </header>
 )
