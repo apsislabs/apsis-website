@@ -1,0 +1,12 @@
+.clientsContainer {
+    padding: 20px 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.clientsImg {
+    width: 140px;
+    height: 100%;
+}

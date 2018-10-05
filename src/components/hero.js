@@ -1,6 +1,6 @@
 import React from "react"
 import heroStyles from "./hero.module.css"
-import Button from './button.js';
+import Button from './button';
 import buttonStyles from "./button.module.css"
 
 
