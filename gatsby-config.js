@@ -6,5 +6,27 @@ module.exports = {
             pathToConfigModule: `src/utils/typography.js`,
             },
         },
+        `gatsby-transformer-sharp`,
+        `gatsby-plugin-sharp`,
+        {
+          resolve: `gatsby-source-filesystem`,
+          options: {
+            name: `images`,
+            path: `${__dirname}/src/images`,
+          },
+        },
+        {
+          resolve: 'gatsby-transformer-remark',
+          options: {
+            plugins: [
+              {
+                resolve: 'gatsby-remark-images',
+                options: {
+                  quality: 90,
+                },
+              },
+            ],
+          },
+        },
     ],
 }
