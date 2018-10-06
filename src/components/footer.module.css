@@ -8,10 +8,14 @@
 
 .copyright {
   height: 200px;
-  padding: 20px;
+  padding: 100px;
   background-color: #d8d8d8;
   text-decoration: none;
   text-align: center;
+}
+
+.spacer {
+  height: 40px;
 }
 
 .map {
@@ -29,7 +33,7 @@
   background-color: #fefefe;
   border: solid 1px #eaeaea;
   margin: 0px 0px 0px 100px;
-  padding: 50px;
+  padding: 20px 0px 0px 30px;
 }
 
 .contact {
