@@ -5,6 +5,7 @@ import footerStyles from "./footer.module.css"
 export default props => (
     <div className={footerStyles.footer}>
         <div className={footerStyles.map}>
+        <div className={footerStyles.spacer}/>
             <div className={footerStyles.mapbox}>
                 <h4>Contact Us</h4>
                 <div className={footerStyles.contact}>
