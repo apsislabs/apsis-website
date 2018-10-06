@@ -1,0 +1,9 @@
+.hero {
+    background-color: #efefef;
+    width: 100%;
+    height: 820px;
+    -webkit-clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
+    clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
+    display: flex;
+    justify-content: center;
+}
