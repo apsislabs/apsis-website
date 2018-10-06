@@ -6,6 +6,7 @@ import Content from "../components/content"
 import Services from "../components/services"
 import DiagonalBackground from "../components/diagonalbackground"
 import OpenSource from "../components/OpenSource"
+import About from "../components/about"
 
 const IndexPage = (props) => (
     <Layout>
@@ -46,6 +47,7 @@ const IndexPage = (props) => (
             clientFour={props.data.clientFour.childImageSharp.fluid}
             clientFourAlt="Weber"
         />
+        <About />
     </Layout>
   )
 
