@@ -13,7 +13,7 @@ const IndexPage = (props) => (
             headerText="Need an app? We can help."
             subtitle="We are developers focused on efficient solutions to real world problems."
         />
-        <Clients 
+        <Clients
             clientOne={props.data.clientOne.childImageSharp.fluid}
             clientOneAlt="Boku"
             clientTwo={props.data.clientTwo.childImageSharp.fluid}
@@ -61,6 +61,20 @@ const IndexPage = (props) => (
         <DiagonalBackground>
             <OpenSource/>
         </DiagonalBackground>
+        <Content
+            title="Idea. Implement. Iterate."
+            text="At Apsis we embrace a process we call “almost agile.” Based on the idea that the best proving ground for new software is real-world users, we focus on rapid development and deployment followed by iteration based on user feedback. Our small project teams of 2-3 developers are organized based on your project needs, and work in small, focused sprints to maximize adaptability."
+        />
+        <Clients
+            clientOne={props.data.clientOne.childImageSharp.fluid}
+            clientOneAlt="Boku"
+            clientTwo={props.data.clientTwo.childImageSharp.fluid}
+            clientTwoAlt="Natera"
+            clientThree={props.data.clientThree.childImageSharp.fluid}
+            clientThreeAlt="Columbia University"
+            clientFour={props.data.clientFour.childImageSharp.fluid}
+            clientFourAlt="Weber"
+        />
     </Layout>
   )
 
