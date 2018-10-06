@@ -4,6 +4,8 @@ import Hero from "../components/hero"
 import Clients from "../components/clients"
 import Content from "../components/content"
 import Service from "../components/service"
+import DiagonalBackground from "../components/diagonalbackground"
+import OpenSource from "../components/OpenSource"
 
 const IndexPage = (props) => (
     <Layout>
@@ -56,6 +58,9 @@ const IndexPage = (props) => (
                 </ul>
             </Service>
         </Content>
+        <DiagonalBackground>
+            <OpenSource/>
+        </DiagonalBackground>
     </Layout>
   )
 
