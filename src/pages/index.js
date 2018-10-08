@@ -7,6 +7,8 @@ import Services from "../components/services"
 import DiagonalBackground from "../components/diagonalbackground"
 import OpenSource from "../components/OpenSource"
 import About from "../components/about"
+import Button from '../components/button';
+import buttonStyles from "../styles/components/button.module.scss"
 
 const IndexPage = (props) => (
     <Layout>
@@ -36,7 +38,13 @@ const IndexPage = (props) => (
         <Content
             title="Idea. Implement. Iterate."
             text="At Apsis we embrace a process we call “almost agile.” Based on the idea that the best proving ground for new software is real-world users, we focus on rapid development and deployment followed by iteration based on user feedback. Our small project teams of 2-3 developers are organized based on your project needs, and work in small, focused sprints to maximize adaptability."
-        />
+        >
+            <Button
+                className={buttonStyles.herobutton}
+                to="/services"
+                text="Our Services"
+            />
+        </Content>
         <Clients
             clientOne={props.data.clientOne.childImageSharp.fluid}
             clientOneAlt="Boku"

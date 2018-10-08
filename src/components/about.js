@@ -1,5 +1,5 @@
 import React from "react"
-import aboutStyles from "./about.module.css"
+import aboutStyles from "../styles/components/about.module.scss"
 
 export default props => (
     <div className={aboutStyles.container}>

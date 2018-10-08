@@ -1,6 +1,6 @@
 import React from "react"
 
-import footerStyles from "./footer.module.css"
+import footerStyles from "../styles/components/footer.module.scss"
 
 export default props => (
     <div className={footerStyles.footer}>

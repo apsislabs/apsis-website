@@ -1,5 +1,5 @@
 import React from "react"
-import serviceStyles from "./service.module.css"
+import serviceStyles from "../styles/components/service.module.scss"
 import Service from "./service"
 
 export default props => (

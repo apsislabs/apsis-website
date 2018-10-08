@@ -1,0 +1,34 @@
+@import '../__variables';
+
+.testimonial {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 400px;
+
+  &__quote {
+      color: $apsis-gray;
+      border-bottom: 1px solid $gray;
+      position: relative;
+      width: 600px;
+
+      &:after,
+      &:before {
+          border-style: solid;
+          border-color: transparent;
+      }
+    }
+
+  &__name {
+      font-style: normal;
+      display: block;
+  }
+
+  &__company {
+      display: block;
+      text-transform: lowercase;
+      font-weight: 300;
+      color: $gray;
+  }
+}

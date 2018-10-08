@@ -1,8 +1,8 @@
 import React from "react"
-import opensourceStyles from "./opensource.module.css"
-import buttonStyles from "./button.module.css"
-import OpenSourceCard from "../components/opensourcecard"
-import Button from "../components/button"
+import opensourceStyles from "../styles/components/opensource.module.scss"
+import buttonStyles from "../styles/components/button.module.scss"
+import OpenSourceCard from "./opensourcecard"
+import Button from "./button"
 
 export default props => (
     <div className={opensourceStyles.opensource}>
@@ -34,7 +34,7 @@ export default props => (
                     text="A killer service layer for your Ruby application."
                 />
             </div>
-            <Button 
+            <Button
                 to='/services'
                 text="See More of Our Work"
                 className={buttonStyles.herobutton}
