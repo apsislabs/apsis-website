@@ -6,6 +6,7 @@ module.exports = {
             pathToConfigModule: `src/utils/typography.js`,
             },
         },
+        `gatsby-plugin-sass`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {

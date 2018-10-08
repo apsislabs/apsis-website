@@ -1,8 +1,8 @@
 import React from "react"
 
 import { Link } from "gatsby"
-import navbarStyles from "./navbar.module.css"
-import buttonStyles from "./button.module.css"
+import navbarStyles from "../styles/components/navbar.module.scss"
+import buttonStyles from "../styles/components/button.module.scss"
 import Button from './button';
 
 const ListLink = props => (

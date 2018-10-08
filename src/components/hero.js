@@ -1,7 +1,7 @@
 import React from "react"
-import heroStyles from "./hero.module.css"
+import heroStyles from "../styles/components/hero.module.scss"
 import Button from './button';
-import buttonStyles from "./button.module.css"
+import buttonStyles from "../styles/components/button.module.scss"
 
 
 export default props => (

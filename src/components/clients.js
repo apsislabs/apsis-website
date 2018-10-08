@@ -1,5 +1,5 @@
 import React from "react"
-import clientStyles from "./clients.module.css"
+import clientStyles from "../styles/components/clients.module.scss"
 import Img from "gatsby-image"
 
 export default props => (

@@ -1,5 +1,5 @@
 import React from "react"
-import diagonalbackgroundStyles from "./diagonalbackground.module.css"
+import diagonalbackgroundStyles from "../styles/components/diagonalbackground.module.scss"
 
 
 export default props => (
