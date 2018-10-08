@@ -4,6 +4,7 @@ import Hero from "../components/hero"
 import Content from "../components/content"
 import QuoteBlock from "../components/quoteblock"
 import HowWeWork from "../components/howwework"
+import HireUsFooter from "../components/hireusfooter"
 
 export default () => (
   <Layout>
@@ -19,5 +20,6 @@ export default () => (
     />
     <QuoteBlock />
     <HowWeWork />
+    <HireUsFooter />
   </Layout>
 )

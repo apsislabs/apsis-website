@@ -1,0 +1,15 @@
+@import '../__variables';
+
+.container {
+  width: 100%;
+  background: $button-color;
+  height: 170px;
+  padding: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  span {
+    padding-left: 20px;
+  }
+}
