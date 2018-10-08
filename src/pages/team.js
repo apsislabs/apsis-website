@@ -1,7 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
 import HireUsFooter from "../components/hireusfooter"
-import ContentBlock from "../components/contentBlock";
+import ContentBlock from "../components/contentblock";
+import TeamGrid from "../components/teamgrid";
 
 export default () => (
   <Layout>
@@ -13,6 +14,7 @@ export default () => (
       <p/>
       This means less time spent sending emails asking for clarification, and fewer headaches for you."
     </ContentBlock>
+    <TeamGrid />
     <HireUsFooter />
   </Layout>
 )
