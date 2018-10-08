@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Content from "../components/content"
 import QuoteBlock from "../components/quoteblock"
+import HowWeWork from "../components/howwework"
 
 export default () => (
   <Layout>
@@ -17,5 +18,6 @@ export default () => (
         That’s why we like to think of our customers less as clients and more as partners. We’re in this together, every step of the way. From initial specs to final deployment, you can trust that we will be there to do what we do best: deliver quality software that meets your business’s needs."
     />
     <QuoteBlock />
+    <HowWeWork />
   </Layout>
 )

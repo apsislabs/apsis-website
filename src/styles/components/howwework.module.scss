@@ -1,0 +1,41 @@
+@import '../__variables';
+
+.container {
+  display: flex;
+  flex-direction: row;
+  padding: 100px 300px;
+
+  h4{
+    height: 24px;
+    font-family: OpenSans;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+    padding: 0px;
+  }
+}
+
+.contentHeader {
+  display: flex;
+  flex-direction: row;
+}
+
+.content {
+  flex-direction: column;
+  align-items: center;
+}
+
+.contentParagraph {
+  margin-bottom: 20px;
+}
+
+.fillerImage {
+  background: $gray;
+  width: 400px;
+  margin-left: 40px;
+}
