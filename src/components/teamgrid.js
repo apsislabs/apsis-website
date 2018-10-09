@@ -11,6 +11,6 @@ export default () => (
         <TeamPlayer />
         <TeamPlayer />
         <TeamPlayer />
-        <i class="fas fa-user-astronaut fa-9x"></i>
+        <i className="fas fa-user-astronaut fa-9x"></i>
     </div>
 )

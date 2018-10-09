@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import HireUsFooter from "../components/hireusfooter"
 import ContentBlock from "../components/contentblock";
+import MapBlock from "../components/mapblock";
 import TeamGrid from "../components/teamgrid";
 
 export default () => (
@@ -15,6 +16,7 @@ export default () => (
       This means less time spent sending emails asking for clarification, and fewer headaches for you."
     </ContentBlock>
     <TeamGrid />
+    <MapBlock />
     <HireUsFooter />
   </Layout>
 )

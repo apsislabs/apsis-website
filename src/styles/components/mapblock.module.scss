@@ -1,0 +1,55 @@
+.container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 80px;
+  align-items: center;
+}
+
+.map {
+  height: 527px;
+  width: 1025px;
+  border: thin solid black;
+  padding-bottom: 20px;
+}
+
+.tabs {
+  border-bottom: none;
+  width: 20%;
+  padding: 0px;
+  font-weight: bold;
+
+  li {
+    padding-bottom: 20px;
+    > a {
+      border: none;
+      border-radius: 0;
+      &:hover {
+        background-color: #8845a6;
+        color: #fff;
+      }
+    }
+    &.active > a {
+      border: none;
+      background-color: #8845a6;
+      color: #fff;
+      &:hover, &:focus {
+        border: none;
+        background-color: #8845a6;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  padding-top: 5px;
+}
+
+.locations {
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0px;
+  width: 1025px;
+}
