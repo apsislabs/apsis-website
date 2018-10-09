@@ -5,13 +5,22 @@ import ContentBlock from "../components/contentblock"
 import QuoteBlock from "../components/quoteblock"
 import HowWeWork from "../components/howwework"
 import HireUsFooter from "../components/hireusfooter"
+import Button from '../components/button';
+import buttonStyles from "../styles/components/button.module.scss"
 
 export default () => (
   <Layout>
-    <Hero 
-        headerText="Simply Software."
-        subtitle="They say do one thing and do it well. Our thing is software."
-    />
+    <Hero>
+      <h1>Simply Software.</h1>
+      <h3>They say do one thing and do it well. Our thing is software.</h3>
+      <span className={buttonStyles.herobuttoncontainer}>
+        <Button
+            className={buttonStyles.herobutton}
+            text="Our Process."
+            to="/services"
+        />
+        </span>
+    </Hero>
     <ContentBlock
         title="More partners, less clients."
         text="Over the years we’ve built software in a variety of industries at every scale from startups to enterprise applications. While the specfiics change, one thing always remains constant: our commitment to doing the right thing.

@@ -12,10 +12,21 @@ import buttonStyles from "../styles/components/button.module.scss"
 
 const IndexPage = (props) => (
     <Layout>
-        <Hero 
-            headerText="Need an app? We can help."
-            subtitle="We are developers focused on efficient solutions to real world problems."
-        />
+        <Hero>
+            <h1>Need an app? We can help.</h1>
+            <h3>We are developers focused on efficient solutions to real world problems.</h3>
+            <span className={buttonStyles.herobuttoncontainer}>
+                <Button className={buttonStyles.herobutton}
+                    text="Hire Us."
+                    to="/hire"
+                />
+                <Button
+                    className={buttonStyles.herobutton}
+                    text="Our Process."
+                    to="/services"
+                />
+            </span>
+        </Hero>
         <Clients
             clientOne={props.data.clientOne.childImageSharp.fluid}
             clientOneAlt="Boku"
