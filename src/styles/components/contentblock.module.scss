@@ -1,4 +1,17 @@
-.content {
+.verticalContent {
+  margin: 120px 400px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  h2 {
+    font-size: 48px;
+    text-align: center;
+  }
+}
+.horizontalContent {
   padding: 120px 185px;
   display: flex;
   flex-direction: row;
@@ -16,6 +29,6 @@
 
 .contentChildren {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 0px 0px 40px 0px;
 }

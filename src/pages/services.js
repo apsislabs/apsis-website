@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
-import Content from "../components/content"
+import ContentBlock from "../components/contentblock"
 import QuoteBlock from "../components/quoteblock"
 import HowWeWork from "../components/howwework"
 import HireUsFooter from "../components/hireusfooter"
@@ -12,7 +12,7 @@ export default () => (
         headerText="Simply Software."
         subtitle="They say do one thing and do it well. Our thing is software."
     />
-    <Content
+    <ContentBlock
         title="More partners, less clients."
         text="Over the years we’ve built software in a variety of industries at every scale from startups to enterprise applications. While the specfiics change, one thing always remains constant: our commitment to doing the right thing.
 
