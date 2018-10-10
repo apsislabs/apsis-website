@@ -6,6 +6,8 @@ module.exports = {
             pathToConfigModule: `src/utils/typography.js`,
             },
         },
+        `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-catch-links`,
         `gatsby-plugin-sass`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
@@ -14,6 +16,13 @@ module.exports = {
           options: {
             name: `images`,
             path: `${__dirname}/src/images`,
+          },
+        },
+        {
+          resolve: `gatsby-source-filesystem`,
+          options: {
+            name: `pages`,
+            path: `${__dirname}/src/pages/blog_posts`,
           },
         },
         {

@@ -9,6 +9,7 @@ import OpenSource from "../components/OpenSource"
 import About from "../components/about"
 import Button from '../components/button';
 import buttonStyles from "../styles/components/button.module.scss"
+import { graphql } from 'gatsby'
 
 const IndexPage = (props) => (
     <Layout>
