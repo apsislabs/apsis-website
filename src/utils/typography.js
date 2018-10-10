@@ -5,6 +5,7 @@ const typography = new Typography({
     baseLineHeight: 1.45,
     headerFontFamily: [
       "OpenSans",
+      "Lora"
     ],
     bodyFontFamily: ["OpenSans"],
   })

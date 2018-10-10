@@ -70,10 +70,10 @@ fragment portfolioImages on File {
 `;
 export const pageQuery = graphql`
 query {
-    laptop: file(relativePath: { eq: "fillers/laptop.png" }) {
+    laptop: file(relativePath: { eq: "images/fillers/laptop.png" }) {
         ...portfolioImages
     }
-    cellphone: file(relativePath: { eq: "fillers/cellphone.png" }) {
+    cellphone: file(relativePath: { eq: "images/fillers/cellphone.png" }) {
         ...portfolioImages
     }
 }

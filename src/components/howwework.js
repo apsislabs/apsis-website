@@ -37,6 +37,5 @@ export default props => (
                 We can lend expertise in a specific new technology, help your team transition to the cloud, or just close some tickets that have been on your backlog for 18 months. If you need a helping hand — even for a short while — we’re here to provide leadership and expertise to get the job done.       
             </div>
         </div>
-        <div className={howweworkStyles.fillerImage}/>
     </div>
 )
