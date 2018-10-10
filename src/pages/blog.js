@@ -6,7 +6,7 @@ import { graphql, Link } from 'gatsby'
 import HireUsFooter from "../components/hireusfooter"
 // import { Link } from "gatsby"
 
-export default (props) => {
+export default (props) => {;
   const { edges: posts } = props.data.blogPosts;
   return (
     <Layout>
@@ -24,7 +24,7 @@ export default (props) => {
             return (
               <ContentBlock vertical={true} >
                 <div className="blog-post-preview" key={post.id}>
-                  <img src={post.frontmatter.image} alt="" />
+                {/* <Img fluid={post.frontmatter.image.childImageSharp.fluid} /> */}
                   <h1>
                     <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
                   </h1>

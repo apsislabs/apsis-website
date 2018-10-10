@@ -2,7 +2,7 @@
 path: "/startup-life-for-me"
 author: eric
 title: 'A Startup Life For Me'
-image: 'posts/acadia.jpg'
+image: '../images/posts/acadia.jpg'
 credit: Eric Greer
 ---
 

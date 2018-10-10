@@ -2,7 +2,7 @@
 path: "/async-action-creators-in-redux"
 author: niall
 title: Asynchronous Action Creators in Redux
-image: 'posts/clocke.jpg'
+image: '../images/posts/clocke.jpg'
 excerpt: Improving the logic-to-boilerplate ratio of asynchronous action definitions.
 ---
 

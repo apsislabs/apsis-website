@@ -2,8 +2,8 @@
 path: "/thanks-electroconf"
 author: "wyatt"
 title: "Thanks, ElectronConf"
-image: 'posts/electronconf.jpg'
-credit: Tina Hartung
+image: '../images/posts/electronconf.jpg'
+credit: 'Tina Hartung'
 ---
 
 Over the weekend, my usual sources for industry news exploded in response to [the postponement](http://electronconf.com/) of the first ElectronConf because the panel of speakers did not "reflect the standards to which we hold ourselves."

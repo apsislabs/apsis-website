@@ -2,7 +2,7 @@
 path: "/parsing-json-with-types-1"
 author: "niall"
 title: "Parsing JSON with Types (Part 1)"
-image: 'posts/minified.jpg'
+image: '../images/posts/minified.jpg'
 credit: "Markus Spiske"
 ---
 

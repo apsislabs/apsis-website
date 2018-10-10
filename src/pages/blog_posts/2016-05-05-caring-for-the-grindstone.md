@@ -2,7 +2,7 @@
 path: "/caring-for-grindstone"
 author: wyatt
 title: Caring for the Grindstone
-image: 'posts/office.jpg'
+image: '../images/posts/office.jpg'
 credit: Vladimir Kudinov
 ---
 
