@@ -1,21 +1,28 @@
-.herobutton {
+@import '../__variables';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.wide {
+  width: 100%;
   border-radius: 4px;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.01);
-  border: solid 1px #979797;
   padding: 7px 40px;
   margin: 0px 15px 0px 0px;
-  background-color: #dbdbdb;
 }
 
-.herobuttoncontainer {
-  margin-left: 120px;
-  margin-top: 50px;
-}
-
-.navbutton {
+.short {
   border-radius: 4px;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.01);
-  border: solid 1px #979797;
-  padding: 7px;
-  background-color: #dbdbdb;
+  padding: 7px 12px;
+}
+
+.blue {
+  background-color: $apsis-blue;
+  font-family: OpenSans, sans-serif;
+  color: white;
+}
+
+.gray {
+  background-color: $button-color;
+  font-family: OpenSans, sans-serif;
+  color: $apsis-dark;
 }

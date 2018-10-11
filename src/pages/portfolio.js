@@ -4,7 +4,7 @@ import Hero from "../components/hero"
 import DiagonalBackground from "../components/diagonalbackground"
 import OpenSource from "../components/OpenSource"
 import ContentBlock from "../components/contentblock"
-import Button from '../components/button';
+import Button from 'gatsby-link';
 import buttonStyles from "../styles/components/button.module.scss"
 import portfolioStyles from "../styles/pages/portfolio.module.scss"
 import Img from "gatsby-image"
@@ -20,9 +20,10 @@ const PortfolioPage = (props) => (
             <span className={buttonStyles.herobuttoncontainer}>
                 <Button
                     className={buttonStyles.herobutton}
-                    text="Read the Case Study."
                     to="/"
-                />
+                >
+                    Read the Case Study.
+                </Button>
             </span>
         </div>
     </Hero>

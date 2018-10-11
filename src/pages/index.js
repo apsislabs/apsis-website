@@ -7,28 +7,34 @@ import Services from "../components/services"
 import DiagonalBackground from "../components/diagonalbackground"
 import OpenSource from "../components/OpenSource"
 import About from "../components/about"
-import Button from '../components/button';
+import Button from 'gatsby-link'
 import buttonStyles from "../styles/components/button.module.scss"
 import { graphql } from 'gatsby'
 
 class IndexPage extends React.Component {
     render () {
+        const blueWideButtonClasses = `${buttonStyles.blue} ${buttonStyles.wide}`;
+        const grayWideButtonClasses = `${buttonStyles.gray} ${buttonStyles.wide}`;
+
         return (
             <Layout>
-                {console.log("PRRRRR", this.props)}
-                <Hero>
+                <Hero img={this.props.data.hero.childImageSharp.fluid}>
                     <h1>Need an app? We can help.</h1>
                     <h3>We are developers focused on efficient solutions to real world problems.</h3>
-                    <span className={buttonStyles.herobuttoncontainer}>
-                        <Button className={buttonStyles.herobutton}
-                            text="Hire Us."
-                            to="/hire"
-                        />
+                    <span>
                         <Button
-                            className={buttonStyles.herobutton}
-                            text="Our Process."
+                            className={blueWideButtonClasses}
                             to="/services"
-                        />
+                        >
+                            Our Process
+                        </Button>
+                        <Button
+                            className={grayWideButtonClasses}
+                            to="/hire"
+                        >
+                            Hire Us
+                        </Button>
+
                     </span>
                 </Hero>
                 <Clients
@@ -89,6 +95,17 @@ class IndexPage extends React.Component {
         }
     }
   `;
+
+  export const fluidHero = graphql`
+    fragment fluidHero on File {
+        childImageSharp {
+            fluid(maxWidth: 1400) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+  `;
+
   export const pageQuery = graphql`
     query {
         clientOne: file(relativePath: { eq: "images/clients/boku.png" }) {
@@ -102,6 +119,9 @@ class IndexPage extends React.Component {
         }
         clientFour: file(relativePath: { eq: "images/clients/weber.png" }) {
             ...fluidImage
+        }
+        hero: file(relativePath: { eq: "images/hero/shuttle_desktop.jpg" }) {
+            ...fluidHero
         }
     }
   `

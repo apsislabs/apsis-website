@@ -2,7 +2,7 @@ import React from "react"
 import opensourceStyles from "../styles/components/opensource.module.scss"
 import buttonStyles from "../styles/components/button.module.scss"
 import OpenSourceCard from "./opensourcecard"
-import Button from "./button"
+import Button from 'gatsby-link';
 
 export default props => (
     <div className={opensourceStyles.opensource}>
@@ -36,9 +36,10 @@ export default props => (
             </div>
             <Button
                 to='/services'
-                text="See More of Our Work"
                 className={buttonStyles.herobutton}
-            />
+            >
+                See More of Our Work
+            </Button>
         </div>
     </div>
 )

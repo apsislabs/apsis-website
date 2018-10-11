@@ -7,29 +7,29 @@
     position: absolute;
     top: 0px;
     z-index: 1;
-    font-weight: bold;
-
+    display: flex;
+    align-items: center;
+  
   a {
-    text-decoration: none;
-    color: $apsis-blue;
-    font-size: 18px;
+    color: white;
+  }
 
-    :active {
-      font-weight: bolder;
+  .listLink {
+    display: inline-flex;
+    margin-left: auto;
+
+    .listLinkItem {
+      margin: 1em;
     }
   }
-
   .icon {
-    width: 32px;
-    height: 32px;
-    background-color: $apsis-blue;
-    margin: 5px;
+    width: 140px;
+    height: 100%;
+    display: inline-flex;
 
-    border-radius: 50%;
-    display: inline-block;
+    margin: 1em;
   }
 }
-
 
 a {
   text-decoration: none;
