@@ -6,22 +6,22 @@ export default props => (
     <div className={clientStyles.clientsContainer}>  
       <Img
         fluid={props.clientOne}
-        alt="Boku"
+        alt={props.clientOneAlt}
         className={clientStyles.clientsImg}
       />
       <Img
         fluid={props.clientTwo}
-        alt="Weber"
+        alt={props.clientTwoAlt}
         className={clientStyles.clientsImg}
       />
       <Img
         fluid={props.clientThree}
-        alt="Columbia University"
+        alt={props.clientThreeAlt}
         className={clientStyles.clientsImg}
       />
       <Img
         fluid={props.clientFour}
-        alt="Natera"
+        alt={props.clientFourAlt}
         className={clientStyles.clientsImg}
       />
     </div>

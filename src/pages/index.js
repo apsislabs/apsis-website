@@ -38,14 +38,14 @@ class IndexPage extends React.Component {
                     </span>
                 </Hero>
                 <Clients
-                    clientOne={this.props.data.clientOne.childImageSharp.fluid}
-                    clientOneAlt="Boku"
-                    clientTwo={this.props.data.clientTwo.childImageSharp.fluid}
+                    clientOne={this.props.data.clientWeber.childImageSharp.fluid}
+                    clientOneAlt="Weber Shandwick"
+                    clientTwo={this.props.data.clientNatera.childImageSharp.fluid}
                     clientTwoAlt="Natera"
-                    clientThree={this.props.data.clientThree.childImageSharp.fluid}
-                    clientThreeAlt="Columbia University"
-                    clientFour={this.props.data.clientFour.childImageSharp.fluid}
-                    clientFourAlt="Weber"
+                    clientThree={this.props.data.clientCallidus.childImageSharp.fluid}
+                    clientThreeAlt="Callidus Cloud"
+                    clientFour={this.props.data.clientBoku.childImageSharp.fluid}
+                    clientFourAlt="Boku"
                 />
                 <ContentBlock
                     title="Your industry is our business."
@@ -69,14 +69,14 @@ class IndexPage extends React.Component {
                     />
                 </ContentBlock>
                 <Clients
-                    clientOne={this.props.data.clientOne.childImageSharp.fluid}
-                    clientOneAlt="Boku"
-                    clientTwo={this.props.data.clientTwo.childImageSharp.fluid}
+                    clientOne={this.props.data.clientWeber.childImageSharp.fluid}
+                    clientOneAlt="Weber Shandwick"
+                    clientTwo={this.props.data.clientNatera.childImageSharp.fluid}
                     clientTwoAlt="Natera"
-                    clientThree={this.props.data.clientThree.childImageSharp.fluid}
-                    clientThreeAlt="Columbia University"
-                    clientFour={this.props.data.clientFour.childImageSharp.fluid}
-                    clientFourAlt="Weber"
+                    clientThree={this.props.data.clientCallidus.childImageSharp.fluid}
+                    clientThreeAlt="Callidus Cloud"
+                    clientFour={this.props.data.clientBoku.childImageSharp.fluid}
+                    clientFourAlt="Boku"
                 />
                 <About />
             </Layout>
@@ -108,16 +108,16 @@ class IndexPage extends React.Component {
 
   export const pageQuery = graphql`
     query {
-        clientOne: file(relativePath: { eq: "images/clients/boku.png" }) {
+        clientBoku: file(relativePath: { eq: "images/clients/boku.png" }) {
             ...fluidImage
         }
-        clientTwo: file(relativePath: { eq: "images/clients/natera.png" }) {
+        clientNatera: file(relativePath: { eq: "images/clients/natera.png" }) {
             ...fluidImage
         }
-        clientThree: file(relativePath: { eq: "images/clients/columbia.png" }) {
+        clientCallidus: file(relativePath: { eq: "images/clients/callidus.png" }) {
             ...fluidImage
         }
-        clientFour: file(relativePath: { eq: "images/clients/weber.png" }) {
+        clientWeber: file(relativePath: { eq: "images/clients/weber.png" }) {
             ...fluidImage
         }
         hero: file(relativePath: { eq: "images/hero/shuttle_desktop.jpg" }) {
