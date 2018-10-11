@@ -8,6 +8,7 @@ import DiagonalBackground from "../components/diagonalbackground"
 import OpenSource from "../components/OpenSource"
 import About from "../components/about"
 import Button from 'gatsby-link'
+import indexStyles from "../styles/pages/index.module.scss"
 import buttonStyles from "../styles/components/button.module.scss"
 import { graphql } from 'gatsby'
 
@@ -51,8 +52,14 @@ class IndexPage extends React.Component {
                     title="Your industry is our business."
                     vertical={false}
                 >
-                Our craft is software development but our specialty is understanding your business, your processes, and your priorities. A robust understanding of your business goals is crucial for us to determine how to serve you best. We take the time to ensure you’re not paying extra for something that’s over-engineered.  We want to strike the right balance among the factors that are important to you: effective features and functionality, budget, speed, technology maintenance costs, and more.
+                    Our craft is software development but our specialty is understanding your business, your processes, and your priorities. A robust understanding of your business goals is crucial for us to determine how to serve you best. We take the time to ensure you’re not paying extra for something that’s over-engineered.  We want to strike the right balance among the factors that are important to you: effective features and functionality, budget, speed, technology maintenance costs, and more.
                     <Services />
+                    <Button
+                        className={blueWideButtonClasses}
+                        to="/services"
+                    >
+                        Our Services
+                    </Button>
                 </ContentBlock>
                 <DiagonalBackground>
                     <OpenSource/>
@@ -61,12 +68,17 @@ class IndexPage extends React.Component {
                     title="Idea. Implement. Iterate."
                     vertical={false}
                 >
-                At Apsis we embrace a process we call “almost agile.” Based on the idea that the best proving ground for new software is real-world users, we focus on rapid development and deployment followed by iteration based on user feedback. Our small project teams of 2-3 developers are organized based on your project needs, and work in small, focused sprints to maximize adaptability.
-                    <Button
-                        className={buttonStyles.herobutton}
-                        to="/services"
-                        text="Our Services"
-                    />
+                    <div>
+                        At Apsis we embrace a process we call “almost agile.” Based on the idea that the best proving ground for new software is real-world users, we focus on rapid development and deployment followed by iteration based on user feedback. Our small project teams of 2-3 developers are organized based on your project needs, and work in small, focused sprints to maximize adaptability.
+                    </div>
+                    <div className={indexStyles.serviceButton}>
+                        <Button
+                            className={blueWideButtonClasses}
+                            to="/services"
+                        >
+                            Our Services
+                        </Button>
+                    </div>
                 </ContentBlock>
                 <Clients
                     clientOne={this.props.data.clientWeber.childImageSharp.fluid}
