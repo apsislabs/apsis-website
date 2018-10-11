@@ -1,3 +1,5 @@
+@import '../__variables';
+
 .opensource {
   padding: 200px 0px 100px 0px;
   width: 950px;
@@ -18,5 +20,6 @@
   flex-wrap: wrap;
   align-content: space-evenly;
   justify-content: center;
-  padding-bottom: 20px;
+  padding: 20px 0px;
+  width: 1000px;
 }
