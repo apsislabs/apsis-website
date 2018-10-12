@@ -2,6 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import Layout from '../components/layout';
 import ContentBlock from '../components/contentblock';
+import { graphql } from "gatsby"
 
 export default function Template({ data }) {
   const post = data.markdownRemark;

@@ -5,7 +5,7 @@ import ContentBlock from "../components/contentblock"
 import QuoteBlock from "../components/quoteblock"
 import HowWeWork from "../components/howwework"
 import HireUsFooter from "../components/hireusfooter"
-import Button from '../components/button';
+import Button from 'gatsby-link';
 import buttonStyles from "../styles/components/button.module.scss"
 
 export default () => (
@@ -16,9 +16,10 @@ export default () => (
       <span className={buttonStyles.herobuttoncontainer}>
         <Button
             className={buttonStyles.herobutton}
-            text="Our Process."
             to="/services"
-        />
+        >
+          Our Process.
+        </Button>
         </span>
     </Hero>
     <ContentBlock

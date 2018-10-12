@@ -2,7 +2,9 @@ import React from "react"
 import opensourceStyles from "../styles/components/opensource.module.scss"
 import buttonStyles from "../styles/components/button.module.scss"
 import OpenSourceCard from "./opensourcecard"
-import Button from "./button"
+import Button from 'gatsby-link';
+
+const blueWideButtonClasses = `${buttonStyles.blue} ${buttonStyles.wide}`;
 
 export default props => (
     <div className={opensourceStyles.opensource}>
@@ -10,7 +12,7 @@ export default props => (
             <h2>Open Source by Default</h2>
             <div className={opensourceStyles.text}>
                 When we’re not building for you, we build for the community.<br/>
-                We’ve published over <a href="https://github.com/apsislabs">20 open source projects</a>. Here are a few of our favorites:
+                We’ve published over 20 open source projects. Here are a few of our favorites:
             </div>
             <div className={opensourceStyles.cards}>
                 <OpenSourceCard
@@ -35,10 +37,11 @@ export default props => (
                 />
             </div>
             <Button
-                to='/services'
-                text="See More of Our Work"
-                className={buttonStyles.herobutton}
-            />
+                to='https://github.com/apsislabs'
+                className={blueWideButtonClasses}
+            >
+                See More of Our Work
+            </Button>
         </div>
     </div>
 )

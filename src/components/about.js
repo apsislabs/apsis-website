@@ -1,9 +1,14 @@
 import React from "react"
 import aboutStyles from "../styles/components/about.module.scss"
+import Img from "gatsby-image"
 
 export default props => (
     <div className={aboutStyles.container}>
-        <div className={aboutStyles.image} />
+        <Img
+            fluid={props.fluid}
+            alt={props.alt}
+            className={aboutStyles.image}
+        />
         <div className={aboutStyles.content}>
             <h2>About Us</h2>
             <span>

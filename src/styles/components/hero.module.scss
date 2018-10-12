@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Lora');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 .hero {
     background-color: #efefef;
-    z-index: -1;
     width: 100%;
     height: 740px;
     clip-path: polygon(
@@ -10,19 +12,44 @@
       0 calc(100% - 5vw)
     );
 
+  .overlay {
+    opacity: 0.75;
+    background-color: #000;
+  }
+  .image {
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: "100%";
+    height: "100%";
+    opacity: 0.75;
+  }
+
+  .content{
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    padding: 200px 0px 40px 120px;
+  }
   h1 {
     width: 851px;
     height: 65px;
-    font-family: OpenSans;
     font-size: 48px;
-    color: #393f50;
-    padding: 200px 0px 40px 120px;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(15, 44, 64, 0.15);
+    font-family: Lora, serif;
+    font-weight: bold;
   }
 
   h3 {
-    padding: 0px 120px;
-    font-family: OpenSans;
+    font-family: OpenSans, sans-serif;
     font-size: 22px;
-    color: #393f50;
+    text-shadow: 0 2px 4px rgba(15, 44, 64, 0.15);
+    color: #ffffff;
+    font-weight: 100;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
   }
 }

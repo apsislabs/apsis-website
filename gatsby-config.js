@@ -1,15 +1,10 @@
 module.exports = {
     plugins: [
-        {
-            resolve: `gatsby-plugin-typography`,
-            options: {
-            pathToConfigModule: `src/utils/typography.js`,
-            },
-        },
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-catch-links`,
         `gatsby-plugin-sass`,
         `gatsby-transformer-sharp`,
+        `gatsby-link`,
         `gatsby-plugin-sharp`,
         {
           resolve: `gatsby-source-filesystem`,
