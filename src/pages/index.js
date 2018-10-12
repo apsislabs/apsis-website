@@ -81,16 +81,29 @@ class IndexPage extends React.Component {
                     </div>
                 </ContentBlock>
                 <Clients
-                    clientOne={this.props.data.clientWeber.childImageSharp.fluid}
-                    clientOneAlt="Weber Shandwick"
-                    clientTwo={this.props.data.clientNatera.childImageSharp.fluid}
-                    clientTwoAlt="Natera"
-                    clientThree={this.props.data.clientCallidus.childImageSharp.fluid}
-                    clientThreeAlt="Callidus Cloud"
-                    clientFour={this.props.data.clientBoku.childImageSharp.fluid}
-                    clientFourAlt="Boku"
+                    clientOne={this.props.data.clientCascade.childImageSharp.fluid}
+                    clientOneAlt="Cascade Bicycle Club"
+                    clientTwo={this.props.data.clientDragonFoundry.childImageSharp.fluid}
+                    clientTwoAlt="Dragon Foundry"
+                    clientThree={this.props.data.clientColumbia.childImageSharp.fluid}
+                    clientThreeAlt="Columbia University"
+                    clientFour={this.props.data.clientTray.childImageSharp.fluid}
+                    clientFourAlt="Tray.io"
                 />
-                <About />
+                <Clients
+                    clientOne={this.props.data.clientPicturiffic.childImageSharp.fluid}
+                    clientOneAlt="Picturiffic"
+                    clientTwo={this.props.data.clientArkatechture.childImageSharp.fluid}
+                    clientTwoAlt="Arkatechture"
+                    clientThree={this.props.data.clientThinkingBaseball.childImageSharp.fluid}
+                    clientThreeAlt="Thinking Baseball"
+                    clientFour={this.props.data.clientCoverMyTest.childImageSharp.fluid}
+                    clientFourAlt="Cover My Test"
+                />
+                <About
+                    fluid={this.props.data.building.childImageSharp.fluid}
+                    alt="Our Seattle Office"
+                />
             </Layout>
         )
     }
@@ -132,7 +145,34 @@ class IndexPage extends React.Component {
         clientWeber: file(relativePath: { eq: "images/clients/weber.png" }) {
             ...fluidImage
         }
+        clientArkatechture: file(relativePath: { eq: "images/clients/arkatechture.png" }) {
+            ...fluidImage
+        }
+        clientCascade: file(relativePath: { eq: "images/clients/cascade.png" }) {
+            ...fluidImage
+        }
+        clientColumbia: file(relativePath: { eq: "images/clients/columbia.png" }) {
+            ...fluidImage
+        }
+        clientCoverMyTest: file(relativePath: { eq: "images/clients/covermytest.png" }) {
+            ...fluidImage
+        }
+        clientDragonFoundry: file(relativePath: { eq: "images/clients/dragonfoundry.png" }) {
+            ...fluidImage
+        }
+        clientPicturiffic: file(relativePath: { eq: "images/clients/picturiffic.png" }) {
+            ...fluidImage
+        }
+        clientThinkingBaseball: file(relativePath: { eq: "images/clients/thinkingbaseball.png" }) {
+            ...fluidImage
+        }
+        clientTray: file(relativePath: { eq: "images/clients/trayio.png" }) {
+            ...fluidImage
+        }
         hero: file(relativePath: { eq: "images/hero/shuttle_desktop.jpg" }) {
+            ...fluidHero
+        }
+        building: file(relativePath: { eq: "images/posts/jack-straw-office.jpg" }) {
             ...fluidHero
         }
     }
