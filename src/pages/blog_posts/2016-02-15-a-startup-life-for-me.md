@@ -1,5 +1,5 @@
 ---
-path: "/startup-life-for-me"
+path: "/blog_posts/startup-life-for-me"
 author: eric
 title: 'A Startup Life For Me'
 image: '../images/posts/acadia.jpg'

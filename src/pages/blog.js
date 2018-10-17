@@ -4,12 +4,16 @@ import ContentBlock from "../components/contentblock"
 // import Img from "gatsby-image"
 import { graphql, Link } from 'gatsby'
 import HireUsFooter from "../components/hireusfooter"
-// import { Link } from "gatsby"
+import Navbar from "../components/navbar"
+
 
 export default (props) => {;
   const { edges: posts } = props.data.blogPosts;
   return (
     <Layout>
+      <Navbar
+        blue={true}
+      />
       <ContentBlock
         vertical={true}
       >
@@ -50,7 +54,6 @@ query {
           frontmatter {
             title
             path
-            image
           }
         }
       }

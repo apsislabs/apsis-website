@@ -1,4 +1,5 @@
 @import '../__variables';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 .container {
   display: flex;
@@ -23,6 +24,10 @@
 .contentHeader {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  i {
+    padding-right: 10px;
+  }
 }
 
 .content {
@@ -32,6 +37,9 @@
 
 .contentParagraph {
   margin-bottom: 20px;
+  font-family: OpenSans, sans-serif;
+  font-size: 18px;
+  color: #4a4a4a;
 }
 
 .fillerImage {

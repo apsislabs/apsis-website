@@ -1,28 +1,44 @@
 @import '../__variables';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 .testimonial {
-    width: 600px;
+    width: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0px 400px;
+    margin: 0px auto;
 
-  &__quote {
-      color: $apsis-gray;
-      border-bottom: 1px solid $gray;
-      position: relative;
-      width: 600px;
-
-      &:after,
-      &:before {
-          border-style: solid;
-          border-color: transparent;
-      }
+    i {
+        color: $gray;
+    }
+    &__container {
+        display: flex;
+        flex-direction: row;
+        color: $gray;
     }
 
-  &__name {
-      font-style: normal;
-      display: block;
+    &__quote {
+        color: $apsis-gray;
+        align-self: center;
+        border-bottom: 1px solid $gray;
+        overflow: visible !important;
+        margin: 20px 60px;
+        padding-bottom: 30px;
+        font-family: OpenSans, sans-serif;
+        font-size: 22px;
+        font-weight: 100;
+        color: #4a4a4a;
+
+        &:after,
+        &:before {
+            border-style: solid;
+            border-color: transparent;
+        }
+    }
+
+    &__name {
+        font-style: normal;
+        display: block;
   }
 
   &__company {
@@ -32,3 +48,4 @@
       color: $gray;
   }
 }
+

@@ -19,15 +19,14 @@
   }
 }
 .horizontalContent {
-  padding: 60px 185px;
-  width: 800px;
+  padding: 60px 0px;
+  width: 900px;
   display: flex;
   flex-direction: row;
   color: #4a5359;
+  margin: 0px auto;
 
   h2 {
-    width: 185px;
-    height: 62px;
     font-family: Lora, serif;
     font-size: 24px;
     font-weight: bold;

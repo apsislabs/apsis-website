@@ -8,13 +8,13 @@ export default () => (
     <StaticQuery
         query={graphql`
         query apsisLogoIconQuery {
-            apsisLogoIcon: file(relativePath: { eq: "images/logos/apsis_mobile_blue.png" }) {
-                childImageSharp {
-                    fluid(maxWidth: 250) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
+          apsisLogoIcon: file(relativePath: { eq: "images/logos/apsis_mobile_blue.png" }) {
+              childImageSharp {
+                  fluid(maxWidth: 250) {
+                      ...GatsbyImageSharpFluid
+                  }
+              }
+          }
         }
         `}
         render={data => (
