@@ -1,34 +1,60 @@
 @import '../__variables';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 .testimonial {
-    width: 600px;
+    width: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0px 400px;
+    margin: 0px auto;
 
-  &__quote {
-      color: $apsis-gray;
-      border-bottom: 1px solid $gray;
-      position: relative;
-      width: 600px;
-
-      &:after,
-      &:before {
-          border-style: solid;
-          border-color: transparent;
-      }
+    i {
+        color: #dae1e6;
     }
 
-  &__name {
-      font-style: normal;
-      display: block;
-  }
+    cite {
+        display: flex;
+        flex-direction: column;
+    }
+    &__attribution {
+        text-align: center;
+        font-family: OpenSans, sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        color: #4a5359;
+    }
 
-  &__company {
-      display: block;
-      text-transform: lowercase;
-      font-weight: 300;
-      color: $gray;
-  }
+    &__title {
+        font-family: OpenSans, sans-serif;
+        font-size: 18px;
+        font-weight: normal;
+        color: #7994a6;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: $gray;
+    }
+
+    &__quote {
+        color: $apsis-gray;
+        align-self: center;
+        border-bottom: 1px solid $gray;
+        overflow: visible !important;
+        margin: 20px 60px;
+        padding-bottom: 30px;
+        font-family: OpenSans, sans-serif;
+        font-size: 22px;
+        font-weight: 100;
+        color: #4a4a4a;
+
+        &:after,
+        &:before {
+            border-style: solid;
+            border-color: transparent;
+        }
+    }
 }
+

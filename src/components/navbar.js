@@ -13,11 +13,21 @@ const ListLink = props => (
 
 const shortBlueButton = `${buttonStyles.blue} ${buttonStyles.short}`;
 
+const blueNav = `${navbarStyles.blue} ${navbarStyles.navbar}` 
+const whiteNav = `${navbarStyles.white} ${navbarStyles.navbar}` 
+
 export default props => (
     <StaticQuery
     query={graphql`
       query apsisLogoQuery {
-        apsisLogo: file(relativePath: { eq: "images/logos/apsis_white.png" }) {
+        apsisWhiteLogo: file(relativePath: { eq: "images/logos/apsis_white.png" }) {
+            childImageSharp {
+                fluid(maxWidth: 500) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        apsisBlueLogo: file(relativePath: { eq: "images/logos/apsis_blue.png" }) {
             childImageSharp {
                 fluid(maxWidth: 500) {
                     ...GatsbyImageSharpFluid
@@ -27,14 +37,14 @@ export default props => (
       }
     `}
     render={data => (
-        <header className={navbarStyles.navbar}>
+        <header className={props.blue ? blueNav : whiteNav}>
 
         <Link
             to="/"
             className={navbarStyles.homeLink}
         >
             <Img
-                fluid={data.apsisLogo.childImageSharp.fluid}
+                fluid={props.blue ? data.apsisBlueLogo.childImageSharp.fluid : data.apsisWhiteLogo.childImageSharp.fluid }
                 alt="Logo"
                 className={navbarStyles.icon}
             />

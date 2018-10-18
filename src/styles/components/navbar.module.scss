@@ -12,7 +12,6 @@
     align-items: center;
   
   a {
-    color: white;
     font-family: OpenSans, sans-serif;
     font-weight: 100;
   }
@@ -39,4 +38,16 @@ a {
   text-decoration: none;
   color: $apsis-gray;
   font-size: 18px;
+}
+
+.blue {
+  a {
+    color: $apsis-blue;
+  }
+}
+
+.white {
+  a {
+    color: white;
+  }
 }

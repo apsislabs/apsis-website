@@ -2,9 +2,13 @@ import React from "react"
 import Layout from "../components/layout"
 import ContentBlock from "../components/contentblock"
 import HireUsFooter from "../components/hireusfooter"
+import Navbar from "../components/navbar"
 
 export default () => (
   <Layout>
+    <Navbar
+      blue={true}
+    />
     <ContentBlock vertical={true}>
       <h1>Let’s build something</h1>
       <h3>Got a project? Just wanna talk shop? <br/> We’re always listening.</h3>

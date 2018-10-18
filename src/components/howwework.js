@@ -4,8 +4,9 @@ import howweworkStyles from "../styles/components/howwework.module.scss"
 export default props => (
     <div className={howweworkStyles.container}>  
         <div className={howweworkStyles.content}>
-            <h2>How we work</h2>
-
+            <div className={howweworkStyles.title}>
+                <h2>How we work</h2>
+            </div>
             <div className={howweworkStyles.contentHeader}>
                 <i className="fas fa-rocket"/>
                 <h4>New Projects</h4>

@@ -11,6 +11,7 @@ import Button from 'gatsby-link'
 import indexStyles from "../styles/pages/index.module.scss"
 import buttonStyles from "../styles/components/button.module.scss"
 import { graphql } from 'gatsby'
+import Navbar from "../components/navbar"
 
 class IndexPage extends React.Component {
     render () {
@@ -19,7 +20,13 @@ class IndexPage extends React.Component {
 
         return (
             <Layout>
-                <Hero img={this.props.data.hero.childImageSharp.fluid}>
+                <Navbar
+                    blue={false}
+                />
+                <Hero
+                    displayname="Hero"
+                    img={this.props.data.hero.childImageSharp.fluid}
+                >
                     <h1>Need an app? We can help.</h1>
                     <h3>We are developers focused on efficient solutions to real world problems.</h3>
                     <span>

@@ -15,7 +15,6 @@ exports.createPages = ({ actions, graphql }) => {
                 frontmatter {
                     path
                     title
-                    image
                 }
             }
         }

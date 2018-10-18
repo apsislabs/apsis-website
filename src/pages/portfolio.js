@@ -10,16 +10,25 @@ import portfolioStyles from "../styles/pages/portfolio.module.scss"
 import Img from "gatsby-image"
 import { graphql } from 'gatsby'
 import HireUsFooter from "../components/hireusfooter"
+import Navbar from "../components/navbar"
+
+const blueWideButtonClasses = `${buttonStyles.blue} ${buttonStyles.wide}`;
 
 const PortfolioPage = (props) => (
   <Layout>
-    <Hero>
+    <Navbar
+        blue={false}
+    />
+    <Hero
+        displayname="Hero"
+        img={props.data.portfolioHero.childImageSharp.fluid}
+    >
         <div>
             <h1>Building :daily</h1>
             <h3>Rethinking how developers take notes.</h3>
             <span className={buttonStyles.herobuttoncontainer}>
                 <Button
-                    className={buttonStyles.herobutton}
+                    className={blueWideButtonClasses}
                     to="/"
                 >
                     Read the Case Study.
@@ -76,6 +85,13 @@ query {
     }
     cellphone: file(relativePath: { eq: "images/fillers/cellphone.png" }) {
         ...portfolioImages
+    }
+    portfolioHero: file(relativePath: { eq: "images/hero/space.jpg" }) {
+        childImageSharp {
+            fluid(maxWidth: 1600) {
+                ...GatsbyImageSharpFluid
+            }
+        }
     }
 }
 `

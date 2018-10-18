@@ -3,11 +3,15 @@ import Helmet from "react-helmet";
 import Layout from '../components/layout';
 import ContentBlock from '../components/contentblock';
 import { graphql } from "gatsby"
+import Navbar from "../components/navbar"
 
 export default function Template({ data }) {
   const post = data.markdownRemark;
   return (
     <Layout>
+      <Navbar
+          blue={true}
+      />
       <ContentBlock>
       <div className="blog-post-container">
         <Helmet title={`CodeStack - ${post.frontmatter.title}`} />
