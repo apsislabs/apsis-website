@@ -9,11 +9,32 @@
     margin: 0px auto;
 
     i {
-        color: $gray;
+        color: #dae1e6;
     }
+
+    cite {
+        display: flex;
+        flex-direction: column;
+    }
+    &__attribution {
+        text-align: center;
+        font-family: OpenSans, sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        color: #4a5359;
+    }
+
+    &__title {
+        font-family: OpenSans, sans-serif;
+        font-size: 18px;
+        font-weight: normal;
+        color: #7994a6;
+    }
+
     &__container {
         display: flex;
         flex-direction: row;
+        align-items: center;
         color: $gray;
     }
 
@@ -35,17 +56,5 @@
             border-color: transparent;
         }
     }
-
-    &__name {
-        font-style: normal;
-        display: block;
-  }
-
-  &__company {
-      display: block;
-      text-transform: lowercase;
-      font-weight: 300;
-      color: $gray;
-  }
 }
 
