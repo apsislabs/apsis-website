@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 .container {
   margin: 0 auto;
   display: flex;
@@ -10,9 +12,19 @@
   height: 527px;
   width: 1025px;
   border: thin solid black;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
+.tablinks{
+  .active {
+    color: #2773a7
+  }
+}
+.tabcontent{
+  .active {
+    color: #2773a7
+  }
+}
 .tabs {
   border-bottom: none;
   width: 20%;
@@ -21,22 +33,18 @@
 
   li {
     padding-bottom: 20px;
+    list-style-type: none;
     > a {
       border: none;
       border-radius: 0;
       &:hover {
-        background-color: #8845a6;
-        color: #fff;
+        color: #2773a7;
       }
     }
     &.active > a {
-      border: none;
-      background-color: #8845a6;
-      color: #fff;
+      color: #2773a7;
       &:hover, &:focus {
-        border: none;
-        background-color: #8845a6;
-        color: #fff;
+        color: #2773a7;
       }
     }
   }
@@ -44,7 +52,11 @@
 
 .content {
   width: 100%;
-  padding-top: 5px;
+  padding-top: 15px;
+  font-family: OpenSans, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  color: #4a5359;
 }
 
 .locations {
