@@ -7,21 +7,32 @@ import HowWeWork from "../components/howwework"
 import HireUsFooter from "../components/hireusfooter"
 import Button from 'gatsby-link';
 import buttonStyles from "../styles/components/button.module.scss"
-import { graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import Navbar from "../components/navbar"
 
-class ServicesPage extends React.Component {
-    render() {
-      const blueWideButtonClasses = `${buttonStyles.blue} ${buttonStyles.wide}`;
+const blueWideButtonClasses = `${buttonStyles.blue} ${buttonStyles.wide}`;
 
-      return (
+export default () => (
+  <StaticQuery
+      query={graphql`
+        query {
+          hero: file(relativePath: { eq: "images/hero/hands_laptops.jpg" }) {
+            childImageSharp {
+              fluid(maxWidth: 1400) {
+                  ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        `}
+        render={data => (
         <Layout>
           <Navbar
               blue={false}
           />
           <Hero
             displayname="Hero"
-            img={this.props.data.hero.childImageSharp.fluid}
+            img={data.hero.childImageSharp.fluid}
           >
             <h1>Simply Software.</h1>
             <h3>They say do one thing and do it well. Our thing is software.</h3>
@@ -48,18 +59,5 @@ class ServicesPage extends React.Component {
         </Layout>
       )
     }
-}
-
-export default ServicesPage
-
-export const fluidHeroServices = graphql`
-query {
-  hero: file(relativePath: { eq: "images/hero/hands_laptops.jpg" }) {
-    childImageSharp {
-      fluid(maxWidth: 1400) {
-          ...GatsbyImageSharpFluid
-      }
-    }
-  }
-}
-`;
+    />
+)
