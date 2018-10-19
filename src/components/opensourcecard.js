@@ -4,7 +4,7 @@ import opensourcecardStyles from "../styles/components/opensourcecard.module.scs
 export default props => (
     <div className={opensourcecardStyles.container}>  
         <div className={opensourcecardStyles.icon}>
-            <i className={props.icon}></i>
+            <i className={`${props.icon} ${props.hover}`}></i>
         </div>
         <div className={opensourcecardStyles.content}>
             <div><strong>{props.title}</strong></div>
