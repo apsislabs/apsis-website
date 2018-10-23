@@ -11,7 +11,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Navbar from "../components/navbar"
 import Helmet from "react-helmet";
 
-const blueWideButtonClasses = `${buttonStyles.blue} ${buttonStyles.wide}`;
+const blueWideButtonClasses = `${buttonStyles.button__blue} ${buttonStyles.button__wide}`;
 
 export default () => (
   <StaticQuery
@@ -38,7 +38,7 @@ export default () => (
           >
             <h1>Simply Software.</h1>
             <h3>They say do one thing and do it well. Our thing is software.</h3>
-            <span className={buttonStyles.herobuttoncontainer}>
+            <span className={buttonStyles}>
               <Button
                   className={blueWideButtonClasses}
                   to="/services"

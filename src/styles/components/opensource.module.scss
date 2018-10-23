@@ -2,24 +2,23 @@
 
 .opensource {
   padding: 200px 0px 100px 0px;
-  width: 950px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   text-align: center;
   margin: 0 auto;
-}
 
-.header {
-  align-items: center;
-}
+  &__header {
+    align-items: center;
+  }
 
-.cards {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: space-evenly;
-  justify-content: center;
-  padding: 20px 0px;
-  width: 1000px;
+  &__cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    justify-content: center;
+    padding: 20px 0px;
+    width: 1000px;
+  }
 }

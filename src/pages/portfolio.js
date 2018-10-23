@@ -13,7 +13,7 @@ import HireUsFooter from "../components/Footer/hireusfooter"
 import Navbar from "../components/navbar"
 import Helmet from "react-helmet";
 
-const blueWideButtonClasses = `${buttonStyles.blue} ${buttonStyles.wide}`;
+const blueWideButtonClasses = `${buttonStyles.button__blue} ${buttonStyles.button__wide}`;
 
 const PortfolioPage = (props) => (
     <StaticQuery
@@ -55,7 +55,7 @@ const PortfolioPage = (props) => (
                     <div>
                         <h1>Building :daily</h1>
                         <h3>Rethinking how developers take notes.</h3>
-                        <span className={buttonStyles.herobuttoncontainer}>
+                        <span>
                             <Button
                                 className={blueWideButtonClasses}
                                 to="/"

@@ -2,22 +2,21 @@ import React from "react"
 import opensourceStyles from "../../styles/components/opensource.module.scss"
 import buttonStyles from "../../styles/components/button.module.scss"
 import OpenSourceCard from "./opensourcecard"
-import Button from 'gatsby-link';
 import opensourcecardStyles from "../../styles/components/opensourcecard.module.scss"
 
-const blueWideButtonClasses = `${buttonStyles.blue} ${buttonStyles.wide}`;
+const blueWideButtonClasses = `${buttonStyles.button__blue} ${buttonStyles.button__wide}`;
 const redHover = `${opensourcecardStyles.red}`;
 const blueHover = `${opensourcecardStyles.blue}`;
 
 export default props => (
     <div className={opensourceStyles.opensource}>
-        <div className={opensourceStyles.header}>
+        <div className={opensourceStyles.opensource__header}>
             <h2>Open Source by Default</h2>
-            <div className={opensourceStyles.text}>
+            <div>
                 When we’re not building for you, we build for the community.<br/>
                 We’ve published over 20 open source projects. Here are a few of our favorites:
             </div>
-            <div className={opensourceStyles.cards}>
+            <div className={opensourceStyles.opensource__cards}>
                 <OpenSourceCard
                     icon="fab fa-js-square"
                     title="orca"
@@ -38,17 +37,16 @@ export default props => (
                 />
                 <OpenSourceCard
                     icon="fab fa-js-square"
-                    title="Slayer"
+                    title="carpenter"
                     hover={blueHover}
-                    text="A killer service layer for your Ruby application."
+                    text="Configuration-driven Custom Post Types for WordPress."
                 />
             </div>
-            <Button
-                to='https://github.com/apsislabs'
+            <a href="https://github.com/apsislabs"
                 className={blueWideButtonClasses}
             >
                 See More of Our Work
-            </Button>
+            </a>
         </div>
     </div>
 )

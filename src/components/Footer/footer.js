@@ -39,7 +39,7 @@ export default () => (
                                 <Img
                                     fluid={data.apsisLogoIcon.childImageSharp.fluid}
                                     alt="Logo"
-                                    className={footerStyles.logoIcon}
+                                    className={footerStyles.logoIconContainer__logoIcon}
                                 />
                             </span>
                         </div>

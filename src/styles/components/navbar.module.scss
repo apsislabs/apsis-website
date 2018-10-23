@@ -1,5 +1,4 @@
 @import '../__variables';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 .navbar {
     background: transparent;
@@ -11,12 +10,19 @@
     display: flex;
     align-items: center;
   
-  a {
-    font-family: 'OpenSans', sans-serif;
-    font-weight: 100;
+  &__blue {
+    a {
+      color: $apsis-blue;
+    }
   }
 
-  .listLink {
+  &__white {
+    a {
+      color: $base-bg-color;
+    }
+  }
+
+  &__listLink {
     display: inline-flex;
     margin-left: auto;
     list-style: none;
@@ -25,29 +31,12 @@
       margin: 1em;
     }
   }
-  .icon {
+
+  &__icon {
     width: 140px;
     height: 100%;
     display: inline-flex;
 
     margin: 1em;
-  }
-}
-
-a {
-  text-decoration: none;
-  color: $apsis-gray;
-  font-size: 18px;
-}
-
-.blue {
-  a {
-    color: $apsis-blue;
-  }
-}
-
-.white {
-  a {
-    color: $base-bg-color;
   }
 }

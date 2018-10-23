@@ -29,7 +29,7 @@ class MapBlock extends React.Component {
             tabcontent[i].style.display = "none";
         }
 
-        tablinks = document.getElementsByClassName(mapblockStyles.tablinks);
+        tablinks = document.getElementsByClassName(mapblockStyles.tabs__tablinks);
         for (i = 0; i < tablinks.length; i++) {
             tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
@@ -40,10 +40,10 @@ class MapBlock extends React.Component {
 
     render() {
         return (
-            <div className={mapblockStyles.container}>
+            <div className={mapblockStyles.mapBlock}>
                 <h2>Where in the world...?</h2>
 
-                <div className={mapblockStyles.map} id="map">
+                <div className={mapblockStyles.mapBlock__map} id="map">
                     <GoogleMapReact
                         bootstrapURLKeys={{ key: 'AIzaSyCF7DHtzwCN8X7ZStPCJwsGsO9aH8-Uiq4' }}
                         center={{lat: this.state.latitude, lng: this.state.longitude}}
@@ -51,24 +51,24 @@ class MapBlock extends React.Component {
                     />
                 </div>
 
-                <div className={mapblockStyles.locations}>
+                <div className={mapblockStyles.mapBlock__locations}>
                     <div className={mapblockStyles.tabs}>
                         <ul>
                             <li>
-                                <a id="seattle" className={mapblockStyles.tablinks} href="team#map" data-toggle="tab" onClick={(e) => this.changeLocation(e, 47.659298, -122.317940, "seattle-content")}>Seattle, WA</a>
+                                <a id="seattle" className={mapblockStyles.tabs__tablinks} href="team#map" data-toggle="tab" onClick={(e) => this.changeLocation(e, 47.659298, -122.317940, "seattle-content")}>Seattle, WA</a>
                             </li>
                             <li>
-                                <a id="portlands" className={mapblockStyles.tablinks} href="#map" data-toggle="tab" onClick={(e) => this.changeLocation(e, 45.5122, -122.6587, "portlands-content")}>The Portlands</a>
+                                <a id="portlands" className={mapblockStyles.tabs__tablinks} href="#map" data-toggle="tab" onClick={(e) => this.changeLocation(e, 45.5122, -122.6587, "portlands-content")}>The Portlands</a>
                             </li>
                             <li>
-                                <a id="boulder" className={mapblockStyles.tablinks} href="#map" data-toggle="tab" onClick={(e) => this.changeLocation(e, 40.0150, -105.2705, "boulder-content")}>Boulder, CO</a>
+                                <a id="boulder" className={mapblockStyles.tabs__tablinks} href="#map" data-toggle="tab" onClick={(e) => this.changeLocation(e, 40.0150, -105.2705, "boulder-content")}>Boulder, CO</a>
                             </li>
                             <li>
-                                <a id="syracus" className={mapblockStyles.tablinks} href="#map" data-toggle="tab" onClick={(e) => this.changeLocation(e, 43.0481, -76.1474, "syracus-content")}>Syracus, NY</a>
+                                <a id="syracus" className={mapblockStyles.tabs__tablinks} href="#map" data-toggle="tab" onClick={(e) => this.changeLocation(e, 43.0481, -76.1474, "syracus-content")}>Syracus, NY</a>
                             </li>
                         </ul>
                     </div>
-                    <div className={mapblockStyles.content}>
+                    <div className={mapblockStyles.mapBlock__content}>
                         <div className={mapblockStyles.tabcontent} id="seattle-content">
                             Mission Control: our two founders (Wyatt and Noah) are based out of Seattle, WA. While the City by the Sound offers no shortage of developer talent, if you’re looking for top-notch engineers for your next project, you can find us in our University District offices.
                         </div>
@@ -79,8 +79,7 @@ class MapBlock extends React.Component {
                             BOULDER IS A PLACE
                         </div>
                         <div className={mapblockStyles.tabcontent} id="syracus-content">
-                            SYRACUS IS ALSO A PLACE
-                        </div>
+                            On the outskirts of Syracuse, two doors down from farmland, at the very edge of the Finger Lakes wine region sits Cazenovia, NY where we’ve stationed our very best New York engineer. With easy access to Syracuse, Rochester , Albany and  more we can easily get an in-person look at your next project. Get big city talent right here in Central New York.                        </div>
                     </div>
                 </div>
             </div>

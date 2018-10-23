@@ -2,8 +2,8 @@ import React from "react"
 import opensourcecardStyles from "../../styles/components/opensourcecard.module.scss"
 
 export default props => (
-    <div className={opensourcecardStyles.container}>  
-        <div className={opensourcecardStyles.icon}>
+    <div className={opensourcecardStyles.card}>
+        <div className={opensourcecardStyles.card__icon}>
             <i className={`${props.icon} ${props.hover}`}></i>
         </div>
         <div className={opensourcecardStyles.content}>

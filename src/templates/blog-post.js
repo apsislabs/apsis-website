@@ -15,12 +15,13 @@ export default function Template({ data }) {
       />
       <ContentBlock>
         <Helmet title={post.frontmatter.title} />
-        <div className={BlogPostStyles.postcontainer}>
-          <div className={BlogPostStyles.title}>{post.frontmatter.title}</div>
-          <img
+        <div className={BlogPostStyles.post}>
+          <div className={BlogPostStyles.post__title}><h1>{post.frontmatter.title}</h1></div>
+          {/* <img
             className={BlogPostStyles.featuredImage}
             src={post.frontmatter.featuredImage} alt=""
-          />
+          /> */}
+          <div className={BlogPostStyles.post__headerImage}/>
           <div
             dangerouslySetInnerHTML={{ __html: post.html }}
           />

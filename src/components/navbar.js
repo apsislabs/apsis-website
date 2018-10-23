@@ -11,10 +11,9 @@ const ListLink = props => (
     </li>
   )
 
-const shortBlueButton = `${buttonStyles.blue} ${buttonStyles.short}`;
-
-const blueNav = `${navbarStyles.blue} ${navbarStyles.navbar}` 
-const whiteNav = `${navbarStyles.white} ${navbarStyles.navbar}` 
+const shortBlueButton = `${buttonStyles.button__blue} ${buttonStyles.button__short}`
+const blueNav = `${navbarStyles.navbar__blue} ${navbarStyles.navbar}`
+const whiteNav = `${navbarStyles.navbar__white} ${navbarStyles.navbar}`
 
 export default props => (
     <StaticQuery
@@ -41,15 +40,14 @@ export default props => (
 
         <Link
             to="/"
-            className={navbarStyles.homeLink}
         >
             <Img
                 fluid={props.blue ? data.apsisBlueLogo.childImageSharp.fluid : data.apsisWhiteLogo.childImageSharp.fluid }
                 alt="Logo"
-                className={navbarStyles.icon}
+                className={navbarStyles.navbar__icon}
             />
         </Link>
-        <ul className={navbarStyles.listLink}>
+        <ul className={navbarStyles.navbar__listLink}>
             <ListLink to="/services">Services</ListLink>
             <ListLink to="/team">Team</ListLink>
             <ListLink to="/portfolio">Portfolio</ListLink>

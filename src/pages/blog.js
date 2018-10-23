@@ -27,8 +27,8 @@ export default (props) => {
           .filter(post => post.node.frontmatter.title.length > 0)
           .map(({ node: post }) => {
             return (
-              <ContentBlock vertical={true} >
-                <div className="blog-post-preview" key={post.id}>
+              <ContentBlock vertical={true} key={post.id} >
+                <div className="blog-post-preview">
                 <div className={BlogPostStyles.headerImage} />
                   <h1>
                     <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
@@ -58,7 +58,6 @@ query {
         frontmatter {
           title
           path
-          featuredImage
         }
       }
     }

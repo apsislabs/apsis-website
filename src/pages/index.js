@@ -16,8 +16,8 @@ import Helmet from "react-helmet";
 
 class IndexPage extends React.Component {
     render () {
-        const blueWideButtonClasses = `${buttonStyles.blue} ${buttonStyles.wide}`;
-        const grayWideButtonClasses = `${buttonStyles.gray} ${buttonStyles.wide}`;
+        const blueWideButtonClasses = `${buttonStyles.button__blue} ${buttonStyles.button__wide}`;
+        const grayWideButtonClasses = `${buttonStyles.button__gray} ${buttonStyles.button__wide}`;
 
         return (
             <Layout>
