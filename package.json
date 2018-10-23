@@ -34,10 +34,12 @@
     "react": "^16.5.2",
     "react-bootstrap": "^0.32.4",
     "react-bootstrap-carousel": "^3.2.1",
+    "react-collapse": "^4.0.3",
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
     "react-id-swiper": "^1.6.8",
     "react-media": "^1.8.0",
+    "react-motion": "^0.5.2",
     "react-typography": "^0.16.13",
     "typography": "^0.16.17"
   }
