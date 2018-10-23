@@ -1,12 +1,9 @@
 import Typography from "typography"
 
 const typography = new Typography({
-    baseFontSize: "18px",
+    baseFontSize: '18px',
     baseLineHeight: 1.45,
-    headerFontFamily: [
-      "OpenSans",
-      "Lora"
-    ],
-    bodyFontFamily: ["OpenSans"],
+    headerFontFamily: ['Lora', 'serif'],
+    bodyFontFamily: ['OpenSans', 'sans-serif'],
   })
 export default typography

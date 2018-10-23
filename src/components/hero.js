@@ -4,13 +4,13 @@ import Img from "gatsby-image"
 
 export default props => (
     <div className={heroStyles.hero} displayname="Hero">
-        <div className={heroStyles.overlay}>
+        <div className={heroStyles.hero__overlay}>
             { props.img ? <Img
                 fluid={props.img}
-                className={heroStyles.image}
+                className={heroStyles.hero__image}
             /> : null }
         </div>
-        <div className={heroStyles.content}>
+        <div className={heroStyles.hero__content}>
             {props.children}
         </div>
     </div>

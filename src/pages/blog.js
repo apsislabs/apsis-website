@@ -1,19 +1,20 @@
 import React from "react"
 import Layout from "../components/layout"
 import ContentBlock from "../components/contentblock"
-// import Img from "gatsby-image"
 import { graphql, Link } from 'gatsby'
-import HireUsFooter from "../components/hireusfooter"
+import HireUsFooter from "../components/Footer/hireusfooter"
 import Navbar from "../components/navbar"
+import BlogPostStyles from "../styles/templates/blog-post.module.scss"
+import Helmet from "react-helmet";
 
-
-export default (props) => {;
+export default (props) => {
   const { edges: posts } = props.data.blogPosts;
   return (
     <Layout>
       <Navbar
         blue={true}
       />
+      <Helmet title="Blog" />
       <ContentBlock
         vertical={true}
       >
@@ -26,11 +27,11 @@ export default (props) => {;
           .filter(post => post.node.frontmatter.title.length > 0)
           .map(({ node: post }) => {
             return (
-              <ContentBlock vertical={true} >
-                <div className="blog-post-preview" key={post.id}>
-                {/* <Img fluid={post.frontmatter.image.childImageSharp.fluid} /> */}
+              <ContentBlock vertical={true} key={post.id} >
+                <div className="blog-post-preview">
+                <div className={BlogPostStyles.headerImage} />
                   <h1>
-                    <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
+                    <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
                   </h1>
                   <p>{post.excerpt}</p>
                 </div>
@@ -46,17 +47,20 @@ export default (props) => {;
 
 export const pageQuery = graphql`
 query {
-    blogPosts : allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___title] }) {
-      edges {
-        node {
-          excerpt(pruneLength: 250)
-          id
-          frontmatter {
-            title
-            path
-          }
+  blogPosts : allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___title] }) {
+    edges {
+      node {
+        excerpt(pruneLength: 250)
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          path
         }
       }
     }
   }
+}
 `;

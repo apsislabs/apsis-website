@@ -1,72 +1,58 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import '../__variables';
 
 .footer {
   text-decoration: none;
   text-align: center;
   position: relative;
   bottom: 0px;
+  color: $apsis-gray;
 
-  color: #4a5359;
-  h4 {
-    font-size: 18px;
-    font-weight: bolder;
-    font-family: OpenSans, sans-serif;
+  &__map {
+    height: 350px;
+  }
+
+  &__copyright {
+    height: 120px;
+    background-color: $apsis-gray;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  &__contactContainer {
+    width: 300px;
+    height: 200px;
+    text-align: left;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    background-color: $base-bg-color;
+    border: solid 1px $button-color;
+    margin: 0px 0px 0px 100px;
+    padding: 20px 0px 0px 30px;
+    z-index: 4;
+    position: absolute;
+    top: 50px;
+  }
+
+  &__contactInfo {
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    height: 72px;
   }
 }
 
-.copyright {
-  height: 120px;
-  background-color: #4a5359;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: OpenSans;
-  font-size: 18px;
-  font-weight: normal;
-  color: white;
-}
-
-.map {
-  height: 350px;
-  // opacity: 0.5;
-}
 .logoIconContainer {
   position: absolute;
   top: 50px;
   right: -50px;
 
-  .logoIcon {
+  &__logoIcon {
     width: 100px;
     img {
       clip: rect(0px,51px,200px,0px);
     }
-  }
-}
-
-.contactContainer {
-  width: 400px;
-  height: 200px;
-  text-align: left;
-  border-radius: 2px;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-  background-color: #fefefe;
-  border: solid 1px #eaeaea;
-  margin: 0px 0px 0px 100px;
-  padding: 20px 0px 0px 30px;
-  z-index: 4;
-  position: absolute;
-  top: 50px;
-  width: 250px;
-
-  .contact {
-    display: flex;
-    flex-direction: row;
-
-    width: 150px;
-    height: 72px;
-    font-family: OpenSans, sans-serif;
-    font-size: 18px;
-    font-weight: normal;
   }
 }

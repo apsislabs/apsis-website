@@ -1,67 +1,64 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import '../__variables';
 
-.container {
+.mapBlock {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   padding: 80px;
   align-items: center;
-}
 
-.map {
-  height: 527px;
-  width: 1025px;
-  border: thin solid black;
-  margin-bottom: 20px;
-}
-
-.tablinks{
-  .active {
-    color: #2773a7
+  &__map {
+    height: 527px;
+    width: 1025px;
+    border: thin solid black;
+    margin-bottom: 20px;
   }
-}
-.tabcontent{
-  .active {
-    color: #2773a7
-  }
-}
-.tabs {
-  border-bottom: none;
-  width: 20%;
-  padding: 0px;
-  font-weight: bold;
 
-  li {
-    padding-bottom: 20px;
-    list-style-type: none;
-    > a {
-      border: none;
-      border-radius: 0;
-      &:hover {
-        color: #2773a7;
-      }
-    }
-    &.active > a {
-      color: #2773a7;
-      &:hover, &:focus {
-        color: #2773a7;
-      }
+  &__content {
+    width: 100%;
+    padding-top: 15px;
+  }
+
+  &__locations {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0px;
+    width: 1025px;
+  }
+
+  .tabcontent{
+    .active {
+      color: $apsis-blue
     }
   }
-}
+  .tabs {
+    border-bottom: none;
+    width: 20%;
+    padding-top: 20px;
+    font-weight: bold;
 
-.content {
-  width: 100%;
-  padding-top: 15px;
-  font-family: OpenSans, sans-serif;
-  font-size: 18px;
-  font-weight: normal;
-  color: #4a5359;
-}
+    &__tablinks{
+      .active {
+        color: $apsis-blue
+      }
+    }
 
-.locations {
-  display: flex;
-  flex-direction: row;
-  padding: 20px 0px;
-  width: 1025px;
+    li {
+      padding-bottom: 20px;
+      list-style-type: none;
+      > a {
+        border: none;
+        border-radius: 0;
+        &:hover {
+          color: $apsis-blue;
+        }
+      }
+      &.active > a {
+        color: $apsis-blue;
+        &:hover, &:focus {
+          color: $apsis-blue;
+        }
+      }
+    }
+  }
 }

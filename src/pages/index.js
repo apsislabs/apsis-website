@@ -3,23 +3,25 @@ import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Clients from "../components/clients"
 import ContentBlock from "../components/contentblock"
-import Services from "../components/services"
+import ServiceList from "../components/Services/servicelist"
 import DiagonalBackground from "../components/diagonalbackground"
-import OpenSource from "../components/OpenSource"
-import About from "../components/about"
+import OpenSource from "../components/OpenSource/OpenSource"
+import About from "../components/Footer/about"
 import Button from 'gatsby-link'
 import indexStyles from "../styles/pages/index.module.scss"
 import buttonStyles from "../styles/components/button.module.scss"
 import { graphql } from 'gatsby'
 import Navbar from "../components/navbar"
+import Helmet from "react-helmet";
 
 class IndexPage extends React.Component {
     render () {
-        const blueWideButtonClasses = `${buttonStyles.blue} ${buttonStyles.wide}`;
-        const grayWideButtonClasses = `${buttonStyles.gray} ${buttonStyles.wide}`;
+        const blueWideButtonClasses = `${buttonStyles.button__blue} ${buttonStyles.button__wide}`;
+        const grayWideButtonClasses = `${buttonStyles.button__gray} ${buttonStyles.button__wide}`;
 
         return (
             <Layout>
+                <Helmet title="Apsis Labs" />
                 <Navbar
                     blue={false}
                 />
@@ -60,7 +62,7 @@ class IndexPage extends React.Component {
                     vertical={false}
                 >
                     Our craft is software development but our specialty is understanding your business, your processes, and your priorities. A robust understanding of your business goals is crucial for us to determine how to serve you best. We take the time to ensure you’re not paying extra for something that’s over-engineered.  We want to strike the right balance among the factors that are important to you: effective features and functionality, budget, speed, technology maintenance costs, and more.
-                    <Services />
+                    <ServiceList />
                     <Button
                         className={blueWideButtonClasses}
                         to="/services"

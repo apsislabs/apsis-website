@@ -1,60 +1,31 @@
 @import '../__variables';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-@import url('https://fonts.googleapis.com/css?family=Lora');
 
 .container {
   display: flex;
   flex-direction: row;
-  padding: 100px 300px;
+  width: 800px;
+  margin: 0px auto;
+  padding: 120px 0px;
+  text-align: justify;
 
-  h4{
-    height: 24px;
-    font-family: OpenSans, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    color: #4a4a4a;
-    margin-bottom: 20px;
-    padding: 0px;
-  }
-
-  .title {
+  &__title {
     justify-content: center;
     display: flex;
   }
-  h2 {
-    width: 207px;
-    height: 41px;
-    font-family: Lora, serif;
-    font-size: 32px;
-    font-weight: bold;
-    color: #4a5359;
-    align-self: center;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 30px;
+    i {
+      padding-right: 10px;
+      margin-block-end: 1.33em;
+    }
   }
-}
 
-.contentHeader {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  i {
-    padding-right: 10px;
+  &__content {
+    flex-direction: column;
+    align-items: center;
   }
-}
-
-.content {
-  flex-direction: column;
-  align-items: center;
-}
-
-.contentParagraph {
-  margin-bottom: 20px;
-  font-family: OpenSans, sans-serif;
-  font-size: 18px;
-  color: #4a4a4a;
-}
-
-.fillerImage {
-  background: $gray;
-  width: 400px;
-  margin-left: 40px;
 }

@@ -1,9 +1,9 @@
 import React from "react"
-import serviceStyles from "../styles/components/service.module.scss"
-import Service from "./service"
+import serviceStyles from "../../styles/components/servicelist.module.scss"
+import Service from "./serviceitem"
 
 export default props => (
-    <div className={serviceStyles.container}>
+    <div className={serviceStyles.service}>
         <Service
             icon="far fa-compass"
             title="Web Development"

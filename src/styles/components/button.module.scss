@@ -1,28 +1,29 @@
 @import '../__variables';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-.wide {
-  width: 100%;
+.button {
   border-radius: 4px;
+  text-align: center;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.01);
-  padding: 7px 40px;
-  margin: 0px 15px 0px 0px;
-}
 
-.short {
-  border-radius: 4px;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.01);
-  padding: 7px 12px;
-}
+  &__wide {
+    width: 190px;
+    padding: 7px 40px;
+    margin: 0px 15px 0px 0px;
+  }
 
-.blue {
-  background-color: $apsis-blue;
-  font-family: OpenSans, sans-serif;
-  color: white !important;
-}
+  &__short {
+    border-radius: 4px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.01);
+    padding: 7px 12px;
+  }
 
-.gray {
-  background-color: $button-color;
-  font-family: OpenSans, sans-serif;
-  color: $apsis-dark;
+  &__blue {
+    background-color: $apsis-blue;
+    color: white !important;
+  }
+
+  &__gray {
+    background-color: $button-color;
+    color: $apsis-dark;
+  }
 }

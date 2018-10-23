@@ -4,13 +4,14 @@ import Hero from "../components/hero"
 import ContentBlock from "../components/contentblock"
 import QuoteBlock from "../components/quoteblock"
 import HowWeWork from "../components/howwework"
-import HireUsFooter from "../components/hireusfooter"
+import HireUsFooter from "../components/Footer/hireusfooter"
 import Button from 'gatsby-link';
 import buttonStyles from "../styles/components/button.module.scss"
 import { StaticQuery, graphql } from 'gatsby'
 import Navbar from "../components/navbar"
+import Helmet from "react-helmet";
 
-const blueWideButtonClasses = `${buttonStyles.blue} ${buttonStyles.wide}`;
+const blueWideButtonClasses = `${buttonStyles.button__blue} ${buttonStyles.button__wide}`;
 
 export default () => (
   <StaticQuery
@@ -27,6 +28,7 @@ export default () => (
         `}
         render={data => (
         <Layout>
+          <Helmet title="Services" />
           <Navbar
               blue={false}
           />
@@ -36,7 +38,7 @@ export default () => (
           >
             <h1>Simply Software.</h1>
             <h3>They say do one thing and do it well. Our thing is software.</h3>
-            <span className={buttonStyles.herobuttoncontainer}>
+            <span className={buttonStyles}>
               <Button
                   className={blueWideButtonClasses}
                   to="/services"

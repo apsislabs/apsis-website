@@ -4,6 +4,7 @@ import Layout from '../components/layout';
 import ContentBlock from '../components/contentblock';
 import { graphql } from "gatsby"
 import Navbar from "../components/navbar"
+import BlogPostStyles from "../styles/templates/blog-post.module.scss"
 
 export default function Template({ data }) {
   const post = data.markdownRemark;
@@ -13,29 +14,31 @@ export default function Template({ data }) {
           blue={true}
       />
       <ContentBlock>
-      <div className="blog-post-container">
-        <Helmet title={`CodeStack - ${post.frontmatter.title}`} />
-        <div className="blog-post">
-          <h1>{post.frontmatter.title}</h1>
-          {/* <img src={post.frontmatter.image} /> */}
+        <Helmet title={post.frontmatter.title} />
+        <div className={BlogPostStyles.post}>
+          <div className={BlogPostStyles.post__title}><h1>{post.frontmatter.title}</h1></div>
+          {/* <img
+            className={BlogPostStyles.featuredImage}
+            src={post.frontmatter.featuredImage} alt=""
+          /> */}
+          <div className={BlogPostStyles.post__headerImage}/>
           <div
-            className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
         </div>
-      </div>
       </ContentBlock>
     </Layout>
   );
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query BlogPostBySlug($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
       html
       frontmatter {
-        path
         title
+        featuredImage
       }
     }
   }

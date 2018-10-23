@@ -1,8 +1,18 @@
+@import '../__variables';
+
 .container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: scroll;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+
+a {
+  text-decoration: none;
+  color: $apsis-gray;
+  font-size: 18px;
+}

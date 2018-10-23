@@ -1,24 +1,19 @@
 @import '../__variables';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 .photo {
   padding-bottom: 40px;
   width: 175px;
-  height: 175px;
+  height: 200px;
   margin: 25px;
   flex: 1 0 15%;
 
-  .name {
-    font-family: OpenSans, sans-serif;
-    font-size: 18px;
+  &__name {
     font-weight: bold;
-    color: #4a5359;
+    color: $apsis-gray;
   }
 
-  .title {
-    font-family: OpenSans, sans-serif;
-    font-size: 18px;
-    color: #7994a6;
+  &__title {
+    color: $gray;
   }
 }
 

@@ -1,17 +1,19 @@
 import React from "react"
 import Layout from "../components/layout"
-import HireUsFooter from "../components/hireusfooter"
+import HireUsFooter from "../components/Footer/hireusfooter"
 import ContentBlock from "../components/contentblock";
 import MapBlock from "../components/mapblock";
-import TeamGrid from "../components/teamgrid";
+import TeamGrid from "../components/TeamGrid/teamgrid";
 import { graphql } from 'gatsby'
 import Navbar from "../components/navbar"
+import Helmet from "react-helmet";
 
 
 class TeamPage extends React.Component {
   render () {
     return (
       <Layout>
+        <Helmet title="Our Team" />
         <Navbar
             blue={true}
         />

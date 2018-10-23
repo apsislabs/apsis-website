@@ -1,20 +1,17 @@
 @import '../__variables';
-@import url('https://fonts.googleapis.com/css?family=Lora');
 
 .container {
   width: 100%;
   background: $apsis-blue;
   height: 170px;
-  color: white;
+  color: $base-bg-color;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-family: Lora, serif;
-  font-size: 18px;
-  font-weight: 100;
 
   span {
     padding-left: 20px;
+    margin-bottom: 1.45rem;
   }
 }

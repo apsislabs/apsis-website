@@ -1,42 +1,43 @@
-.container {
-  background: rgb(209, 209, 209)080;
+@import '../__variables';
+
+.card {
+  background: $gray-lightest;
   width: 444px;
   height: 117px;
   margin: 10px;
-  padding: 10px;
+  padding: 20px 0px 10px 0px;
   display: flex;
   flex-direction: row;
   border-radius: 2px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-  background-color: #fefefe;
-  border: solid 1px #eaeaea;
+  background-color: $base-bg-color;
+  border: solid 1px $button-color;
+  text-align: left;
 
-  .icon {
+  .content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  &__icon {
     font-size: 40px;
     display: flex;
     align-items: center;
-    margin: 10px;
-    color: #e6e6e6;
+    margin: 30px;
+    color: $gray-lighter;
   }
 
   &:hover {
     border-radius: 2px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(15, 44, 64, 0.15);
     border: solid 1px #7994a6;
-    background-image: linear-gradient(to bottom, #fefefe, #fefefe), linear-gradient(105deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.05));
+    background-image: linear-gradient(to bottom, $base-bg-color, $base-bg-color), linear-gradient(105deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.05));
     .red {
-      color: #a92020;
+      color: $ruby-red;
     }
     .blue {
-      color: #2773a7;
+      color: $apsis-blue;
     }
   }
-}
-
-
-
-.content {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
 }

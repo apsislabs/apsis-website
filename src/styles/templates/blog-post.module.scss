@@ -1,0 +1,16 @@
+.post {
+  width: 800px;
+  padding-top: 180px;
+
+  &__title {
+    padding-bottom: 40px;
+    text-align: center;
+  }
+
+  &__headerImage {
+    width: 800px;
+    height: 600px;
+    background: gray;
+    margin-bottom: 40px;
+  }
+}

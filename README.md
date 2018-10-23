@@ -6,6 +6,9 @@ Requires Node, NPM, and the Gatsby CLI.
 
 To run: `gatsby develop`
 
+## Adding a Blog Post
+Use an existing post as a reference, they live in src/pages/blog_posts
+
 ---
 
 # Built by Apsis

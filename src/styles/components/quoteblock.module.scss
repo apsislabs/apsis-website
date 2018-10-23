@@ -1,5 +1,4 @@
 @import '../__variables';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 .testimonial {
     width: 700px;
@@ -9,7 +8,7 @@
     margin: 0px auto;
 
     i {
-        color: #dae1e6;
+        color: $gray-lighter;
     }
 
     cite {
@@ -18,17 +17,13 @@
     }
     &__attribution {
         text-align: center;
-        font-family: OpenSans, sans-serif;
-        font-size: 18px;
         font-weight: bold;
-        color: #4a5359;
+        color: $apsis-gray;
     }
 
     &__title {
-        font-family: OpenSans, sans-serif;
-        font-size: 18px;
         font-weight: normal;
-        color: #7994a6;
+        color: $gray;
     }
 
     &__container {
@@ -45,15 +40,18 @@
         overflow: visible !important;
         margin: 20px 60px;
         padding-bottom: 30px;
-        font-family: OpenSans, sans-serif;
         font-size: 22px;
         font-weight: 100;
-        color: #4a4a4a;
-
-        &:after,
+        color: $apsis-gray;
         &:before {
             border-style: solid;
             border-color: transparent;
+        }
+        &:after{
+            border-color: $gray-lightest transparent transparent;
+            z-index: 1;
+            content: "";
+            border-style: solid;
         }
     }
 }
