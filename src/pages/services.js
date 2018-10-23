@@ -51,7 +51,7 @@ export default () => (
             vertical={false}
             title="More partners, less clients."
           >
-              Over the years we’ve built software in a variety of industries at every scale from startups to enterprise applications. While the specfiics change, one thing always remains constant: our commitment to doing the right thing.
+              Over the years we’ve built software in a variety of industries at every scale from startups to enterprise applications. While the specfics change, one thing always remains constant: our commitment to doing the right thing.
               <p/>
               That’s why we like to think of our customers less as clients and more as partners. We’re in this together, every step of the way. From initial specs to final deployment, you can trust that we will be there to do what we do best: deliver quality software that meets your business’s needs."
           </ContentBlock>
