@@ -1,6 +1,6 @@
 import React from "react"
 import TeamPlayer from "./teamplayer"
-import teamgridStyles from "../styles/components/teamgrid.module.scss"
+import teamgridStyles from "../../styles/components/teamgrid.module.scss"
 
 export default (props) => (
     <div className={teamgridStyles.grid}>

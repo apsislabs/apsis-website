@@ -1,8 +1,8 @@
 @import '../__variables';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 .wide {
-  width: 100%;
+  width: 190px;
+  text-align: center;
   border-radius: 4px;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.01);
   padding: 7px 40px;
@@ -17,12 +17,10 @@
 
 .blue {
   background-color: $apsis-blue;
-  font-family: OpenSans, sans-serif;
   color: white !important;
 }
 
 .gray {
   background-color: $button-color;
-  font-family: OpenSans, sans-serif;
   color: $apsis-dark;
 }

@@ -12,7 +12,7 @@
     align-items: center;
   
   a {
-    font-family: OpenSans, sans-serif;
+    font-family: 'OpenSans', sans-serif;
     font-weight: 100;
   }
 
@@ -48,6 +48,6 @@ a {
 
 .white {
   a {
-    color: white;
+    color: $base-bg-color;
   }
 }

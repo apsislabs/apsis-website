@@ -1,36 +1,56 @@
 const path = require('path');
+const { createFilePath } = require('gatsby-source-filesystem')
+const _ = require('lodash')
+
 exports.createPages = ({ actions, graphql }) => {
     const { createPage } = actions;
-    const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
-    return graphql(`{
-        allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___title] }
-        limit: 1000
-        ) {
-        edges {
-            node {
-                excerpt(pruneLength: 250)
-                html
-                id
-                frontmatter {
-                    path
-                    title
+    return new Promise((resolve, reject) => {
+        const blogPost = path.resolve('./src/templates/blog-post.js')
+        resolve(
+          graphql(
+            `
+              {
+                allMarkdownRemark(limit: 1000) {
+                  edges {
+                    node {
+                      fields {
+                        slug
+                      }
+                    }
+                  }
                 }
+              }
+            `
+          ).then(result => {
+            if (result.errors) {
+              console.log(result.errors)
+              reject(result.errors)
             }
-        }
-        }
-    }`)
-    .then(result => {
-    if (result.errors) {
-        return Promise.reject(result.errors);
+
+            // Create blog posts pages.
+            _.each(result.data.allMarkdownRemark.edges, edge => {
+              createPage({
+                path: edge.node.fields.slug,
+                component: blogPost,
+                context: {
+                  slug: edge.node.fields.slug,
+                },
+              })
+            })
+          })
+        )
+      })
     }
-    result.data.allMarkdownRemark.edges
-        .forEach(({ node }) => {
-        createPage({
-            path: node.frontmatter.path,
-            component: blogPostTemplate,
-            context: {} // additional data can be passed via context
-        });
-        });
-    });
-}
+
+    exports.onCreateNode = ({ node, actions, getNode }) => {
+      const { createNodeField } = actions
+
+      if (node.internal.type === `MarkdownRemark`) {
+        const value = createFilePath({ node, getNode })
+        createNodeField({
+          name: `slug`,
+          node,
+          value,
+        })
+      }
+    }

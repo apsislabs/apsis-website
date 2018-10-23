@@ -1,16 +1,20 @@
 //== Colors
 //
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
 
 $apsis-blue: #2773a7;
 $apsis-dark: #2c3e50;
-$apsis-gray: #596D79;
-$base-bg-color: #fff;
+$apsis-gray: #4a5359;
+$base-bg-color: #fefefe;
 $button-color: #ededef;
+$ruby-red: #a92020;
 
 $gray-darker: darken($apsis-dark, 15%);
 $gray: lighten($apsis-gray, 30%);
-$gray-lighter: lighten($apsis-gray, 40%);
-$gray-lightest: lighten($apsis-gray, 55%);
+$gray-lighter: lighten($apsis-gray, 45%);
+$gray-lightest: lighten($apsis-gray, 65%);
 
 // Links
 

@@ -1,11 +1,13 @@
 import React from "react"
 import Layout from "../components/layout"
 import ContentBlock from "../components/contentblock"
-import HireUsFooter from "../components/hireusfooter"
+import HireUsFooter from "../components/Footer/hireusfooter"
 import Navbar from "../components/navbar"
+import Helmet from "react-helmet";
 
 export default () => (
   <Layout>
+    <Helmet title="Work With Us" />
     <Navbar
       blue={true}
     />

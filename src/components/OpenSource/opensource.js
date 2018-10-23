@@ -1,9 +1,9 @@
 import React from "react"
-import opensourceStyles from "../styles/components/opensource.module.scss"
-import buttonStyles from "../styles/components/button.module.scss"
+import opensourceStyles from "../../styles/components/opensource.module.scss"
+import buttonStyles from "../../styles/components/button.module.scss"
 import OpenSourceCard from "./opensourcecard"
 import Button from 'gatsby-link';
-import opensourcecardStyles from "../styles/components/opensourcecard.module.scss"
+import opensourcecardStyles from "../../styles/components/opensourcecard.module.scss"
 
 const blueWideButtonClasses = `${buttonStyles.blue} ${buttonStyles.wide}`;
 const redHover = `${opensourcecardStyles.red}`;

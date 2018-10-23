@@ -1,13 +1,13 @@
-.clientsContainer {
+.client {
     padding: 20px 150px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-}
 
-.clientsImg {
-    width: 200px;
-    height: 100%;
-    margin: 35px;
+    &__image {
+        width: 200px;
+        height: 100%;
+        margin: 35px;
+    }
 }

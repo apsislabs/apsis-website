@@ -1,5 +1,5 @@
 import React from "react"
-import opensourcecardStyles from "../styles/components/opensourcecard.module.scss"
+import opensourcecardStyles from "../../styles/components/opensourcecard.module.scss"
 
 export default props => (
     <div className={opensourcecardStyles.container}>  
