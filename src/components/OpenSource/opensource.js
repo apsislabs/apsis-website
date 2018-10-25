@@ -21,24 +21,28 @@ export default props => (
                     icon="fab fa-js-square"
                     title="orca"
                     hover={blueHover}
+                    url="https://github.com/apsislabs/orca"
                     text="Orchestrate your Javascript: Run just the code you need where you intend."
                 />
                 <OpenSourceCard
                     icon="fas fa-gem"
                     title="phi_attrs"
                     hover={redHover}
+                    url="https://github.com/apsislabs/phi_attrs"
                     text="HIPAA-compliant logging and access control for your ActiveRecord models."
                 />
                 <OpenSourceCard
                     icon="far fa-gem"
                     title="Slayer"
                     hover={redHover}
+                    url="https://github.com/apsislabs/slayer"
                     text="A killer service layer for your Ruby application."
                 />
                 <OpenSourceCard
                     icon="fab fa-js-square"
                     title="carpenter"
                     hover={blueHover}
+                    url="https://github.com/apsislabs/carpenter"
                     text="Configuration-driven Custom Post Types for WordPress."
                 />
             </div>

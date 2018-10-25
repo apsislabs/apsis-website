@@ -64,7 +64,7 @@ class MapBlock extends React.Component {
                                 <a id="boulder" className={mapblockStyles.tabs__tablinks} href="#map" data-toggle="tab" onClick={(e) => this.changeLocation(e, 40.0150, -105.2705, "boulder-content")}>Boulder, CO</a>
                             </li>
                             <li>
-                                <a id="syracus" className={mapblockStyles.tabs__tablinks} href="#map" data-toggle="tab" onClick={(e) => this.changeLocation(e, 43.0481, -76.1474, "syracus-content")}>Syracus, NY</a>
+                                <a id="syracuse" className={mapblockStyles.tabs__tablinks} href="#map" data-toggle="tab" onClick={(e) => this.changeLocation(e, 43.0481, -76.1474, "syracuse-content")}>Syracuse, NY</a>
                             </li>
                         </ul>
                     </div>

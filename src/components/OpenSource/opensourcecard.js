@@ -2,13 +2,15 @@ import React from "react"
 import opensourcecardStyles from "../../styles/components/opensourcecard.module.scss"
 
 export default props => (
-    <div className={opensourcecardStyles.card}>
-        <div className={opensourcecardStyles.card__icon}>
-            <i className={`${props.icon} ${props.hover}`}></i>
+    <a href={props.url}>
+        <div className={opensourcecardStyles.card} href={props.url}>
+            <div className={opensourcecardStyles.card__icon}>
+                <i className={`${props.icon} ${props.hover}`}></i>
+            </div>
+            <div className={opensourcecardStyles.content}>
+                <div><strong>{props.title}</strong></div>
+                <span>{props.text}</span>
+            </div>
         </div>
-        <div className={opensourcecardStyles.content}>
-            <div><strong>{props.title}</strong></div>
-            <span>{props.text}</span>
-        </div>
-    </div>
+    </a>
 )

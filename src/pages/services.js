@@ -38,14 +38,6 @@ export default () => (
           >
             <h1>Simply Software.</h1>
             <h3>They say do one thing and do it well. Our thing is software.</h3>
-            <span className={buttonStyles}>
-              <Button
-                  className={blueWideButtonClasses}
-                  to="/services"
-              >
-                Our Process.
-              </Button>
-              </span>
           </Hero>
           <ContentBlock
             vertical={false}
