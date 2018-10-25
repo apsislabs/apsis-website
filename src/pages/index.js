@@ -124,7 +124,7 @@ class IndexPage extends React.Component {
     fragment fluidImage on File {
         childImageSharp {
             fluid(maxWidth: 140) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_tracedSVG
             }
         }
     }

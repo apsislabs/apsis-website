@@ -41,7 +41,7 @@ export const fluidTeam = graphql`
 fragment fluidTeam on File {
     childImageSharp {
         fluid(maxWidth: 200) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_tracedSVG
         }
     }
 }

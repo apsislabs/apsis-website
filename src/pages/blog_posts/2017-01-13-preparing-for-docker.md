@@ -1,8 +1,8 @@
 ---
-path: "/preparing-for-docker"
+path: "/blog_posts/preparing-for-docker"
 author: eric
 title: Preparing for Docker
-image: '../images/posts/shipping-containers.jpg'
+image: '../../images/posts/shipping-containers.jpg'
 credit: olafpictures
 ---
 

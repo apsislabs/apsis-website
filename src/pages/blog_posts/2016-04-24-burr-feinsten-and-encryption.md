@@ -1,7 +1,7 @@
 ---
-path: "/encryption-draft-bill"
+path: "/blog_posts/encryption-draft-bill"
 title: "Read the Source: Encryption Draft Bill"
-image: '../images/posts/locks.jpg'
+image: '../../images/posts/locks.jpg'
 credit: Giulio Magnifico
 author: noah
 ---
