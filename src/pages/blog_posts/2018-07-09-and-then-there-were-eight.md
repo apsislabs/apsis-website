@@ -1,8 +1,8 @@
 ---
-path: "/and-then-there-were-eight"
+path: "/blog_posts/and-then-there-were-eight"
 title: "And Then There Were Eight"
 author: "mo"
-image: '../images/posts/mount_hood.jpg'
+image: '../../images/posts/mount_hood.jpg'
 credit: 'Sarah McDevitt'
 ---
 

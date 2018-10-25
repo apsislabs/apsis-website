@@ -5,6 +5,7 @@ import ContentBlock from '../components/contentblock';
 import { graphql } from "gatsby"
 import Navbar from "../components/navbar"
 import BlogPostStyles from "../styles/templates/blog-post.module.scss"
+import Img from "gatsby-image"
 
 export default function Template({ data }) {
   const post = data.markdownRemark;
@@ -17,11 +18,10 @@ export default function Template({ data }) {
         <Helmet title={post.frontmatter.title} />
         <div className={BlogPostStyles.post}>
           <div className={BlogPostStyles.post__title}><h1>{post.frontmatter.title}</h1></div>
-          {/* <img
-            className={BlogPostStyles.featuredImage}
-            src={post.frontmatter.featuredImage} alt=""
-          /> */}
-          <div className={BlogPostStyles.post__headerImage}/>
+          <Img
+            className={BlogPostStyles.post__headerImage}
+            fluid={post.frontmatter.image.childImageSharp.fluid} alt="this is the real image"
+          />
           <div
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
@@ -38,7 +38,13 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        featuredImage
+        image {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+        }
       }
     }
   }

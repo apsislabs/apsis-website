@@ -7,7 +7,7 @@ import Img from "gatsby-image"
 
 const ListLink = props => (
     <li className={navbarStyles.listLinkItem}>
-      <Link to={props.to}>{props.children}</Link>
+      <Link activeClassName={navbarStyles.active} to={props.to}>{props.children}</Link>
     </li>
   )
 
@@ -22,14 +22,14 @@ export default props => (
         apsisWhiteLogo: file(relativePath: { eq: "images/logos/apsis_white.png" }) {
             childImageSharp {
                 fluid(maxWidth: 500) {
-                    ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluid_tracedSVG
                 }
             }
         }
         apsisBlueLogo: file(relativePath: { eq: "images/logos/apsis_blue.png" }) {
             childImageSharp {
                 fluid(maxWidth: 500) {
-                    ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluid_tracedSVG
                 }
             }
         }

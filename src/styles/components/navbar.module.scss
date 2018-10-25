@@ -16,6 +16,10 @@
     }
   }
 
+  .active {
+    font-weight: 600;
+  }
+
   &__white {
     a {
       color: $base-bg-color;

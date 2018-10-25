@@ -6,6 +6,7 @@ import HireUsFooter from "../components/Footer/hireusfooter"
 import Navbar from "../components/navbar"
 import BlogPostStyles from "../styles/templates/blog-post.module.scss"
 import Helmet from "react-helmet";
+import Img from "gatsby-image"
 
 export default (props) => {
   const { edges: posts } = props.data.blogPosts;
@@ -29,7 +30,10 @@ export default (props) => {
             return (
               <ContentBlock vertical={true} key={post.id} >
                 <div className="blog-post-preview">
-                <div className={BlogPostStyles.headerImage} />
+                  <Img
+                    className={BlogPostStyles.post__headerImage}
+                    fluid={post.frontmatter.image.childImageSharp.fluid} alt="this is the real image"
+                  />
                   <h1>
                     <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
                   </h1>
@@ -58,6 +62,13 @@ query {
         frontmatter {
           title
           path
+          image {
+            childImageSharp {
+              fluid(maxWidth: 800) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
+            }
+          }
         }
       }
     }

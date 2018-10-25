@@ -1,20 +1,23 @@
 @import '../__variables';
 
 .button {
-  border-radius: 4px;
-  text-align: center;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.01);
-
   &__wide {
+    border-radius: 4px;
     width: 190px;
     padding: 7px 40px;
     margin: 0px 15px 0px 0px;
+    &:hover {
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(15, 44, 64, 0.15);
+    }
   }
 
   &__short {
     border-radius: 4px;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.01);
     padding: 7px 12px;
+
+    &:hover {
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(15, 44, 64, 0.15);
+    }
   }
 
   &__blue {

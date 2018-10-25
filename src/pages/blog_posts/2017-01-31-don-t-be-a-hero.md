@@ -1,8 +1,8 @@
 ---
-path: "/dont-be-a-hero"
+path: "/blog_posts/dont-be-a-hero"
 author: "wyatt"
 title: "Don't be a Hero"
-image: '../images/posts/hero.jpg'
+image: '../../images/posts/hero.jpg'
 credit: Henry Hustava
 ---
 

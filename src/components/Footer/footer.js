@@ -46,7 +46,7 @@ export default () => (
                     </div>
                 </div>
                 <div className={footerStyles.footer__copyright}>
-                    © 2018 apsis labs | github | facebook | twitter
+                    © 2018 apsis labs    | <a href="https://github.com/apsislabs">github</a> | <a href="https://www.facebook.com/Apsis-Labs-642514445785846/">facebook</a> | <a href="https://twitter.com/apsislabs">twitter</a>
                 </div>
             </div>
         )}
