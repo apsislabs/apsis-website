@@ -83,9 +83,9 @@ class IndexPage extends React.Component {
                     <div className={indexStyles.serviceButton}>
                         <Button
                             className={blueWideButtonClasses}
-                            to="/services"
+                            to="/portfolio"
                         >
-                            Our Services
+                            Our Portfolio
                         </Button>
                     </div>
                 </ContentBlock>

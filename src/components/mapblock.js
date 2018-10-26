@@ -76,7 +76,7 @@ class MapBlock extends React.Component {
                             With team members in both Portland, OR and Portland, ME, the arguments over which office was Portland #1 threatened to tear our small team apart. So we compromised. Whether you’re Best Coast or Beast Coast, if you’re looking for development services in a Portland — any Portland — you can find our engineers at a coffee shop or coworking space near you.
                         </div>
                         <div className={mapblockStyles.tabcontent} id="boulder-content">
-                            BOULDER IS A PLACE
+                            Home to nature lovers and national research centers, Boulder, CO is undoubtedly the sunniest city we reside in. If you need a hand with that dog training app you've been thinking about, come meet us downtown before your afternoon run up Sanitas.
                         </div>
                         <div className={mapblockStyles.tabcontent} id="syracus-content">
                             On the outskirts of Syracuse, two doors down from farmland, at the very edge of the Finger Lakes wine region sits Cazenovia, NY where we’ve stationed our very best New York engineer. With easy access to Syracuse, Rochester , Albany and  more we can easily get an in-person look at your next project. Get big city talent right here in Central New York.                        </div>

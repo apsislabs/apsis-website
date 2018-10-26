@@ -12,7 +12,7 @@ export default props => (
                 <h4>New Projects</h4>
             </div>
             <div className={howweworkStyles.container__paragraph}>
-                We love to work on new projects, and it’s a place where our experience as entrepreneurs really shines. We’re experienced and prepared to help at every step of a product’s lifecycle: from standing at the whiteboard, to defining an initial MVP, to launching a public beta — we’ve done it all. Because we work with a broad array of technologies, we’re always ready to offer insight into new trends, while ensuring your product will be built to last.
+                We love to work on new projects, as it’s a place where our experience as entrepreneurs really shines. We’re experienced and prepared to help at every step of a product’s lifecycle: from standing at the whiteboard, to defining an initial MVP, to launching a public beta — we’ve done it all. Because we work with a broad array of technologies, we’re always ready to offer insight into new trends, while ensuring your product will be built to last.
                 <p/>
                 If you’re a startup looking to bring a proof of concept to find your first round of funding, or an established business looking to enter a new market, our passion for product development will ensure you come away with a functional application that does what it needs to and nothing more.
             </div>

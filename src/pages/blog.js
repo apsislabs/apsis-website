@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import Header from "../components/header"
 import ContentBlock from "../components/contentblock"
 import { graphql, Link } from 'gatsby'
 import HireUsFooter from "../components/Footer/hireusfooter"
@@ -16,12 +17,10 @@ export default (props) => {
         blue={true}
       />
       <Helmet title="Blog" />
-      <ContentBlock
-        vertical={true}
-      >
+      <Header>
         <h1>We wrote these.</h1>
         <h3>Maybe you want to read them. Maybe not. Your choice.</h3>
-      </ContentBlock>
+      </Header>
 
       <div className="blog-posts">
         {posts
@@ -30,13 +29,15 @@ export default (props) => {
             return (
               <ContentBlock vertical={true} key={post.id} >
                 <div className="blog-post-preview">
-                  <Img
-                    className={BlogPostStyles.post__headerImage}
-                    fluid={post.frontmatter.image.childImageSharp.fluid} alt="this is the real image"
-                  />
-                  <h1>
-                    <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
-                  </h1>
+                  <Link to={post.fields.slug}>
+                    <Img
+                      className={BlogPostStyles.post__headerImage}
+                      fluid={post.frontmatter.image.childImageSharp.fluid} alt="generic stock of something semi related to blog post"
+                    />
+                    <h1>
+                      {post.frontmatter.title}
+                    </h1>
+                  </Link>
                   <p>{post.excerpt}</p>
                 </div>
               </ContentBlock>
