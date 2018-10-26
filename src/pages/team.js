@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import HireUsFooter from "../components/Footer/hireusfooter"
-import ContentBlock from "../components/contentblock";
+import Header from "../components/header";
 import MapBlock from "../components/mapblock";
 import TeamGrid from "../components/TeamGrid/teamgrid";
 import { graphql } from 'gatsby'
@@ -17,14 +17,12 @@ class TeamPage extends React.Component {
         <Navbar
             blue={true}
         />
-        <ContentBlock
-          vertical={true}
-          title="A developer in every timezone."
-        >
+        <Header>
+            <h1>A developer in every timezone.</h1>
           Why does that matter? We know when it comes to finding the right team to build your next project, communication is king. As a remote company, we’ve always placed an emphasis on clear and concise communication, and developing strong teams over long distances.
           <p/>
           This means less time spent sending emails asking for clarification, and fewer headaches for you."
-        </ContentBlock>
+        </Header>
         <TeamGrid
           teamImages={this.props.data}
         />

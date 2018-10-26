@@ -49,6 +49,7 @@ export default props => (
         </Link>
         <ul className={navbarStyles.navbar__listLink}>
             <ListLink to="/services">Services</ListLink>
+            <ListLink to="/process">Process</ListLink>
             <ListLink to="/team">Team</ListLink>
             <ListLink to="/portfolio">Portfolio</ListLink>
             <ListLink to="/blog">Blog</ListLink>
