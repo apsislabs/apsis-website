@@ -13,3 +13,23 @@
     margin-bottom: 40px;
   }
 }
+
+.preview {
+  &__imageWrapper {
+    display: inline-block;
+    overflow: hidden;
+    width: 700px;
+  }
+  &__headerImage {
+    transition: all .2s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &__title {
+    padding-top: 2.5rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.375rem;
+    font-weight: bold;
+  }
+}

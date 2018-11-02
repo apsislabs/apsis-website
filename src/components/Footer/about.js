@@ -11,9 +11,9 @@ export default props => (
         />
         <div className={aboutStyles.about__content}>
             <h2>About Us</h2>
-            <span>
+            <div className={aboutStyles.about__text}>
                 We are high-efficiency, low bullshit. If we aren’t a good fit for your project, we will let you know upfront.  We also believe in working sustainably, and we walk the walk with required vacations and the ability to work remotely. We are happy engineers, which leads to happy code.
-            </span>
+            </div>
         </div>
     </div>
 )

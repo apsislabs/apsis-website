@@ -1,0 +1,18 @@
+.tool {
+    width: 900px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    &__image {
+        width: 170px;
+        height: 100%;
+        margin: 30px;
+        &:hover {
+            transform: scale(1.05); transition: transform ease-in-out 0.25s;
+        }
+    }
+}

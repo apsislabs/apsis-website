@@ -3,15 +3,17 @@
 .container {
   width: 100%;
   background: $apsis-blue;
-  height: 170px;
-  color: $base-bg-color;
+  height: 10.625rem;
+  h3 {
+    color: $base-bg-color;
+    margin-bottom: 0px;
+  }
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 
   span {
-    padding-left: 20px;
-    margin-bottom: 1.45rem;
+    padding-left: 1.25rem;
   }
 }

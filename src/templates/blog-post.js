@@ -32,20 +32,20 @@ export default function Template({ data }) {
 }
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      html
-      frontmatter {
-        title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
+query BlogPostBySlug($slug: String!) {
+  markdownRemark(fields: { slug: { eq: $slug } }) {
+    id
+    html
+    frontmatter {
+      title
+      image {
+        childImageSharp {
+          fluid(maxWidth: 800) {
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
     }
   }
+}
 `;

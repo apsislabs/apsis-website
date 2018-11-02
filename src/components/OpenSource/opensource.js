@@ -6,7 +6,7 @@ import opensourcecardStyles from "../../styles/components/opensourcecard.module.
 
 const blueWideButtonClasses = `${buttonStyles.button__blue} ${buttonStyles.button__wide}`;
 const redHover = `${opensourcecardStyles.red}`;
-const blueHover = `${opensourcecardStyles.blue}`;
+const jsHover = `${opensourcecardStyles.js}`;
 
 export default props => (
     <div className={opensourceStyles.opensource}>
@@ -20,7 +20,7 @@ export default props => (
                 <OpenSourceCard
                     icon="fab fa-js-square"
                     title="orca"
-                    hover={blueHover}
+                    hover={jsHover}
                     url="https://github.com/apsislabs/orca"
                     text="Orchestrate your Javascript: Run just the code you need where you intend."
                 />
@@ -41,7 +41,7 @@ export default props => (
                 <OpenSourceCard
                     icon="fab fa-js-square"
                     title="carpenter"
-                    hover={blueHover}
+                    hover={jsHover}
                     url="https://github.com/apsislabs/carpenter"
                     text="Configuration-driven Custom Post Types for WordPress."
                 />

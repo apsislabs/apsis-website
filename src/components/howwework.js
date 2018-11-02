@@ -9,7 +9,7 @@ export default props => (
             </div>
             <div className={howweworkStyles.container__header}>
                 <i className="fas fa-rocket"/>
-                <h4>New Projects</h4>
+                <h4><strong>New Projects</strong></h4>
             </div>
             <div className={howweworkStyles.container__paragraph}>
                 We love to work on new projects, as it’s a place where our experience as entrepreneurs really shines. We’re experienced and prepared to help at every step of a product’s lifecycle: from standing at the whiteboard, to defining an initial MVP, to launching a public beta — we’ve done it all. Because we work with a broad array of technologies, we’re always ready to offer insight into new trends, while ensuring your product will be built to last.
@@ -18,7 +18,7 @@ export default props => (
             </div>
             <div className={howweworkStyles.container__header}>
                 <i className="far fa-hourglass"></i>
-                <h4>Legacy Code</h4>
+                <h4><strong>Legacy Code</strong></h4>
             </div >
             <div className={howweworkStyles.container__paragraph}>
                 For most businesses, there’s no escaping legacy code. Whether it’s a solid application that’s been running your accounting team for years, or your core product with weekly updates, someone’s got to maintain it.
@@ -30,7 +30,7 @@ export default props => (
 
             <div className={howweworkStyles.container__header}>
                 <i className="fas fa-magic"></i>
-                <h4>Augmented Teams</h4>
+                <h4><strong>Augmented Teams</strong></h4>
             </div>
             <div className={howweworkStyles.container__paragraph}>
                 Sometimes you need a little extra help, but it’s hard to find a well-defined project or feature that you can hand off. That’s okay: we’re experts at augmenting existing engineering orgs. We specialize in slotting into your development workflow – either as part of your existing structure, or even bringing structure where it’s sorely needed.

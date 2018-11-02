@@ -2,7 +2,7 @@ import React from "react"
 import serviceStyles from "../../styles/components/servicelist.module.scss"
 import Service from "./serviceitem"
 
-export default props => (
+export default () => (
     <div className={serviceStyles.service}>
         <Service
             icon="far fa-compass"

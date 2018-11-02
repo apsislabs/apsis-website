@@ -3,6 +3,7 @@ path: "/blog_posts/work-and-passion"
 author: niall
 title: Work & Passion
 image: '../../images/posts/forest.jpg'
+date: '2016-03-14'
 excerpt: Hi, I'm Niall.  I'm the third hire (fifth including founders) at Apsis. The first thing you ought to know about me is that I disdain work.
 ---
 

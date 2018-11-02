@@ -32,8 +32,8 @@ export default () => (
                             <span>
                                 Apsis Labs<br/>
                                 PO Box 85866<br/>
-                                Seattle, WA 98145<p/>
-                                contact@apsis.io
+                                Seattle, WA 98145<br/><br/>
+                                <a href="mailto:contact@apsis.io">contact@apsis.io</a>
                             </span>
                             <span className={footerStyles.logoIconContainer}>
                                 <Img
@@ -46,7 +46,8 @@ export default () => (
                     </div>
                 </div>
                 <div className={footerStyles.footer__copyright}>
-                    © 2018 apsis labs    | <a href="https://github.com/apsislabs">github</a> | <a href="https://www.facebook.com/Apsis-Labs-642514445785846/">facebook</a> | <a href="https://twitter.com/apsislabs">twitter</a>
+                    <span>© 2018 apsis labs</span>
+                    <span className={footerStyles.links}><a href="https://github.com/apsislabs">github</a> | <a href="https://www.facebook.com/Apsis-Labs-642514445785846/">facebook</a> | <a href="https://twitter.com/apsislabs">twitter</a></span>
                 </div>
             </div>
         )}
@@ -57,6 +58,8 @@ export default () => (
 function defaultOptions_(/* maps */) {
   return {
     styles: mapStyles,
+    gestureHandling: 'none',
+    zoomControl: false
   };
 }
 

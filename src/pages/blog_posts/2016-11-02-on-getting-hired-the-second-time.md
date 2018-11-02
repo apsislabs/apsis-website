@@ -4,6 +4,7 @@ author: chris
 layout: post
 title: On Getting Hired the Second Time
 image: '../../images/posts/adk_fall.jpg'
+date: '2016-11-02'
 ---
 
 Hey there, I'm Chris and I'm employee #4 at Apsis Labs. I joined a half a year ago and I'm loving it. I work from Syracuse, NY (the photo above is from a few hours north on Cranberry Lake in the Adirondacks).

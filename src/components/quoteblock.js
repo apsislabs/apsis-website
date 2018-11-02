@@ -1,5 +1,12 @@
 import React from "react";
 import quoteblockStyles from "../styles/components/quoteblock.module.scss";
+import {Animated} from "react-animated-css";
+
+const Quote = (props) => (
+    <Animated animationIn="fadeInUp" isVisible={props.isVisible}>
+        {props.text}
+    </Animated>
+)
 
 class QuoteBlock extends React.Component {
     constructor(props) {
@@ -10,6 +17,7 @@ class QuoteBlock extends React.Component {
 
         this.state = {
             activeIndex: 0,
+            isVisible: true,
             quotes: [
                 {
                     text: "Apsis has been exceptional to work with. More than just a vendor, Apsis is a partner whom we trust to interact directly with clients. Their work has consistently exceeded expectations, delivered on-time and on-budget. Developers who can thoughtfully problem solve and think critically are surprisingly rare and I look forward to working with them more in the future.",
@@ -42,6 +50,10 @@ class QuoteBlock extends React.Component {
         this.interval = setInterval(() => this.goToNextSlide(), 10000)
     }
 
+    componentWillUpdate(){
+        // this.setState({isVisible: !this.state.isVisible})
+    }
+
     componentWillUnmount() {
         clearInterval(this.interval);
     }
@@ -59,6 +71,7 @@ class QuoteBlock extends React.Component {
 
         this.setState({
             activeIndex: index,
+            isVisible: !this.state.isVisible,
             activeQuote: this.state.quotes[this.state.activeIndex]
         });
     }
@@ -76,6 +89,7 @@ class QuoteBlock extends React.Component {
 
         this.setState({
             activeIndex: index,
+            isVisible: !this.state.isVisible,
             activeQuote: this.state.quotes[this.state.activeIndex]
         });
     }
@@ -85,19 +99,22 @@ class QuoteBlock extends React.Component {
             <div className={quoteblockStyles.testimonial}>
                 <h2>What Our Clients Say</h2>
                 <div>
-                    <i className="fas fa-quote-left fa-2x" onClick={() => this.goToPrevSlide()}/>
+                    <i className="fas fa-quote-left" />
                 </div>
                 <div className={quoteblockStyles.testimonial__container}>
                     <div>
-                        <i className="fas fa-angle-left fa-3x"/>
+                        <i className="fas fa-angle-left fa-2x" onClick={() => this.goToPrevSlide()}/>
                     </div>
                         <div>
                             <div className={quoteblockStyles.testimonial__quote}>
-                                {this.state.activeQuote.text}
+                                <Quote
+                                    text={this.state.activeQuote.text}
+                                    isVisible={this.state.isVisible}
+                                />
                             </div>
                         </div>
                     <div>
-                        <i className="fas fa-angle-right fa-3x" onClick={() => this.goToNextSlide()}/>
+                        <i className="fas fa-angle-right fa-2x" onClick={() => this.goToNextSlide()}/>
                     </div>
                 </div>
                 <cite>

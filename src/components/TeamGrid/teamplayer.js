@@ -4,7 +4,8 @@ import Img from "gatsby-image"
 
 export default (props) => (
     <div className={teamStyles.photo}>
-        <Img fluid={props.img} />
+        <Img fluid={props.img}
+        critical={true} />
         <div className={teamStyles.photo__name}>{props.name}</div>
         <div className={teamStyles.photo__title}>{props.title}</div>
     </div>

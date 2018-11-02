@@ -3,13 +3,13 @@
 
 .hero {
     width: 100%;
+    max-height: 90vh;
     clip-path: polygon(
       0 0,
       100% 0,
       100% 80%,
       0 calc(100% - 5vw)
     );
-    color: $base-bg-color;
 
   &__overlay {
     opacity: 0.75;
@@ -35,6 +35,7 @@
   h1 {
     font-size: 48px;
     text-shadow: 0 2px 4px rgba(15, 44, 64, 0.15);
+    color: $base-bg-color;
   }
 
   h3 {
@@ -42,5 +43,6 @@
     font-size: 22px;
     font-weight: 100;
     text-shadow: 0 2px 4px rgba(15, 44, 64, 0.15);
+    color: $base-bg-color;
   }
 }

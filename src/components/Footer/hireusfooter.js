@@ -8,6 +8,6 @@ const grayShortButtonClasses = `${buttonStyles.button__gray} ${buttonStyles.butt
 export default () => (
   <div className={hireusfooterStyles.container}>
     <h3>Your code is getting cold.</h3>
-    <span><Button className={grayShortButtonClasses} to="/hire">Hire Us</Button></span>
+    <span><Button className={grayShortButtonClasses} to="/contact">Hire Us</Button></span>
   </div>
 )

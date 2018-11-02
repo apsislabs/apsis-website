@@ -4,7 +4,6 @@ import Hero from "../components/hero"
 import DiagonalBackground from "../components/diagonalbackground"
 import OpenSource from "../components/OpenSource/OpenSource"
 import ContentBlock from "../components/contentblock"
-// import Button from 'gatsby-link';
 import buttonStyles from "../styles/components/button.module.scss"
 import portfolioStyles from "../styles/pages/portfolio.module.scss"
 import Img from "gatsby-image"
@@ -13,6 +12,7 @@ import HireUsFooter from "../components/Footer/hireusfooter"
 import Navbar from "../components/navbar"
 import Helmet from "react-helmet";
 import {Collapse} from 'react-collapse';
+import {Animated} from "react-animated-css";
 
 const blueWideButtonClasses = `${buttonStyles.button__blue} ${buttonStyles.button__wide}`;
 
@@ -65,7 +65,7 @@ class PortfolioPage extends React.Component {
                 `}
                 render={data => (
                     <Layout>
-                        <Helmet title="Portfolio" />
+                        <Helmet title="Portfolio | Apsis Labs" />
                         <Navbar
                             blue={false}
                         />
@@ -74,16 +74,16 @@ class PortfolioPage extends React.Component {
                             img={data.portfolioHero.childImageSharp.fluid}
                         >
                             <div>
-                                <h1>Building :daily</h1>
-                                <h3>Rethinking how developers take notes.</h3>
-                                <span>
-                                    <a href="#"
-                                        className={blueWideButtonClasses}
-                                        onClick={this.toggleExpand}
-                                    >
-                                        Read the Case Study.
-                                    </a>
-                                </span>
+                                <Animated animationIn="fadeInUp">
+                                    <h1>Building :daily</h1>
+                                    <h3>Rethinking how developers take notes.</h3>
+                                </Animated>
+                                <div
+                                    className={blueWideButtonClasses}
+                                    onClick={this.toggleExpand}
+                                >
+                                    Read the Case Study.
+                                </div>
                             </div>
                         </Hero>
 
@@ -116,7 +116,7 @@ class PortfolioPage extends React.Component {
                             <Img
                                 fluid={data.cellphone.childImageSharp.fluid}
                                 alt="Cellphone"
-                                className={portfolioStyles.image}
+                                className={portfolioStyles.container__image}
                             />
 
                                 <div className={portfolioStyles.content}>

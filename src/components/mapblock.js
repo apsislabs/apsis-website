@@ -1,84 +1,86 @@
 import React from "react"
 import mapblockStyles from "../styles/components/mapblock.module.scss"
-import GoogleMapReact from "google-map-react"
+import Map from "google-map-react"
+import { navigate } from "gatsby-link"
+import {Animated} from "react-animated-css";
+
+
+const Marker = () => (
+    <Animated animationIn="pulse">
+        <div className={mapblockStyles.mapBlock__marker}/>
+    </Animated>
+)
+
+//      <Marker
+//     position={{lat: 47.659298, lng: -122.317940}} /> <Marker
+//     position={{lat: 37.778519, lng: -122.405640}} /> 
+// </div> : null
 
 class MapBlock extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            latitude: 47.659298,
-            longitude: -122.317940
-        }
-    }
-
     componentDidMount(){
-        var i, tabcontent;
-        tabcontent = document.getElementsByClassName(mapblockStyles.tabcontent);
-        for (i = 1; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
+        if (this.props.cityName){
+            document.getElementById(`${this.props.cityName}-tab`).className += ` ${mapblockStyles.tabcontent__active}`;
+            document.getElementById(this.props.cityName).style.display = "block";
         }
     }
 
-    changeLocation(e, lat, lng, cityName){
-        this.setState({latitude: lat, longitude: lng});
-        var i, tabcontent, tablinks;
-
-        tabcontent = document.getElementsByClassName(mapblockStyles.tabcontent);
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-
-        tablinks = document.getElementsByClassName(mapblockStyles.tabs__tablinks);
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-
-        document.getElementById(cityName).style.display = "block";
-        e.currentTarget.className += " active";
+    changeLocation(e, cityName){
+        e.preventDefault();
+        navigate(`/team/${cityName}#map`);   
     }
 
     render() {
         return (
             <div className={mapblockStyles.mapBlock}>
-                <h2>Where in the world...?</h2>
+                <h2>Where in the World...?</h2>
 
                 <div className={mapblockStyles.mapBlock__map} id="map">
-                    <GoogleMapReact
+                    <Map
                         bootstrapURLKeys={{ key: 'AIzaSyCF7DHtzwCN8X7ZStPCJwsGsO9aH8-Uiq4' }}
-                        center={{lat: this.state.latitude, lng: this.state.longitude}}
+                        center={{lat: this.props.latitude, lng: this.props.longitude}}
                         defaultZoom={10}
+                        className={mapblockStyles.mapBlock__map}
+                    >
+                    <Marker
+                        lat={this.props.latitude + .03}
+                        lng={this.props.longitude}
+                        text={this.props.cityName}
                     />
+                    <Marker
+                        lat={37.778519 + .03}
+                        lng={-122.405640}
+                    />  
+                    </Map>
                 </div>
 
                 <div className={mapblockStyles.mapBlock__locations}>
                     <div className={mapblockStyles.tabs}>
                         <ul>
                             <li>
-                                <a id="seattle" className={mapblockStyles.tabs__tablinks} href="team#map" data-toggle="tab" onClick={(e) => this.changeLocation(e, 47.659298, -122.317940, "seattle-content")}>Seattle, WA</a>
+                                <span id="seattle-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, "seattle")}>Seattle, WA</span>
                             </li>
                             <li>
-                                <a id="portlands" className={mapblockStyles.tabs__tablinks} href="#map" data-toggle="tab" onClick={(e) => this.changeLocation(e, 45.5122, -122.6587, "portlands-content")}>The Portlands</a>
+                                <span id="portlands-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, "portlands")}>The Portlands</span>
                             </li>
                             <li>
-                                <a id="boulder" className={mapblockStyles.tabs__tablinks} href="#map" data-toggle="tab" onClick={(e) => this.changeLocation(e, 40.0150, -105.2705, "boulder-content")}>Boulder, CO</a>
+                                <span id="boulder-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, "boulder")}>Boulder, CO</span>
                             </li>
                             <li>
-                                <a id="syracuse" className={mapblockStyles.tabs__tablinks} href="#map" data-toggle="tab" onClick={(e) => this.changeLocation(e, 43.0481, -76.1474, "syracuse-content")}>Syracuse, NY</a>
+                                <span id="syracuse-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, "syracuse")}>Syracuse, NY</span>
                             </li>
                         </ul>
                     </div>
                     <div className={mapblockStyles.mapBlock__content}>
-                        <div className={mapblockStyles.tabcontent} id="seattle-content">
+                        <div className={mapblockStyles.tabcontent} id="seattle">
                             Mission Control: our two founders (Wyatt and Noah) are based out of Seattle, WA. While the City by the Sound offers no shortage of developer talent, if you’re looking for top-notch engineers for your next project, you can find us in our University District offices.
                         </div>
-                        <div className={mapblockStyles.tabcontent} id="portlands-content">
+                        <div className={mapblockStyles.tabcontent} id="portlands">
                             With team members in both Portland, OR and Portland, ME, the arguments over which office was Portland #1 threatened to tear our small team apart. So we compromised. Whether you’re Best Coast or Beast Coast, if you’re looking for development services in a Portland — any Portland — you can find our engineers at a coffee shop or coworking space near you.
                         </div>
-                        <div className={mapblockStyles.tabcontent} id="boulder-content">
+                        <div className={mapblockStyles.tabcontent} id="boulder">
                             Home to nature lovers and national research centers, Boulder, CO is undoubtedly the sunniest city we reside in. If you need a hand with that dog training app you've been thinking about, come meet us downtown before your afternoon run up Sanitas.
                         </div>
-                        <div className={mapblockStyles.tabcontent} id="syracus-content">
+                        <div className={mapblockStyles.tabcontent} id="syracuse">
                             On the outskirts of Syracuse, two doors down from farmland, at the very edge of the Finger Lakes wine region sits Cazenovia, NY where we’ve stationed our very best New York engineer. With easy access to Syracuse, Rochester , Albany and  more we can easily get an in-person look at your next project. Get big city talent right here in Central New York.                        </div>
                     </div>
                 </div>

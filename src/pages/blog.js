@@ -16,10 +16,11 @@ export default (props) => {
       <Navbar
         blue={true}
       />
-      <Helmet title="Blog" />
-      <Header>
-        <h1>We wrote these.</h1>
-        <h3>Maybe you want to read them. Maybe not. Your choice.</h3>
+      <Helmet title="Blog | Apsis Labs" />
+      <Header
+        title="Collecting Our Thoughts"
+      >
+        <h3>We think it's important to share and reflect what we've learned over the years.  Here's a collection of posts around who we are and what we've done.</h3>
       </Header>
 
       <div className="blog-posts">
@@ -28,18 +29,20 @@ export default (props) => {
           .map(({ node: post }) => {
             return (
               <ContentBlock vertical={true} key={post.id} >
-                <div className="blog-post-preview">
-                  <Link to={post.fields.slug}>
-                    <Img
-                      className={BlogPostStyles.post__headerImage}
-                      fluid={post.frontmatter.image.childImageSharp.fluid} alt="generic stock of something semi related to blog post"
-                    />
-                    <h1>
-                      {post.frontmatter.title}
-                    </h1>
-                  </Link>
-                  <p>{post.excerpt}</p>
-                </div>
+                <Link to={post.fields.slug}>
+                  <div className="blog-post-preview">
+                      <div className={BlogPostStyles.preview__imageWrapper}>
+                        <Img
+                          className={BlogPostStyles.preview__headerImage}
+                          fluid={post.frontmatter.image.childImageSharp.fluid} alt="generic stock of something semi related to blog post"
+                        />
+                      </div>
+                      <p className={BlogPostStyles.preview__title}>
+                        {post.frontmatter.title}
+                      </p>
+                    <p>{post.excerpt}</p>
+                  </div>
+                </Link>
               </ContentBlock>
             );
           })}

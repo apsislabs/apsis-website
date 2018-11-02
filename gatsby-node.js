@@ -1,5 +1,6 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem')
+const { createPaginatedPages } = require('gatsby-paginate')
 const _ = require('lodash')
 
 exports.createPages = ({ actions, graphql }) => {
@@ -26,7 +27,14 @@ exports.createPages = ({ actions, graphql }) => {
               console.log(result.errors)
               reject(result.errors)
             }
-
+            createPaginatedPages({
+              edges: result.data.allMarkdownRemark.edges,
+              createPage: createPage,
+              pageTemplate: "src/templates/blog-listing.js",
+              pageLength: 5,
+              pathPrefix: "posts",
+              buildPath: (index, pathPrefix) => index > 1 ? `${pathPrefix}/${index}` : `/${pathPrefix}` // This is optional and this is the default
+            })
             // Create blog posts pages.
             _.each(result.data.allMarkdownRemark.edges, edge => {
               createPage({

@@ -6,6 +6,7 @@
   position: relative;
   bottom: 0px;
   color: $apsis-gray;
+  font-size: 	1.125rem;
 
   &__map {
     height: 350px;
@@ -13,32 +14,46 @@
 
   &__copyright {
     height: 120px;
+    width: 100%;
     background-color: $apsis-gray;
     text-decoration: none;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
     color: white;
-
+    align-content: space-between;
+    padding: 0px 180px 0px 180px;
+    .links {
+      right: 180px;
+      position: absolute;
+    }
     a {
       color: white;
       padding: 10px;
+      font-size: 	1.125rem;
+      &:hover{
+        color: $apsis-blue;
+      }
     }
   }
 
   &__contactContainer {
-    width: 300px;
-    height: 200px;
+    width: 395px;
+    height: 250px;
     text-align: left;
     border-radius: 2px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
     background-color: $base-bg-color;
     border: solid 1px $button-color;
     margin: 0px 0px 0px 100px;
-    padding: 20px 0px 0px 30px;
+    padding: 50px;
     z-index: 4;
     position: absolute;
     top: 50px;
+
+    h4 {
+      margin-bottom: 10px;
+    }
   }
 
   &__contactInfo {
@@ -46,18 +61,25 @@
     flex-direction: row;
     width: 150px;
     height: 72px;
+    font-size: 	1.125rem;
+    a {
+      font-size: 1.125rem;
+      &:hover{
+        color: $apsis-blue;
+      }
+    }
   }
 }
 
 .logoIconContainer {
-  position: absolute;
-  top: 50px;
-  right: -50px;
-
   &__logoIcon {
-    width: 100px;
+    position: absolute;
+    top: -72px;
+    right: -161px;
+    width: 240px;
+    height: 240px;
     img {
-      clip: rect(0px,51px,200px,0px);
+      clip: rect(0px, 64px, 240px, 0px);
     }
   }
 }
