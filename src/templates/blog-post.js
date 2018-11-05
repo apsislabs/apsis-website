@@ -14,15 +14,16 @@ export default function Template({ data }) {
       <Navbar
           blue={true}
       />
-      <ContentBlock>
+      <ContentBlock vertical={true}>
         <Helmet title={post.frontmatter.title} />
         <div className={BlogPostStyles.post}>
-          <div className={BlogPostStyles.post__title}><h1>{post.frontmatter.title}</h1></div>
           <Img
             className={BlogPostStyles.post__headerImage}
             fluid={post.frontmatter.image.childImageSharp.fluid} alt="this is the real image"
           />
+          <h1><div className={BlogPostStyles.post__title}>{post.frontmatter.title}</div></h1>
           <div
+            className={BlogPostStyles.post__content}
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
         </div>

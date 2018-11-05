@@ -33,6 +33,7 @@
     "nuka-carousel": "^4.4.1",
     "popper": "^1.0.1",
     "react": "^16.5.2",
+    "react-animate-height": "^2.0.6",
     "react-animated-css": "^1.0.4",
     "react-collapse": "^4.0.3",
     "react-dom": "^16.5.2",

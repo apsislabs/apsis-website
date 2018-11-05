@@ -11,11 +11,6 @@ const Marker = () => (
     </Animated>
 )
 
-//      <Marker
-//     position={{lat: 47.659298, lng: -122.317940}} /> <Marker
-//     position={{lat: 37.778519, lng: -122.405640}} /> 
-// </div> : null
-
 class MapBlock extends React.Component {
     componentDidMount(){
         if (this.props.cityName){

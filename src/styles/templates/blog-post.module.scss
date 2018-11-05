@@ -1,17 +1,18 @@
 .post {
-  width: 800px;
   padding-top: 180px;
+  width: 800px;
 
   &__title {
     padding-bottom: 40px;
-    text-align: center;
+    text-align: left;
   }
 
   &__headerImage {
-    width: 700px;
+    width: 800px;
     height: 100%;
     margin-bottom: 40px;
   }
+
 }
 
 .preview {

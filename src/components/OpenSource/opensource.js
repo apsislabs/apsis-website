@@ -4,7 +4,7 @@ import buttonStyles from "../../styles/components/button.module.scss"
 import OpenSourceCard from "./opensourcecard"
 import opensourcecardStyles from "../../styles/components/opensourcecard.module.scss"
 
-const blueWideButtonClasses = `${buttonStyles.button__blue} ${buttonStyles.button__wide}`;
+const blueWideButtonClasses = `${buttonStyles.button__blue} ${buttonStyles.button__wide} ${opensourceStyles.button}`;
 const redHover = `${opensourcecardStyles.red}`;
 const jsHover = `${opensourcecardStyles.js}`;
 
