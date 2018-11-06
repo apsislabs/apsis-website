@@ -32,5 +32,14 @@ module.exports = {
               pathToConfigModule: `src/utils/typography.js`,
             },
         },
+        {
+          resolve: `gatsby-plugin-nprogress`,
+          options: {
+            // Setting a color is optional.
+            color: `#2773a7`,
+            // Disable the loading spinner.
+            showSpinner: false,
+          },
+        },
     ],
 }

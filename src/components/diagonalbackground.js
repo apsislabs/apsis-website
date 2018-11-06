@@ -3,7 +3,10 @@ import diagonalbackgroundStyles from "../styles/components/diagonalbackground.mo
 
 
 export default props => (
-    <div className={diagonalbackgroundStyles.hero}>  
-      {props.children}
+    <div className={diagonalbackgroundStyles.diagonal}>
+      <div className={diagonalbackgroundStyles.diagonal__container}>
+        {props.children}
+      </div>
     </div>
+
 )

@@ -1,46 +1,58 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import '../__variables';
 
-.hero {
-    width: 100%;
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% 80%,
-      0 calc(100% - 5vw)
-    );
-    color: $base-bg-color;
+.hero_container {
 
-  &__overlay {
-    opacity: 0.75;
-    background-color: #000;
-  }
+  filter: drop-shadow(0px 10px 5px rgba(0,0,0,0.1));
 
-  &__image {
-    left: 0;
-    top: 0;
-    z-index: -1;
-    width: "100%";
-    height: "100%";
-    opacity: 0.75;
-  }
+  .hero {
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 80%,
+        0 calc(100% - 5vw)
+      );
+      // clip-path: polygon(0 16%, 100% 0%, 100% 86%, 0 calc(100% - 5vw));
 
-  &__content{
-    z-index: 1;
-    position: absolute;
-    top: 0px;
-    padding: 20% 10%;
-  }
+      width: 100%;
+      height: 100%;
+      padding-bottom: 5vw;
+      max-height: 90vh;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(15, 44, 64, 0.15);
 
-  h1 {
-    font-size: 48px;
-    text-shadow: 0 2px 4px rgba(15, 44, 64, 0.15);
-  }
+    &--expandable {
+      max-height: 0;
+    }
+    &__expanded {
+      width: 100%;
+      height: 100%;
+    }
 
-  h3 {
-    font-family: 'OpenSans', sans-serif;
-    font-size: 22px;
-    font-weight: 100;
-    text-shadow: 0 2px 4px rgba(15, 44, 64, 0.15);
+    &__image {
+      left: 0;
+      top: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      opacity: 0.75;
+    }
+
+    &__content{
+      padding: 20% 10%;
+    }
+
+    h1 {
+      font-size: 48px;
+      text-shadow: 0 2px 4px rgba(15, 44, 64, 0.15);
+      color: $base-bg-color;
+    }
+
+    h3 {
+      font-family: 'OpenSans', sans-serif;
+      font-size: 22px;
+      font-weight: 100;
+      text-shadow: 0 2px 4px rgba(15, 44, 64, 0.15);
+      color: $base-bg-color;
+    }
   }
 }

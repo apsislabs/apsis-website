@@ -1,9 +1,8 @@
 @import '../__variables';
 
 .navbar {
-    background: transparent;
     width: 100%;
-    padding: 10px;
+    // padding: 0px 40px 0px 40px;
     position: absolute;
     top: 0px;
     z-index: 1;
@@ -11,16 +10,18 @@
     align-items: center;
   
   &__blue {
+    background: #fff;
     a {
       color: $apsis-blue;
     }
   }
 
   .active {
-    font-weight: 600;
+    text-decoration: underline;
   }
 
   &__white {
+    background: transparent;
     a {
       color: $base-bg-color;
     }
@@ -30,9 +31,14 @@
     display: inline-flex;
     margin-left: auto;
     list-style: none;
+    margin-bottom: 0;
 
     .listLinkItem {
       margin: 1em;
+      &:hover {
+        transition: text-shadow ease-in-out 0.25s;
+        text-shadow: 2px 2px rgba(15, 44, 64, 0.15);
+      }
     }
   }
 
@@ -43,4 +49,8 @@
 
     margin: 1em;
   }
+}
+
+.unpinBlue {
+  background: #f09;
 }

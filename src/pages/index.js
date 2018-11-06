@@ -13,6 +13,7 @@ import buttonStyles from "../styles/components/button.module.scss"
 import { graphql } from 'gatsby'
 import Navbar from "../components/navbar"
 import Helmet from "react-helmet";
+import {Animated} from "react-animated-css";
 
 class IndexPage extends React.Component {
     render () {
@@ -21,16 +22,18 @@ class IndexPage extends React.Component {
 
         return (
             <Layout>
-                <Helmet title="Apsis Labs" />
+                <Helmet title="Apsis Labs | A Seattle Software Development Company" />
                 <Navbar
                     blue={false}
                 />
                 <Hero
                     displayname="Hero"
-                    img={this.props.data.hero.childImageSharp.fluid}
+                    imgSrc={this.props.data.hero.childImageSharp.fluid.src}
                 >
-                    <h1>Need an app? We can help.</h1>
-                    <h3>We are developers focused on efficient solutions to real world problems.</h3>
+                    <Animated animationIn="fadeInUp">
+                        <h1>Need an app? We can help.</h1>
+                        <h3>We are developers focused on efficient solutions to real world problems.</h3>
+                    </Animated>
                     <span>
                         <Button
                             className={blueWideButtonClasses}
@@ -40,7 +43,7 @@ class IndexPage extends React.Component {
                         </Button>
                         <Button
                             className={grayWideButtonClasses}
-                            to="/hire"
+                            to="/contact"
                         >
                             Hire Us
                         </Button>
@@ -50,12 +53,16 @@ class IndexPage extends React.Component {
                 <Clients
                     clientOne={this.props.data.clientWeber.childImageSharp.fluid}
                     clientOneAlt="Weber Shandwick"
+                    clientOneUrl="https://www.webershandwick.com/"
                     clientTwo={this.props.data.clientNatera.childImageSharp.fluid}
                     clientTwoAlt="Natera"
-                    clientThree={this.props.data.clientCallidus.childImageSharp.fluid}
-                    clientThreeAlt="Callidus Cloud"
+                    clientTwoUrl="https://www.natera.com/"
+                    clientThree={this.props.data.clientTray.childImageSharp.fluid}
+                    clientThreeAlt="Tray.io"
+                    clientThreeUrl="https://tray.io/"
                     clientFour={this.props.data.clientBoku.childImageSharp.fluid}
                     clientFourAlt="Boku"
+                    clientFourUrl="https://www.boku.com/"
                 />
                 <ContentBlock
                     title="Your industry is our business."
@@ -83,31 +90,39 @@ class IndexPage extends React.Component {
                     <div className={indexStyles.serviceButton}>
                         <Button
                             className={blueWideButtonClasses}
-                            to="/portfolio"
+                            to="/services"
                         >
-                            Our Portfolio
+                            Our services
                         </Button>
                     </div>
                 </ContentBlock>
                 <Clients
                     clientOne={this.props.data.clientCascade.childImageSharp.fluid}
                     clientOneAlt="Cascade Bicycle Club"
+                    clientOneUrl="https://www.cascade.org/"
                     clientTwo={this.props.data.clientDragonFoundry.childImageSharp.fluid}
                     clientTwoAlt="Dragon Foundry"
+                    clientTwoUrl="http://www.dragonfoundry.com/"
                     clientThree={this.props.data.clientColumbia.childImageSharp.fluid}
                     clientThreeAlt="Columbia University"
-                    clientFour={this.props.data.clientTray.childImageSharp.fluid}
-                    clientFourAlt="Tray.io"
+                    clientThreeUrl="https://www.columbia.edu/"
+                    clientFour={this.props.data.clientCallidus.childImageSharp.fluid}
+                    clientFourAlt="Callidus Cloud"
+                    clientFourUrl="https://www.calliduscloud.com/"
                 />
                 <Clients
                     clientOne={this.props.data.clientPicturiffic.childImageSharp.fluid}
                     clientOneAlt="Picturiffic"
+                    clientOneUrl="https://picturiffic.apsis.io/"
                     clientTwo={this.props.data.clientArkatechture.childImageSharp.fluid}
                     clientTwoAlt="Arkatechture"
+                    clientTwoUrl="https://www.arkatechture.com/"
                     clientThree={this.props.data.clientThinkingBaseball.childImageSharp.fluid}
                     clientThreeAlt="Thinking Baseball"
+                    clientThreeUrl="https://www.thinkingbaseball.com/"
                     clientFour={this.props.data.clientCoverMyTest.childImageSharp.fluid}
                     clientFourAlt="Cover My Test"
+                    clientFourUrl="https://covermytest.com/"
                 />
                 <About
                     fluid={this.props.data.building.childImageSharp.fluid}
@@ -179,7 +194,11 @@ class IndexPage extends React.Component {
             ...fluidImage
         }
         hero: file(relativePath: { eq: "images/hero/shuttle_desktop.jpg" }) {
-            ...fluidHero
+            childImageSharp {
+                fluid(maxWidth: 1400) {
+                    src
+                }
+            }
         }
         building: file(relativePath: { eq: "images/posts/jack-straw-office.jpg" }) {
             ...fluidHero

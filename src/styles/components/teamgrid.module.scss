@@ -1,30 +1,44 @@
 @import '../__variables';
 
-.photo {
-  padding-bottom: 40px;
-  width: 175px;
-  height: 200px;
-  margin: 25px;
-  flex: 1 0 15%;
-
-  &__name {
-    font-weight: bold;
-    color: $apsis-gray;
-  }
-
-  &__title {
-    color: $gray;
-  }
-}
-
 .grid {
   display: flex;
-  align-content: stretch;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin: 0 auto;
-  width: 900px;
+  max-width: 900px;
 
-  i {
-    margin: 45px;
+  .photo {
+    font-size: 1.125rem;
+    width: 200px;
+    padding-bottom: 40px;
+
+    @media (max-width: 400px) {
+        display: block;
+    }
+    &:hover {
+      box-sizing: border-box;
+      border-radius: 4px;
+      transform: scale(1.01); transition: transform ease-in-out 0.25s;
+      background-image: linear-gradient(to bottom, $base-bg-color, $base-bg-color), linear-gradient(105deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.05));
+    }
+    img {
+      flex: 1;
+      width: 200px;
+      box-sizing: border-box;
+      border-radius: 4px;
+      border: solid 1px #7994a6;
+      background-image: linear-gradient(to bottom, #fefefe, #fefefe), linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.05));
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(15, 44, 64, 0.15);
+
+    }
+    &__name {
+      padding-top: 10px;
+      font-weight: bold;
+      color: $apsis-gray;
+    }
+
+    &__title {
+      color: #7994a6;
+    }
   }
 }

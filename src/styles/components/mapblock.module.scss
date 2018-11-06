@@ -6,17 +6,42 @@
   flex-direction: column;
   padding: 80px;
   align-items: center;
+  border-radius: 4px;
 
+  &__marker {
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50% 50% 0;
+    background: $apsis-blue;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 50%;
+    top: 50%;
+    margin: -20px 0 0 -20px;
+      &:after {
+        content: '';
+        width: 14px;
+        height: 14px;
+        margin: 8px 0 0 8px;
+        background: $gray-lightest;
+        position: absolute;
+        border-radius: 50%;
+      }
+    }
   &__map {
     height: 527px;
     width: 1025px;
-    border: thin solid black;
+    border-radius: 4px;
     margin-bottom: 20px;
+
+    border-radius: 5px;
+    z-index:0;
   }
 
   &__content {
     width: 100%;
     padding-top: 15px;
+    padding-left: 115px;
   }
 
   &__locations {
@@ -27,8 +52,12 @@
   }
 
   .tabcontent{
-    .active {
-      color: $apsis-blue
+    font-size: 1.125rem;
+    max-width: 795px;
+    display: none;
+    &__active {
+      display: block;
+      color: $apsis-blue;
     }
   }
   .tabs {
@@ -36,10 +65,13 @@
     width: 20%;
     padding-top: 20px;
     font-weight: bold;
+    font-size: 1.125rem;
 
     &__tablinks{
+      cursor:pointer;
       .active {
-        color: $apsis-blue
+        color: $apsis-blue;
+        display: block;
       }
     }
 
