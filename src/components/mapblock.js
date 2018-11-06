@@ -15,15 +15,13 @@ class MapBlock extends React.Component {
         super(props)
         this.state = {
             cityName: "seattle",
-            latitude: 37.778519,
-            longitude: -122.405640,
+            latitude: 47.6062,
+            longitude: -122.3321,
         }
         this.changeLocation = this.changeLocation.bind(this);
     }
 
     changeLocation(e, lat, lng, cityName){
-        // e.preventDefault();
-        // e.stopPropagation();
         this.setState({latitude: lat, longitude: lng});
         var i, tabcontent, tablinks;
 
@@ -40,8 +38,6 @@ class MapBlock extends React.Component {
         document.getElementById(cityName).style.display = "block";
         e.currentTarget.className += ` ${mapblockStyles.tabcontent__active}`;
         this.setState({latitude: lat, longitude: lng, cityName})
-
-        // return false;
     }
 
     componentDidMount(){
@@ -53,9 +49,6 @@ class MapBlock extends React.Component {
 
         document.getElementById(this.state.cityName).style.display = "block";
         document.getElementById(`${this.state.cityName}-tab`).className += ` ${mapblockStyles.tabcontent__active}`;
-        // this.setState({latitude: lat, longitude: lng, cityName})
-        // document.getElementById(`${this.state.cityName}-tab`).className += ` ${mapblockStyles.tabcontent__active}`;
-        // document.getElementById(this.state.cityName).style.display = "block";
     }
 
     render() {
@@ -69,16 +62,17 @@ class MapBlock extends React.Component {
                         center={{lat: this.state.latitude, lng: this.state.longitude}}
                         defaultZoom={10}
                         className={mapblockStyles.mapBlock__map}
+                        zoom={this.state.cityName === "portlands" ? 3 : 10}
                     >
                     <Marker
                         lat={this.state.latitude + .03}
                         lng={this.state.longitude}
                         text={this.state.cityName}
                     />
-                    {/* <Marker
-                        lat={37.778519 + .03}
-                        lng={-122.405640}
-                    />   */}
+                    { this.state.cityName === "portlands" && <Marker
+                        lat={43.6591 + .03}
+                        lng={-70.2568}
+                    />   }
                     </Map>
                 </div>
 
@@ -86,16 +80,16 @@ class MapBlock extends React.Component {
                     <div className={mapblockStyles.tabs}>
                         <ul>
                             <li>
-                                <span id="seattle-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, 1, 2, "seattle")}>Seattle, WA</span>
+                                <span id="seattle-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, 47.6062, -122.3321, "seattle")}>Seattle, WA</span>
                             </li>
                             <li>
-                                <span id="portlands-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, 2, 3, "portlands")}>The Portlands</span>
+                                <span id="portlands-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, 45.5122, -122.6587, "portlands")}>The Portlands</span>
                             </li>
                             <li>
-                                <span id="boulder-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, 4, 5, "boulder")}>Boulder, CO</span>
+                                <span id="boulder-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, 40.0150, -105.2705, "boulder")}>Boulder, CO</span>
                             </li>
                             <li>
-                                <span id="syracuse-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, 6, 7, "syracuse")}>Syracuse, NY</span>
+                                <span id="syracuse-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, 43.0481, -76.1474, "syracuse")}>Syracuse, NY</span>
                             </li>
                         </ul>
                     </div>

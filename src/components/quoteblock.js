@@ -52,9 +52,9 @@ class QuoteBlock extends React.Component {
         this.interval = setInterval(() => this.goToNextSlide(), 10000)
     }
 
-    componentWillUpdate(){
-        // this.setState({isVisible: !this.state.isVisible})
-    }
+    // componentWillUpdate(){
+    //     // this.setState({isVisible: !this.state.isVisible})
+    // }
 
     componentWillUnmount() {
         clearInterval(this.interval);
@@ -97,13 +97,13 @@ class QuoteBlock extends React.Component {
     }
 
     render() {
-        var settings = {
-            dots: true,
-            infinite: true,
-            speed: 10,
-            slidesToShow: 1,
-            slidesToScroll: 1
-          };
+        // var settings = {
+        //     dots: true,
+        //     infinite: true,
+        //     speed: 10,
+        //     slidesToShow: 1,
+        //     slidesToScroll: 1
+        //   };
         return(
         <div className={quoteblockStyles.testimonial}>
             <Slider infinite={true} slidesToShow={2} arrows>
@@ -123,7 +123,7 @@ class QuoteBlock extends React.Component {
 
             <h2>What Our Clients Say</h2>
             <div>
-                <img src={icon} />
+                <img src={icon} alt="open quotemark"/>
             </div>
             <div className={quoteblockStyles.testimonial__container}>
                 <div>

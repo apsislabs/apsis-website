@@ -11,9 +11,8 @@ const NavLink = props => {
 
 const BlogListingPage = ({ data, pageContext }) => {
   const { group, index, first, last, pageCount } = pageContext;
-  const previousUrl = index - 1 == 1 ? "" : (index - 1).toString();
+  const previousUrl = index - 1 === 1 ? "" : (index - 1).toString();
   const nextUrl = (index + 1).toString();
-
   return (
     <div>
       <h4>{pageCount} Posts</h4>

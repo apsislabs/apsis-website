@@ -154,7 +154,7 @@ class PortfolioPage extends React.Component {
                                 />
                                 <h2>Signal</h2>
                                 <p>
-                                    <a href="https://hub.dolby.com/" target="_blank">Signal</a> is the narrative hub of Dolby's technology brand. Built on WordPress, the custom website uses a slew of cutting-edge web technologies.
+                                    <a href="https://hub.dolby.com/" target="_blank" rel="noopener noreferrer">Signal</a> is the narrative hub of Dolby's technology brand. Built on WordPress, the custom website uses a slew of cutting-edge web technologies.
 
                                     Using our own open-source set of plugins, the Signal site also shows the flexibility and power of WordPress as a CMS.
                                 </p>

@@ -14,8 +14,22 @@ exports.createPages = ({ actions, graphql }) => {
                 allMarkdownRemark(limit: 1000) {
                   edges {
                     node {
+                      id
+                      excerpt(pruneLength: 400)
                       fields {
                         slug
+                      }
+                      frontmatter {
+                        title
+                        date
+                        path
+                        image {
+                          childImageSharp {
+                            fluid(maxWidth: 800) {
+                              src
+                            }
+                          }
+                        }
                       }
                     }
                   }
@@ -30,9 +44,9 @@ exports.createPages = ({ actions, graphql }) => {
             createPaginatedPages({
               edges: result.data.allMarkdownRemark.edges,
               createPage: createPage,
-              pageTemplate: "src/templates/blog-listing.js",
+              pageTemplate: "src/pages/blog.js",
               pageLength: 5,
-              pathPrefix: "posts",
+              pathPrefix: "blog",
               buildPath: (index, pathPrefix) => index > 1 ? `${pathPrefix}/${index}` : `/${pathPrefix}` // This is optional and this is the default
             })
             // Create blog posts pages.
