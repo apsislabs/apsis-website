@@ -29,7 +29,7 @@ export default () => (
           hero: file(relativePath: { eq: "images/hero/hands_laptops.jpg" }) {
             childImageSharp {
               fluid(maxWidth: 1400) {
-                  ...GatsbyImageSharpFluid
+                  src
               }
             }
           }
@@ -58,8 +58,8 @@ export default () => (
           />
           <Hero
             displayname="Hero"
-            img={data.hero.childImageSharp.fluid}
-          >
+            imgSrc={data.hero.childImageSharp.fluid.src}
+            >
             <Animated animationIn="fadeInUp">
               <h1>Simply Software.</h1>
               <h3>They say: do one thing and do it well. Our thing is software.</h3>

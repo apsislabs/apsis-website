@@ -27,11 +27,7 @@ const whiteNav = `${navbarStyles.navbar__white} ${navbarStyles.navbar}`
 class Navbar extends Component {
     constructor(props) {
         super(props);
-        // this.navRef = React.createRef();
-    }
-    setWrapperStyles() {
-        // nav = navRef.current.classList;
-        // this.props.isBlue ? this.navRef.add(navbarStyles.unpinBlue) : this.navRef.add(navbarStyles.unpinWhite)
+        this.state = {navBlue: this.props.blue}
     }
 
     render(){
@@ -57,15 +53,16 @@ class Navbar extends Component {
                 `}
                 render={data => (
                     <Headroom
-                        // onUnfix={setWrapperStyles(this.props.blue)}
+                        onUnpin={() => this.setState({navBlue: true})}
+                        onPin={() => (document.body.scrollTop === 0 ? this.setState({navBlue: true}) : this.setState({navBlue: !this.props.blue})) }
                     >
                         <nav>
-                            <header className={this.props.blue ? blueNav : whiteNav}>
+                            <header className={this.state.navBlue ? blueNav : whiteNav}>
                                 <Link
                                     to="/"
                                 >
                                     <Img
-                                        fluid={this.props.blue ? data.apsisBlueLogo.childImageSharp.fluid : data.apsisWhiteLogo.childImageSharp.fluid }
+                                        fluid={this.state.navBlue ? data.apsisBlueLogo.childImageSharp.fluid : data.apsisWhiteLogo.childImageSharp.fluid }
                                         alt="Logo"
                                         className={navbarStyles.navbar__icon}
                                     />

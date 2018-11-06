@@ -1,7 +1,6 @@
 import React from "react"
 import mapblockStyles from "../styles/components/mapblock.module.scss"
 import Map from "google-map-react"
-import { navigate } from "gatsby-link"
 import {Animated} from "react-animated-css";
 
 
@@ -12,16 +11,51 @@ const Marker = () => (
 )
 
 class MapBlock extends React.Component {
-    componentDidMount(){
-        if (this.props.cityName){
-            document.getElementById(`${this.props.cityName}-tab`).className += ` ${mapblockStyles.tabcontent__active}`;
-            document.getElementById(this.props.cityName).style.display = "block";
+    constructor(props) {
+        super(props)
+        this.state = {
+            cityName: "seattle",
+            latitude: 37.778519,
+            longitude: -122.405640,
         }
+        this.changeLocation = this.changeLocation.bind(this);
     }
 
-    changeLocation(e, cityName){
-        e.preventDefault();
-        navigate(`/team/${cityName}#map`);   
+    changeLocation(e, lat, lng, cityName){
+        // e.preventDefault();
+        // e.stopPropagation();
+        this.setState({latitude: lat, longitude: lng});
+        var i, tabcontent, tablinks;
+
+        tabcontent = document.getElementsByClassName(mapblockStyles.tabcontent);
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName(mapblockStyles.tabs__tablinks);
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(` ${mapblockStyles.tabcontent__active}`, "");
+        }
+
+        document.getElementById(cityName).style.display = "block";
+        e.currentTarget.className += ` ${mapblockStyles.tabcontent__active}`;
+        this.setState({latitude: lat, longitude: lng, cityName})
+
+        // return false;
+    }
+
+    componentDidMount(){
+        var i, tabcontent;
+        tabcontent = document.getElementsByClassName(mapblockStyles.tabcontent);
+        for (i = 1; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        document.getElementById(this.state.cityName).style.display = "block";
+        document.getElementById(`${this.state.cityName}-tab`).className += ` ${mapblockStyles.tabcontent__active}`;
+        // this.setState({latitude: lat, longitude: lng, cityName})
+        // document.getElementById(`${this.state.cityName}-tab`).className += ` ${mapblockStyles.tabcontent__active}`;
+        // document.getElementById(this.state.cityName).style.display = "block";
     }
 
     render() {
@@ -32,19 +66,19 @@ class MapBlock extends React.Component {
                 <div className={mapblockStyles.mapBlock__map} id="map">
                     <Map
                         bootstrapURLKeys={{ key: 'AIzaSyCF7DHtzwCN8X7ZStPCJwsGsO9aH8-Uiq4' }}
-                        center={{lat: this.props.latitude, lng: this.props.longitude}}
+                        center={{lat: this.state.latitude, lng: this.state.longitude}}
                         defaultZoom={10}
                         className={mapblockStyles.mapBlock__map}
                     >
                     <Marker
-                        lat={this.props.latitude + .03}
-                        lng={this.props.longitude}
-                        text={this.props.cityName}
+                        lat={this.state.latitude + .03}
+                        lng={this.state.longitude}
+                        text={this.state.cityName}
                     />
-                    <Marker
+                    {/* <Marker
                         lat={37.778519 + .03}
                         lng={-122.405640}
-                    />  
+                    />   */}
                     </Map>
                 </div>
 
@@ -52,16 +86,16 @@ class MapBlock extends React.Component {
                     <div className={mapblockStyles.tabs}>
                         <ul>
                             <li>
-                                <span id="seattle-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, "seattle")}>Seattle, WA</span>
+                                <span id="seattle-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, 1, 2, "seattle")}>Seattle, WA</span>
                             </li>
                             <li>
-                                <span id="portlands-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, "portlands")}>The Portlands</span>
+                                <span id="portlands-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, 2, 3, "portlands")}>The Portlands</span>
                             </li>
                             <li>
-                                <span id="boulder-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, "boulder")}>Boulder, CO</span>
+                                <span id="boulder-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, 4, 5, "boulder")}>Boulder, CO</span>
                             </li>
                             <li>
-                                <span id="syracuse-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, "syracuse")}>Syracuse, NY</span>
+                                <span id="syracuse-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, 6, 7, "syracuse")}>Syracuse, NY</span>
                             </li>
                         </ul>
                     </div>

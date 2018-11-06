@@ -1,6 +1,8 @@
 import React from "react";
 import quoteblockStyles from "../styles/components/quoteblock.module.scss";
 import {Animated} from "react-animated-css";
+import icon from "../images/quote_icon.svg";
+import Slider from "react-slick";
 
 const Quote = (props) => (
     <Animated animationIn="fadeInUp" isVisible={props.isVisible}>
@@ -95,36 +97,56 @@ class QuoteBlock extends React.Component {
     }
 
     render() {
-        return (
-            <div className={quoteblockStyles.testimonial}>
-                <h2>What Our Clients Say</h2>
-                <div>
-                    <i className="fas fa-quote-left" />
+        var settings = {
+            dots: true,
+            infinite: true,
+            speed: 10,
+            slidesToShow: 1,
+            slidesToScroll: 1
+          };
+        return(
+        <div className={quoteblockStyles.testimonial}>
+            <Slider infinite={true} slidesToShow={2} arrows>
+                <div className={quoteblockStyles.testimonial__quote}>
+                    text: "Apsis has been exceptional to work with. More than just a vendor, Apsis is a partner whom we trust to interact directly with clients. Their work has consistently exceeded expectations, delivered on-time and on-budget. Developers who can thoughtfully problem solve and think critically are surprisingly rare and I look forward to working with them more in the future.",
+                    attribution: "Chris Goddard",
+                    title: "Vice President of Analytics",
+                    company: "Weber Shandwick"
                 </div>
-                <div className={quoteblockStyles.testimonial__container}>
-                    <div>
-                        <i className="fas fa-angle-left fa-2x" onClick={() => this.goToPrevSlide()}/>
-                    </div>
-                        <div>
-                            <div className={quoteblockStyles.testimonial__quote}>
-                                <Quote
-                                    text={this.state.activeQuote.text}
-                                    isVisible={this.state.isVisible}
-                                />
-                            </div>
-                        </div>
-                    <div>
-                        <i className="fas fa-angle-right fa-2x" onClick={() => this.goToNextSlide()}/>
-                    </div>
+                <div className={quoteblockStyles.testimonial__quote}>
+                    text: "Apsis has been exceptional to work with. More than just a vendor, Apsis is a partner whom we trust to interact directly with clients. Their work has consistently exceeded expectations, delivered on-time and on-budget. Developers who can thoughtfully problem solve and think critically are surprisingly rare and I look forward to working with them more in the future.",
+                    attribution: "Chris Goddard",
+                    title: "Vice President of Analytics",
+                    company: "Weber Shandwick"
                 </div>
-                <cite>
-                    <span className={quoteblockStyles.testimonial__attribution}>{this.state.activeQuote.attribution}</span>
-                    <span className={quoteblockStyles.testimonial__title}>{this.state.activeQuote.title} @ {this.state.activeQuote.company}</span>
-                </cite>
-            </div>
-        )
-    }
-}
+            </Slider>
 
+            <h2>What Our Clients Say</h2>
+            <div>
+                <img src={icon} />
+            </div>
+            <div className={quoteblockStyles.testimonial__container}>
+                <div>
+                    <i className="fas fa-angle-left fa-2x" onClick={() => this.goToPrevSlide()}/>
+                </div>
+                <div className={quoteblockStyles.arrow_box}>
+                    <div className={quoteblockStyles.testimonial__quote}>
+                        <Quote
+                            text={this.state.activeQuote.text}
+                            isVisible={this.state.isVisible}
+                        />
+                    </div>
+                </div>
+                <div>
+                    <i className="fas fa-angle-right fa-2x" onClick={() => this.goToNextSlide()}/>
+                </div>
+            </div>
+            <cite>
+                <span className={quoteblockStyles.testimonial__attribution}>{this.state.activeQuote.attribution}</span>
+                <span className={quoteblockStyles.testimonial__title}>{this.state.activeQuote.title} @ {this.state.activeQuote.company}</span>
+            </cite>
+        </div>
+    )}
+}
 
 export default QuoteBlock

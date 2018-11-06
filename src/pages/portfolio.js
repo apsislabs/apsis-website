@@ -26,7 +26,7 @@ class PortfolioPage extends React.Component {
         this.toggleExpand = this.toggleExpand.bind(this);
     }
     toggleExpand() {
-        this.setState({ expanded: !this.state.expanded, });
+        this.setState({ expanded: !this.state.expanded });
     }
 
     render() {
@@ -65,7 +65,7 @@ class PortfolioPage extends React.Component {
                         portfolioHero: file(relativePath: { eq: "images/hero/space.jpg" }) {
                             childImageSharp {
                                 fluid(maxWidth: 1400) {
-                                    ...GatsbyImageSharpFluid
+                                    src
                                 }
                             }
                         }
@@ -79,7 +79,8 @@ class PortfolioPage extends React.Component {
                         />
                         <Hero
                             displayname="Hero"
-                            img={data.portfolioHero.childImageSharp.fluid}
+                            fixedHeight={!this.state.expanded}
+                            imgSrc={data.portfolioHero.childImageSharp.fluid.src}
                         >
                             <div>
                                 <Animated animationIn="fadeInUp">

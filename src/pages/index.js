@@ -28,7 +28,7 @@ class IndexPage extends React.Component {
                 />
                 <Hero
                     displayname="Hero"
-                    img={this.props.data.hero.childImageSharp.fluid}
+                    imgSrc={this.props.data.hero.childImageSharp.fluid.src}
                 >
                     <Animated animationIn="fadeInUp">
                         <h1>Need an app? We can help.</h1>
@@ -194,7 +194,11 @@ class IndexPage extends React.Component {
             ...fluidImage
         }
         hero: file(relativePath: { eq: "images/hero/shuttle_desktop.jpg" }) {
-            ...fluidHero
+            childImageSharp {
+                fluid(maxWidth: 1400) {
+                    src
+                }
+            }
         }
         building: file(relativePath: { eq: "images/posts/jack-straw-office.jpg" }) {
             ...fluidHero
