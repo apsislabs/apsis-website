@@ -47,7 +47,7 @@ class TeamPage extends React.Component {
                         <Button className={blueWideButtonClasses} to="/portfolio">
                             See Our Work
                         </Button>
-                        <Button className={blueWideButtonClasses} to="/hire" >
+                        <Button className={blueWideButtonClasses} to="/contact" >
                             Hire Us
                         </Button>
                     </span>

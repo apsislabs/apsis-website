@@ -1,14 +1,14 @@
 import React from "react"
 import Layout from "../components/layout"
 import Header from "../components/header"
-import HireUsFooter from "../components/Footer/hireusfooter"
+import ContentBlock from "../components/contentblock"
 import Navbar from "../components/navbar"
 import Helmet from "react-helmet";
 import contactStyles from "../styles/pages/contact.module.scss"
 import buttonStyles from "../styles/components/button.module.scss"
-import Button from "gatsby-link"
-const blueWideButtonClasses = `${buttonStyles.button__blue} ${buttonStyles.button__wide}`;
+import Link from "gatsby-link"
 
+const shortWideButton = `${buttonStyles.button__blue} ${buttonStyles.button__wide}`
 export default () => (
   <Layout>
     <Helmet title="Work With Us | Apsis Labs" />
@@ -19,22 +19,25 @@ export default () => (
       title="Let’s build something"
     >
       <h3>Got a project? Just wanna talk shop? <br/> We’re always listening.</h3>
-      <center>
-        <Button
-          className={blueWideButtonClasses}
-          to="/process"
-        >
-          Are We A Fit?
-        </Button>
-      </center>
-      <br/>
     </Header>
-
-    <iframe
-      className={contactStyles.form}
-      src="https://docs.google.com/forms/d/e/1FAIpQLSd-gqzdImjTtnqulXZYFWGVTPuCt-lbvqt85frJx2c8VfQI1w/viewform?embedded=true"
-      title="Contact Us">Loading...
-    </iframe>
-    <HireUsFooter />
+    <ContentBlock vertical={true}>
+    <form className={contactStyles.form} method="POST" action="https://a17eeo6v24.execute-api.us-west-2.amazonaws.com/contactformapi">
+        <span>
+          <input type="text" name="name"  placeholder="Your Name" className={contactStyles.form__input}/>
+        </span>
+        <span>
+          <input type="text" name="email" placeholder="Email Address" className={contactStyles.form__input}/>
+        </span>
+        <span>
+          <textarea rows="5" type="text" name="message" placeholder="Type your Message" className={contactStyles.form__input}/>
+        </span>
+        <input type="submit" value="Submit form" className={shortWideButton}/>
+    </form>
+    <span className={contactStyles.bottomText}>
+      You can also reach out to us via email: <a href="mailto:contact@apsis.io">contact@apsis.io</a>
+      <p/>
+      Want to know more before you contact us? <Link to="/process">Read about our process.</Link>
+    </span>
+    </ContentBlock>
   </Layout>
 )

@@ -1,3 +1,5 @@
+@import '../__variables';
+
 .tool {
     width: 900px;
     margin: 0px auto;
@@ -15,4 +17,9 @@
             transform: scale(1.05); transition: transform ease-in-out 0.25s;
         }
     }
+
+    @media only screen and (max-width: $desktop-size) {
+        width: 100%;
+        flex-direction: column;
+      }
 }

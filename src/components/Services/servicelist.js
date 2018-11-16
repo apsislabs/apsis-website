@@ -1,6 +1,10 @@
 import React from "react"
 import serviceStyles from "../../styles/components/servicelist.module.scss"
 import Service from "./serviceitem"
+import buttonStyles from "../../styles/components/button.module.scss"
+import Button from 'gatsby-link'
+
+const blueWideButtonClasses = `${buttonStyles.button__blue} ${buttonStyles.button__wide}`;
 
 export default () => (
     <div className={serviceStyles.service}>
@@ -34,5 +38,12 @@ export default () => (
                 <li>HIPAA & Security</li>
             </ul>
         </Service>
+
+        <Button
+            className={blueWideButtonClasses}
+            to="/services"
+        >
+            Our Services
+        </Button>
     </div>
 )

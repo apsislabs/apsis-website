@@ -29,6 +29,7 @@
     "glamor": "^2.20.40",
     "google-map-react": "^1.0.9",
     "jquery": "^3.3.1",
+    "lambda-mailer": "^0.2.0",
     "node-sass": "^4.9.3",
     "nuka-carousel": "^4.4.1",
     "popper": "^1.0.1",
@@ -46,6 +47,7 @@
     "react-slick": "^0.23.2",
     "react-typography": "^0.16.13",
     "slick-carousel": "^1.8.1",
-    "typography": "^0.16.17"
+    "typography": "^0.16.17",
+    "video-react": "^0.13.1"
   }
 }
