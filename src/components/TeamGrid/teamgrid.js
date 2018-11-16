@@ -78,12 +78,12 @@ export default () => (
                 <TeamPlayer
                     img={data.henry.childImageSharp.fluid}
                     name="Henry Keiter"
-                    title="Spider Wrangler"
+                    title="Senior Engineer"
                 />
                 <TeamPlayer
                     img={data.eric.childImageSharp.fluid}
                     name="Eric Greer"
-                    title="Most Eric"
+                    title="Senior Engineer"
                 />
                 <TeamPlayer
                     img={data.nic.childImageSharp.fluid}
