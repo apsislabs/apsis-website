@@ -20,8 +20,8 @@
       max-height: 90vh;
       box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(15, 44, 64, 0.15);
 
-    &--expandable {
-      max-height: 0;
+    &__expandable {
+      max-height: none;
     }
     &__expanded {
       width: 100%;
@@ -53,6 +53,12 @@
       font-weight: 100;
       text-shadow: 0 2px 4px rgba(15, 44, 64, 0.15);
       color: $base-bg-color;
+    }
+  }
+
+  @media only screen and (max-width: $mobile-size) {
+    h1 {
+      padding-top: 1em;
     }
   }
 }

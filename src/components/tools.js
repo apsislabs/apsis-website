@@ -4,6 +4,9 @@ import Img from "gatsby-image"
 
 export default props => (
     <div className={toolStyles.tool}>
+      <div className={toolStyles.tool__image}>
+        <h2>Tools We Love</h2>
+      </div>
       <a href={props.toolOneUrl} target="_blank" rel="noopener noreferrer">
         <Img
           fluid={props.toolOne}
@@ -12,9 +15,6 @@ export default props => (
           critical={true}
         />
       </a>
-      <div className={toolStyles.tool__image}>
-        <h2>Tools We Love</h2>
-      </div>
       <a href={props.toolTwoUrl} target="_blank" rel="noopener noreferrer">
       <Img
         fluid={props.toolTwo}

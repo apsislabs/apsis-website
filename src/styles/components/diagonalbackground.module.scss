@@ -8,12 +8,7 @@
         height: 100%;
         padding: 200px 0px 200px 0px;
         -webkit-clip-path: polygon(0 16%, 100% 0%, 100% 86%, 0 calc(100% - 1vw));
-        clip-path: polygon(
-            0 16%,
-            100% 0,
-            100% 80%,
-            0 calc(100% - 1vw)
-        );
+        clip-path: polygon(0% 8%, 100% 0, 100% 90%, 0 calc(100% - 5vw));
         display: flex;
         justify-content: center;
         align-items: center;

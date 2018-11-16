@@ -14,6 +14,7 @@ import Navbar from "../components/navbar"
 import Helmet from "react-helmet";
 import {Collapse} from 'react-collapse';
 import {Animated} from "react-animated-css";
+import { Player } from 'video-react';
 
 const blueWideButtonClasses = `${buttonStyles.button__blue} ${buttonStyles.button__wide}`;
 
@@ -25,6 +26,7 @@ class PortfolioPage extends React.Component {
         }
         this.toggleExpand = this.toggleExpand.bind(this);
     }
+
     toggleExpand() {
         this.setState({ expanded: !this.state.expanded });
     }
@@ -43,10 +45,13 @@ class PortfolioPage extends React.Component {
                         }
                         tb: file(relativePath: { eq: "images/portfolio/thinkingbaseball/iphone_frame.png" }) {
                             childImageSharp {
-                                fluid(maxWidth: 1200) {
-                                    ...GatsbyImageSharpFluid
+                                fluid(maxWidth: 300) {
+                                    src
                                 }
                             }
+                        }
+                        tbVideo: file(relativePath: { eq: "images/portfolio/thinkingbaseball/tb_bg_video.mp4" }) {
+                            publicURL
                         }
                         dolby: file(relativePath: { eq: "images/portfolio/dolby/dolby_screens.png" }) {
                             childImageSharp {
@@ -82,35 +87,33 @@ class PortfolioPage extends React.Component {
                             fixedHeight={!this.state.expanded}
                             imgSrc={data.portfolioHero.childImageSharp.fluid.src}
                         >
-                            <div>
-                                <Animated animationIn="fadeInUp">
-                                    <h1>Building :daily</h1>
-                                    <h3>Rethinking how developers take notes.</h3>
-                                </Animated>
-                                <div
-                                    className={blueWideButtonClasses}
-                                    onClick={this.toggleExpand}
-                                >
-                                    Read the Case Study.
-                                </div>
-
-
-                                <Collapse
-                                    isOpened={this.state.expanded}
-                                    className={heroStyles.hero__expanded}
-                                >
-                                    <ContentBlock
-                                        vertical={true}
-                                    >
-                                        <Img
-                                            fluid={data.daily.childImageSharp.fluid}
-                                            alt="Daily, a to do app for developers"
-                                        />
-                                        <h2>:daily</h2>
-                                            Sed tincidunt venenatis nisi et iaculis. Nunc urna lectus, rutrum sit amet lorem eu, luctus pharetra est. Curabitur a tincidunt tortor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras a efficitur nibh. Nulla eu dolor eu ex porttitor tincidunt. Aliquam porta euismod nisl, eget iaculis magna mollis eget.
-                                    </ContentBlock>
-                                </Collapse>
+                            <Animated animationIn="fadeInUp">
+                                <h1>Building :daily</h1>
+                                <h3>Rethinking how developers take notes.</h3>
+                            </Animated>
+                            <div
+                                className={blueWideButtonClasses}
+                                onClick={this.toggleExpand}
+                            >
+                                Read the Case Study.
                             </div>
+
+
+                            <Collapse
+                                isOpened={this.state.expanded}
+                                className={heroStyles.hero__expanded}
+                            >
+                                <ContentBlock
+                                    vertical={true}
+                                >
+                                    <Img
+                                        fluid={data.daily.childImageSharp.fluid}
+                                        alt="Daily, a to do app for developers"
+                                    />
+                                    <h2>:daily</h2>
+                                        Sed tincidunt venenatis nisi et iaculis. Nunc urna lectus, rutrum sit amet lorem eu, luctus pharetra est. Curabitur a tincidunt tortor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras a efficitur nibh. Nulla eu dolor eu ex porttitor tincidunt. Aliquam porta euismod nisl, eget iaculis magna mollis eget.
+                                </ContentBlock>
+                            </Collapse>
                         </Hero>
                         <ContentBlock vertical={true}>
                             <div className={portfolioStyles.verticalContainer}>
@@ -127,14 +130,22 @@ class PortfolioPage extends React.Component {
 
                         <DiagonalBackground>
                             <div className={portfolioStyles.container}>
-                                <Img
-                                    fluid={data.tb.childImageSharp.fluid}
-                                    alt="Thinking Baseball"
-                                    className={portfolioStyles.container__image}
-                                />
-
+                                <div
+                                    className={portfolioStyles.container__image} 
+                                    style={{backgroundImage: `url(${data.tb.childImageSharp.fluid.src})`}}
+                                >
+                                    <Player
+                                        className={portfolioStyles.video}
+                                        preload={'auto'}
+                                        autoPlay={true}
+                                        muted={true}
+                                        controls={false}
+                                    >
+                                        <source src={data.tbVideo.publicURL} />
+                                    </Player>
+                                </div>
                                 <div className={portfolioStyles.content}>
-                                    <h2>ThinkingBaseball</h2>
+                                    <h2>ThinkingBaseball {data.tbVideo.publicUrl}</h2>
                                     <p>
                                         <a href="https://www.thinkingbaseball.com/" target="_blank" rel="noopener noreferrer">Thinking Baseball</a> is a mobile app for iOS and Android designed to teach young players to master the mental side of baseball.
 

@@ -62,10 +62,10 @@ $padding-xs: $padding-sm / 2;
 //== Media Queries
 //
 
-$mobile-size: em(320);
-$tablet-size: em(768);
-$desktop-size: em(960);
-$largedesktop-size: em(1050);
+$mobile-size: 365px;
+$tablet-size: 768px;
+$desktop-size: 960px;
+$largedesktop-size: 1050px;
 
 $mobile: new-breakpoint(min-width $mobile-size 4);
 $tablet: new-breakpoint(min-width $tablet-size 8);

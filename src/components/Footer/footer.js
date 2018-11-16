@@ -10,8 +10,8 @@ export default () => (
         query apsisLogoIconQuery {
           apsisLogoIcon: file(relativePath: { eq: "images/logos/apsis_mobile_blue.png" }) {
             childImageSharp {
-              fluid(maxWidth: 250) {
-                  ...GatsbyImageSharpFluid
+              fluid(maxWidth: 500) {
+                  src
               }
             }
           }
@@ -26,7 +26,9 @@ export default () => (
                         defaultZoom={14}
                         options={defaultOptions_}
                     />
-                    <div className={footerStyles.footer__contactContainer}>
+                    <div className={footerStyles.footer__contactContainer}
+                      style={{backgroundImage: `url(${data.apsisLogoIcon.childImageSharp.fluid.src})`}}
+                    >
                         <h4>Contact Us</h4>
                         <div className={footerStyles.footer__contactInfo}>
                             <span>
@@ -34,13 +36,6 @@ export default () => (
                                 PO Box 85866<br/>
                                 Seattle, WA 98145<br/><br/>
                                 <a href="mailto:contact@apsis.io">contact@apsis.io</a>
-                            </span>
-                            <span className={footerStyles.logoIconContainer}>
-                                <Img
-                                    fluid={data.apsisLogoIcon.childImageSharp.fluid}
-                                    alt="Logo"
-                                    className={footerStyles.logoIconContainer__logoIcon}
-                                />
                             </span>
                         </div>
                     </div>

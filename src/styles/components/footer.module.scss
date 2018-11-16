@@ -35,6 +35,22 @@
         color: $apsis-blue;
       }
     }
+
+    @media only screen and (min-width: $mobile-size) and (max-width: $desktop-size) {
+      padding: 2px;
+      .links {
+        position: flex;
+        right: 0px;
+      }
+    }
+
+    @media only screen and (max-width: $mobile-size) {
+      padding: 2px;
+      .links {
+        position: relative;
+        right: 0px;
+      }
+    }
   }
 
   &__contactContainer {
@@ -50,9 +66,17 @@
     z-index: 4;
     position: absolute;
     top: 50px;
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: auto 90%;
 
     h4 {
       margin-bottom: 10px;
+    }
+
+    @media only screen and (max-width: $mobile-size) {
+      margin: 0px 0px 0px 5px;
+      width: 97%;
     }
   }
 
@@ -62,6 +86,7 @@
     width: 150px;
     height: 72px;
     font-size: 	1.125rem;
+
     a {
       font-size: 1.125rem;
       &:hover{
@@ -71,15 +96,3 @@
   }
 }
 
-.logoIconContainer {
-  &__logoIcon {
-    position: absolute;
-    top: -72px;
-    right: -161px;
-    width: 240px;
-    height: 240px;
-    img {
-      clip: rect(0px, 64px, 240px, 0px);
-    }
-  }
-}

@@ -16,7 +16,12 @@
       font-weight: bold;
     }
   }
-  
+
+  @media only screen and (max-width: $mobile-size) {
+    flex-direction: column;
+    align-items: center;
+  }
+
   i {
     color: $gray-lighter;
     padding-right: 10px;

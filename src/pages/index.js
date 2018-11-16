@@ -7,9 +7,9 @@ import ServiceList from "../components/Services/servicelist"
 import DiagonalBackground from "../components/diagonalbackground"
 import OpenSource from "../components/OpenSource/OpenSource"
 import About from "../components/Footer/about"
-import Button from 'gatsby-link'
 import indexStyles from "../styles/pages/index.module.scss"
 import buttonStyles from "../styles/components/button.module.scss"
+import Button from 'gatsby-link'
 import { graphql } from 'gatsby'
 import Navbar from "../components/navbar"
 import Helmet from "react-helmet";
@@ -34,7 +34,7 @@ class IndexPage extends React.Component {
                         <h1>Need an app? We can help.</h1>
                         <h3>We are developers focused on efficient solutions to real world problems.</h3>
                     </Animated>
-                    <span>
+                    <span className={indexStyles.heroButton}>
                         <Button
                             className={blueWideButtonClasses}
                             to="/services"
@@ -70,12 +70,6 @@ class IndexPage extends React.Component {
                 >
                     Our craft is software development but our specialty is understanding your business, your processes, and your priorities. A robust understanding of your business goals is crucial for us to determine how to serve you best. We take the time to ensure you’re not paying extra for something that’s over-engineered.  We want to strike the right balance among the factors that are important to you: effective features and functionality, budget, speed, technology maintenance costs, and more.
                     <ServiceList />
-                    <Button
-                        className={blueWideButtonClasses}
-                        to="/services"
-                    >
-                        Our Services
-                    </Button>
                 </ContentBlock>
                 <DiagonalBackground>
                     <OpenSource/>

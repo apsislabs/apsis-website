@@ -14,6 +14,9 @@
   border: solid 1px $button-color;
   text-align: left;
 
+  @media only screen and (max-width: $tablet-size) {
+    width: 45vh;
+  }
   .content {
     display: flex;
     flex-direction: column;
