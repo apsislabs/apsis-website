@@ -2,9 +2,10 @@
 ## Running in development
 This site uses [Gatsby](https://www.gatsbyjs.org/).
 
-Requires Node, NPM, and the Gatsby CLI.
+Requires Node, NPM.
+Good tool to have: Gatsby CLI.
 
-To run: `gatsby develop`
+To run: `gatsby develop` (with Gatsby CLI) or `npm run develop`
 
 ## Adding a Blog Post
 Use an existing post as a reference, they live in src/pages/blog_posts
