@@ -5,7 +5,7 @@ import buttonStyles from "../styles/components/button.module.scss"
 import Button from 'gatsby-link';
 import Img from "gatsby-image"
 import Headroom from "react-headroom"
-import { Location } from '@reach/router';
+// import { Location } from '@reach/router';
 
 const ListLink = props => (
     <li className={navbarStyles[`navbar__listLinkItem`]}>
@@ -13,11 +13,11 @@ const ListLink = props => (
     </li>
 )
 
-const Loc = () => (
-    <Location>
-        {({ location }) => (location.pathname !== "/" && <Link to="/">Home</Link>)}
-    </Location>
-)
+// const Loc = () => (
+//     <Location>
+//         {({ location }) => (location.pathname !== "/" && <Link to="/">Home</Link>)}
+//     </Location>
+// )
 
 const shortBlueHireButton = `${buttonStyles.button__blue} ${buttonStyles.button__short} ${navbarStyles.navbar__button}`
 const blueNav = `${navbarStyles.navbar__blue} ${navbarStyles.navbar}`

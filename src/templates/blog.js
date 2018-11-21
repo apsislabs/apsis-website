@@ -17,7 +17,7 @@ const NavLink = props => {
 };
 
 const BlogPage = ({pageContext}) => {
-  const { group, index, first, last, pageCount } = pageContext;
+  const { group, index, first, last } = pageContext; //can also get pageCount from here
   const previousUrl = index - 1 === 1 ? "" : (index - 1).toString();
   const nextUrl = (index + 1).toString();
  
