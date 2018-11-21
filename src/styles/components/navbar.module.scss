@@ -123,9 +123,12 @@
     }
     &__listLink {
       background: $apsis-blue;
-      padding: 9px;
+      padding-top: 9px;
       text-align: right;
-      width: 95%;
+      width: 100vw;
+      position: absolute;
+      left: 0px;
+      top: 72px;
     }
     &__homeLink {
       position: relative;

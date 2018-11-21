@@ -41,5 +41,15 @@ module.exports = {
             showSpinner: false,
           },
         },
+        {
+          resolve: `gatsby-plugin-manifest`,
+          options: {
+            name: "Apsis Labs",
+            short_name: "Apsis",
+            start_url: "/",
+            icon: "src/images/favicons/favicon-16x16.png",
+          }
+        },
+        'gatsby-plugin-offline'
     ],
 }
