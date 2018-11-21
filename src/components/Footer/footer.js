@@ -1,7 +1,6 @@
 import React from "react"
 import footerStyles from "../../styles/components/footer.module.scss"
 import GoogleMapReact from "google-map-react"
-import Img from "gatsby-image"
 import { StaticQuery, graphql } from "gatsby"
 
 export default () => (

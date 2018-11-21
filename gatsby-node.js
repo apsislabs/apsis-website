@@ -44,7 +44,7 @@ exports.createPages = ({ actions, graphql }) => {
             createPaginatedPages({
               edges: result.data.allMarkdownRemark.edges,
               createPage: createPage,
-              pageTemplate: "src/pages/blog.js",
+              pageTemplate: "src/templates/blog.js",
               pageLength: 5,
               pathPrefix: "blog",
               buildPath: (index, pathPrefix) => index > 1 ? `${pathPrefix}/${index}` : `/${pathPrefix}` // This is optional and this is the default

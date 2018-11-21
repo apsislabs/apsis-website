@@ -5,7 +5,6 @@ import ContentBlock from '../components/contentblock';
 import { graphql } from "gatsby"
 import Navbar from "../components/navbar"
 import BlogPostStyles from "../styles/templates/blog-post.module.scss"
-import Img from "gatsby-image"
 
 export default function Template({ data }) {
   const post = data.markdownRemark;
@@ -17,9 +16,10 @@ export default function Template({ data }) {
       <ContentBlock vertical={true}>
         <Helmet title={post.frontmatter.title} />
         <div className={BlogPostStyles.post}>
-          <Img
+          <img
             className={BlogPostStyles.post__headerImage}
-            fluid={post.frontmatter.image.childImageSharp.fluid} alt="this is the real image"
+            src={post.frontmatter.image.childImageSharp.fluid.src}
+            alt="generic stockphoto"
           />
           <h1><div className={BlogPostStyles.post__title}>{post.frontmatter.title}</div></h1>
           <div
@@ -37,6 +37,9 @@ query BlogPostBySlug($slug: String!) {
   markdownRemark(fields: { slug: { eq: $slug } }) {
     id
     html
+    fields {
+      slug
+    }
     frontmatter {
       title
       image {
