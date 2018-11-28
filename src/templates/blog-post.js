@@ -5,6 +5,7 @@ import ContentBlock from '../components/contentblock';
 import { graphql } from "gatsby"
 import Navbar from "../components/navbar"
 import BlogPostStyles from "../styles/templates/blog-post.module.scss"
+import AuthorBlock from "../components/author_block"
 
 export default function Template({ data }) {
   const post = data.markdownRemark;
@@ -21,12 +22,16 @@ export default function Template({ data }) {
             src={post.frontmatter.image.childImageSharp.fluid.src}
             alt="generic stockphoto"
           />
-          <h1><div className={BlogPostStyles.post__title}>{post.frontmatter.title}</div></h1>
-          <div
-            className={BlogPostStyles.post__content}
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
+          <div className={BlogPostStyles.post__content}>
+            <h1><div className={BlogPostStyles.post__title}>{post.frontmatter.title}</div></h1>
+            <div
+              dangerouslySetInnerHTML={{ __html: post.html }}
+            />
+          </div>
         </div>
+        <AuthorBlock
+          name={post.frontmatter.author}
+        />
       </ContentBlock>
     </Layout>
   );

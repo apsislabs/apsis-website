@@ -46,7 +46,7 @@ const BlogPage = ({pageContext}) => {
                     />
                   </div>
                   <p className={BlogPostStyles.preview__title}>
-                    {node.frontmatter.title}
+                    <h1>{node.frontmatter.title}</h1>
                   </p>
                 <p>{node.excerpt}</p>
                 </Link>
