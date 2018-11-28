@@ -1,0 +1,26 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "apsis-website-20181128105735-authRole",
+            "UnauthRoleArn": "arn:aws:iam::424781101301:role/apsis-website-20181128105735-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::424781101301:role/apsis-website-20181128105735-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "apsis-website-20181128105735-deployment",
+            "UnauthRoleName": "apsis-website-20181128105735-unauthRole",
+            "StackName": "apsis-website-20181128105735",
+            "StackId": "arn:aws:cloudformation:us-west-2:424781101301:stack/apsis-website-20181128105735/7849c5b0-f33f-11e8-9cb4-503ac9ec2499"
+        }
+    },
+    "prod": {
+        "awscloudformation": {
+            "AuthRoleName": "apsis-website-20181128112320-authRole",
+            "UnauthRoleArn": "arn:aws:iam::424781101301:role/apsis-website-20181128112320-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::424781101301:role/apsis-website-20181128112320-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "apsis-website-20181128112320-deployment",
+            "UnauthRoleName": "apsis-website-20181128112320-unauthRole",
+            "StackName": "apsis-website-20181128112320",
+            "StackId": "arn:aws:cloudformation:us-west-2:424781101301:stack/apsis-website-20181128112320/1102ba70-f343-11e8-9284-50a68a0e3256"
+        }
+    }
+}
