@@ -6,23 +6,22 @@
     left: 0;
     right: 0;
     z-index: 1;
-    position: fixed;
+    position: absolute;
   }
+
   .headroom--unfixed {
     transform: translateY(0);
     @media only screen and (min-width: $mobile-size) and (max-width: $desktop-size) {
       right: 30px;
       top: 10px;
     }
-    @media only screen and (min-width: $desktop-size) {
-      &__listLink {    
-        display: inline-flex !important;
-      }
-    }
   }
-  .headroom--scrolled {
-    transition: transform 200ms ease-in-out;
 
+  .not-at-top .headroom--scrolled {
+    transition: transform 200ms ease-in-out;
+  }
+
+  .headroom--scrolled {
     .navbar__white {
       background: #fff;
       a, i {
@@ -34,14 +33,17 @@
       color: #fff;
     }
   }
+
   .headroom--unpinned {
     position: fixed;
     transform: translateY(-100%);
   }
+
   .headroom--pinned {
     position: fixed;
     transform: translateY(0%);
   }
+
   .headroom-wrapper {
     height: 0px !important;
   }

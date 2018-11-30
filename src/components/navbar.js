@@ -29,13 +29,27 @@ class Navbar extends Component {
         super(props);
         this.state = {
             navBlue: this.props.blue,
-            dropDown: true
+            dropDown: true,
+            atTop: true
         }
         this.toggleMenu = this.toggleMenu.bind(this);
+        this.atTop = this.atTop.bind(this);
+        this.notAtTop = this.notAtTop.bind(this);
     }
 
     toggleMenu(){
         this.setState({dropDown: !this.state.dropDown});
+    }
+
+    atTop() {
+        this.setState({ atTop: true });
+    }
+
+    notAtTop() {
+        // This egregious hack makes sure the not-at-top class gets added *after* the item is hidden
+        setTimeout(() => {
+            this.setState({ atTop: false });
+        }, 0);
     }
 
     render(){
@@ -60,32 +74,37 @@ class Navbar extends Component {
                 }
                 `}
                 render={data => (
-                    <Headroom disableInlineStyles={true} >
-                        <nav>
-                            <header className={this.state.navBlue ? blueNav : whiteNav}>
-                                <Link
-                                    to="/"
-                                    className={navbarStyles.navbar__homeLink}
-                                >
-                                    <Img
-                                        fluid={this.state.navBlue ? data.apsisBlueLogo.childImageSharp.fluid : data.apsisWhiteLogo.childImageSharp.fluid }
-                                        alt="Logo"
-                                        className={navbarStyles.navbar__icon}
-                                    />
-                                </Link>
-                                <i onClick={() => this.toggleMenu()} className="fas fa-bars"/>
-                                <ul className={navbarStyles.navbar__listLink} style={{display: this.state.dropDown ? 'block' : 'none'}}>
-                                    <ListLink to="/services">Our Services</ListLink>
-                                    <ListLink to="/team">Our Team</ListLink>
-                                    <ListLink to="/portfolio">Our Work</ListLink>
-                                    <ListLink to="/blog">Blog</ListLink>
-                                    <li>
-                                        <Button className={shortBlueHireButton} to="/contact">Hire Us</Button>
-                                    </li>
-                                </ul>
-                            </header>
-                        </nav>
-                    </Headroom>
+                    <div className={this.state.atTop ? 'at-top' : 'not-at-top' }>
+                        <Headroom disableInlineStyles={true}
+                                onPin={this.notAtTop}
+                                onUnpin={this.notAtTop}
+                                onUnfix={this.atTop}>
+                            <nav>
+                                <header className={this.state.navBlue ? blueNav : whiteNav}>
+                                    <Link
+                                        to="/"
+                                        className={navbarStyles.navbar__homeLink}
+                                    >
+                                        <Img
+                                            fluid={this.state.navBlue ? data.apsisBlueLogo.childImageSharp.fluid : data.apsisWhiteLogo.childImageSharp.fluid }
+                                            alt="Logo"
+                                            className={navbarStyles.navbar__icon}
+                                        />
+                                    </Link>
+                                    <i onClick={() => this.toggleMenu()} className="fas fa-bars"/>
+                                    <ul className={navbarStyles.navbar__listLink}>
+                                        <ListLink to="/services">Our Services</ListLink>
+                                        <ListLink to="/team">Our Team</ListLink>
+                                        <ListLink to="/portfolio">Our Work</ListLink>
+                                        <ListLink to="/blog">Blog</ListLink>
+                                        <li>
+                                            <Button className={shortBlueHireButton} to="/contact">Hire Us</Button>
+                                        </li>
+                                    </ul>
+                                </header>
+                            </nav>
+                        </Headroom>
+                    </div>
                 )}
             />
         )
