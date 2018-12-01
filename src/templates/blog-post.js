@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import Layout from '../components/layout';
 import ContentBlock from '../components/contentblock';
 import { graphql } from "gatsby"
-import Navbar from "../components/navbar"
+import Navigation from "../components/navigation"
 import BlogPostStyles from "../styles/templates/blog-post.module.scss"
 import AuthorBlock from "../components/author_block"
 
@@ -11,9 +11,7 @@ export default function Template({ data }) {
   const post = data.markdownRemark;
   return (
     <Layout>
-      <Navbar
-          blue={true}
-      />
+      <Navigation blue={true} />
       <ContentBlock vertical={true}>
         <Helmet title={post.frontmatter.title} />
         <div className={BlogPostStyles.post}>

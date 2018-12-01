@@ -6,7 +6,7 @@ import QuoteBlock from "../components/quoteblock"
 import HowWeWork from "../components/howwework"
 import HireUsFooter from "../components/Footer/hireusfooter"
 import { StaticQuery, graphql } from 'gatsby'
-import Navbar from "../components/navbar"
+import Navigation from "../components/navigation"
 import Helmet from "react-helmet";
 import buttonStyles from "../styles/components/button.module.scss"
 import Button from "gatsby-link"
@@ -53,9 +53,7 @@ export default () => (
         render={data => (
         <Layout>
           <Helmet title="Services | Apsis Labs" />
-          <Navbar
-              blue={false}
-          />
+          <Navigation blue={false} />
           <Hero
             displayname="Hero"
             imgSrc={data.hero.childImageSharp.fluid.src}

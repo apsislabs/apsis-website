@@ -1,15 +1,13 @@
 import React from "react"
 import Layout from "../components/layout"
 import Header from "../components/header"
-import Navbar from "../components/navbar"
+import Navigation from "../components/navigation"
 import Helmet from "react-helmet";
 
 export default () => (
   <Layout>
     <Helmet title="Work With Us | Apsis Labs" />
-    <Navbar
-      blue={true}
-    />
+    <Navigation blue={true} />
     <Header
       title="404"
     >

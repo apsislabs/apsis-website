@@ -43,6 +43,7 @@ $mobile-modular-scale-base: $modular-scale-base * .75;
 //== Sizes
 //
 
+$app-padding: 40px;
 $sidebar-width: 260px;
 $container-width: 720px;
 $screen-min-width: 260px;
@@ -62,7 +63,7 @@ $padding-xs: $padding-sm / 2;
 //== Media Queries
 //
 
-$mobile-size: 365px;
+$mobile-size: 375px;
 $tablet-size: 768px;
 $desktop-size: 960px;
 $largedesktop-size: 1050px;
