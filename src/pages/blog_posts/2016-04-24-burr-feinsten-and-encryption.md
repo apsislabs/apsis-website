@@ -3,7 +3,7 @@ path: "/blog_posts/encryption-draft-bill"
 title: "Read the Source: Encryption Draft Bill"
 image: '../../images/posts/locks.jpg'
 credit: Giulio Magnifico
-author: noah
+author: Noah
 date: '2016-04-24'
 ---
 

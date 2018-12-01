@@ -1,6 +1,6 @@
 ---
 path: "/blog_posts/bash-completion"
-author: "chris"
+author: "Chris"
 title: "Save Time with Bash Programmable Autocompletion"
 image: '../../images/posts/bash.jpg'
 date: '2018-01-08'

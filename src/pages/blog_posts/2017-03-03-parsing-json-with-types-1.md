@@ -1,6 +1,6 @@
 ---
 path: "/blog_posts/parsing-json-with-types-1"
-author: "niall"
+author: "Niall"
 title: "Parsing JSON with Types (Part 1)"
 image: '../../images/posts/minified.jpg'
 credit: "Markus Spiske"

@@ -1,6 +1,6 @@
 ---
 path: "/blog_posts/getting-hired-the-second-time"
-author: chris
+author: Chris
 layout: post
 title: On Getting Hired the Second Time
 image: '../../images/posts/adk_fall.jpg'

@@ -47,6 +47,7 @@ query BlogPostBySlug($slug: String!) {
     }
     frontmatter {
       title
+      author
       image {
         childImageSharp {
           fluid(maxWidth: 800) {

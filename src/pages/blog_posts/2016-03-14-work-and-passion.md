@@ -1,6 +1,6 @@
 ---
 path: "/blog_posts/work-and-passion"
-author: niall
+author: Niall
 title: Work & Passion
 image: '../../images/posts/forest.jpg'
 date: '2016-03-14'

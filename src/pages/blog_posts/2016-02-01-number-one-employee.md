@@ -1,6 +1,6 @@
 ---
 path: "/blog_posts/number-one-employee"
-author: henry
+author: Henry
 title: Number One Employee
 image: '../../images/posts/pikes-peak.jpg'
 date: '2016-02-01'

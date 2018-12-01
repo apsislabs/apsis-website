@@ -22,6 +22,7 @@ exports.createPages = ({ actions, graphql }) => {
                       frontmatter {
                         title
                         date
+                        author
                         path
                         image {
                           childImageSharp {

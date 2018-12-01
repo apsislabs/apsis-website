@@ -1,6 +1,6 @@
 ---
 path: "/blog_posts/thanks-electroconf"
-author: "wyatt"
+author: "Wyatt"
 title: "Thanks, ElectronConf"
 image: '../../images/posts/electronconf.jpg'
 credit: 'Tina Hartung'

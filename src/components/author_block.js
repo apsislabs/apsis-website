@@ -1,17 +1,17 @@
 import React from "react"
 import authorStyles from "../styles/components/author.module.scss"
 import { StaticQuery, graphql } from "gatsby"
-
+let author
 export default props => (
     <StaticQuery
         query={graphql`
         {
-            allDataYaml {
+            allPeopleYaml {
                 edges {
                     node {
-                        mo {
-                            name
-                        }
+                        name
+                        bio
+                        image
                     }
                 }
             }
@@ -19,13 +19,18 @@ export default props => (
         `}
         render={data => (
             <aside className={authorStyles.bio}>
-                <img src={props.image} alt="ooo"className={authorStyles.bio__image}/>
-                {/* {data.allDataYaml.edges.node.mo.name} */}
-                <header class={authorStyles.bio__header}>
-                    <h5 class={authorStyles.bio__title}>{ props.authorName }</h5>
+                {
+                    author = data.allPeopleYaml.edges.filter(o => o.node.name.includes(props.name))
+                    console.log("IMG", author.image)
+                
+                }
+                <img src={props.image} alt={author.name} className={authorStyles.bio__image}/>
+                {console.log("NODE", data.allPeopleYaml.edges.filter(o => o.node.name.includes(props.name)))}
+                <header className={authorStyles.bio__header}>
+                    <h5 className={authorStyles.bio__title}>{ props.authorName }</h5>
                 </header>
 
-                <div class={authorStyles.bio__content}>
+                <div className={authorStyles.bio__content}>
                     {props.bio}
                 </div>
             </aside>
