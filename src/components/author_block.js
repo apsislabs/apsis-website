@@ -21,8 +21,7 @@ export default props => (
             <aside className={authorStyles.bio}>
                 {
                     author = data.allPeopleYaml.edges.filter(o => o.node.name.includes(props.name))
-                    console.log("IMG", author.image)
-                
+                    // console.log("IMG", author.image)
                 }
                 <img src={props.image} alt={author.name} className={authorStyles.bio__image}/>
                 {console.log("NODE", data.allPeopleYaml.edges.filter(o => o.node.name.includes(props.name)))}

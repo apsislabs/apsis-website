@@ -185,7 +185,7 @@ class IndexPage extends React.Component {
         clientTray: file(relativePath: { eq: "images/clients/trayio.png" }) {
             ...fluidImage
         }
-        hero: file(relativePath: { eq: "images/hero/shuttle_desktop.jpg" }) {
+        hero: file(relativePath: { eq: "images/hero/hero3.jpg" }) {
             childImageSharp {
                 fluid(maxWidth: 1400) {
                     src

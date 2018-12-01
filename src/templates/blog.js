@@ -43,9 +43,9 @@ const BlogPage = ({pageContext}) => {
                       src={node.frontmatter.image.childImageSharp.fluid.src} alt="generic stock of something semi related to blog post"
                     />
                   </div>
-                  <p className={BlogPostStyles.preview__title}>
+                  <div className={BlogPostStyles.preview__title}>
                     <h1>{node.frontmatter.title}</h1>
-                  </p>
+                  </div>
                 <p>{node.excerpt}</p>
                 </Link>
               </ContentBlock>

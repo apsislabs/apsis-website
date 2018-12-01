@@ -67,7 +67,7 @@ class PortfolioPage extends React.Component {
                                 }
                             }
                         }
-                        portfolioHero: file(relativePath: { eq: "images/hero/space.jpg" }) {
+                        portfolioHero: file(relativePath: { eq: "images/hero/hero2.jpg" }) {
                             childImageSharp {
                                 fluid(maxWidth: 1400) {
                                     src
