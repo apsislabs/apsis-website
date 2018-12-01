@@ -4,7 +4,7 @@ import HireUsFooter from "../components/Footer/hireusfooter"
 import Header from "../components/header";
 import MapBlock from "../components/mapblock";
 import TeamGrid from "../components/TeamGrid/teamgrid";
-import Navbar from "../components/navbar"
+import Navigation from "../components/navigation"
 import Helmet from "react-helmet";
 import buttonStyles from "../styles/components/button.module.scss"
 import Button from "gatsby-link"
@@ -27,9 +27,7 @@ class TeamPage extends React.Component {
         return (
             <Layout>
                 <Helmet title={this.state.title} />
-                <Navbar
-                    blue={true}
-                />
+                <Navigation blue={true} />
                 <Header
                     title="A developer in every timezone."
                 >

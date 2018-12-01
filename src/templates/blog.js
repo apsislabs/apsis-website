@@ -4,7 +4,7 @@ import Header from "../components/header"
 import ContentBlock from "../components/contentblock"
 import { graphql, Link } from 'gatsby'
 import HireUsFooter from "../components/Footer/hireusfooter"
-import Navbar from "../components/navbar"
+import Navigation from "../components/navigation"
 import BlogPostStyles from "../styles/templates/blog-post.module.scss"
 import Helmet from "react-helmet";
 
@@ -20,12 +20,10 @@ const BlogPage = ({pageContext}) => {
   const { group, index, first, last } = pageContext; //can also get pageCount from here
   const previousUrl = index - 1 === 1 ? "" : (index - 1).toString();
   const nextUrl = (index + 1).toString();
- 
+
   return (
     <Layout>
-      <Navbar
-        blue={true}
-      />
+      <Navigation blue={true} />
       <Helmet title="Blog | Apsis Labs" />
       <Header
         title="Collecting Our Thoughts"

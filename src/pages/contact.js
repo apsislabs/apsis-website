@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import Header from "../components/header"
 import ContentBlock from "../components/contentblock"
-import Navbar from "../components/navbar"
+import Navigation from "../components/navigation"
 import Helmet from "react-helmet";
 import contactStyles from "../styles/pages/contact.module.scss"
 import buttonStyles from "../styles/components/button.module.scss"
@@ -12,9 +12,7 @@ const shortWideButton = `${buttonStyles.button__blue} ${buttonStyles.button__wid
 export default () => (
   <Layout>
     <Helmet title="Work With Us | Apsis Labs" />
-    <Navbar
-      blue={true}
-    />
+    <Navigation blue={true} />
     <Header
       title="Let’s build something"
     >

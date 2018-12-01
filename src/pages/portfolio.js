@@ -10,7 +10,7 @@ import portfolioStyles from "../styles/pages/portfolio.module.scss"
 import Img from "gatsby-image"
 import { StaticQuery, graphql } from 'gatsby'
 import HireUsFooter from "../components/Footer/hireusfooter"
-import Navbar from "../components/navbar"
+import Navigation from "../components/navigation"
 import Helmet from "react-helmet";
 import {Collapse} from 'react-collapse';
 import {Animated} from "react-animated-css";
@@ -79,9 +79,7 @@ class PortfolioPage extends React.Component {
                 render={data => (
                     <Layout>
                         <Helmet title="Portfolio | Apsis Labs" />
-                        <Navbar
-                            blue={false}
-                        />
+                        <Navigation blue={false} />
                         <Hero
                             displayname="Hero"
                             fixedHeight={!this.state.expanded}
@@ -131,7 +129,7 @@ class PortfolioPage extends React.Component {
                         <DiagonalBackground>
                             <div className={portfolioStyles.container}>
                                 <div
-                                    className={portfolioStyles.container__image} 
+                                    className={portfolioStyles.container__image}
                                     style={{backgroundImage: `url(${data.tb.childImageSharp.fluid.src})`}}
                                 >
                                     <Player

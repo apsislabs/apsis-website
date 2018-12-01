@@ -11,7 +11,7 @@ import indexStyles from "../styles/pages/index.module.scss"
 import buttonStyles from "../styles/components/button.module.scss"
 import Button from 'gatsby-link'
 import { graphql } from 'gatsby'
-import Navbar from "../components/navbar"
+import Navigation from "../components/navigation"
 import Helmet from "react-helmet";
 import {Animated} from "react-animated-css";
 
@@ -23,9 +23,7 @@ class IndexPage extends React.Component {
         return (
             <Layout>
                 <Helmet title="Apsis Labs | A Seattle Software Development Company" />
-                <Navbar
-                    blue={false}
-                />
+                <Navigation blue={false} />
                 <Hero
                     displayname="Hero"
                     imgSrc={this.props.data.hero.childImageSharp.fluid.src}
