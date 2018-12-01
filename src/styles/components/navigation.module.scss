@@ -1,0 +1,130 @@
+@import '../__variables';
+
+:global {
+    .fas.fa-bars {
+        display: inline-block;
+        @media only screen and (min-width: $tablet-size + 1) {
+            display: none;
+        }
+    }
+
+    .headroom {
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+    .headroom--unfixed {
+        position: relative;
+        transform: translateY(0);
+    }
+
+    .headroom--unpinned {
+        position: fixed;
+        transform: translateY(-100%);
+    }
+
+    .headroom--pinned {
+        position: fixed;
+        transform: translateY(0%);
+    }
+}
+
+.animate {
+    :global(.headroom--scrolled) {
+        transition: transform 200ms ease-in-out;
+    }
+}
+
+.navigation {
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    left: 0;
+
+    &.blue {
+        a.link, i {
+            color: $apsis-blue;
+        }
+        header {
+            background-color:  $base-bg-color;
+        }
+    }
+
+    &.white {
+        a.link, i {
+            color: $base-bg-color;
+        }
+        header {
+            background-color: $apsis-blue;
+        }
+    }
+
+    &:not(.solid) :global(.headroom--unfixed) header {
+        background-color: transparent;
+    }
+
+    header {
+        padding: $app-padding/2 $app-padding;
+
+        nav.nav {
+            @media only screen and (min-width: $tablet-size + 1) {
+                padding: $app-padding / 2;
+            }
+            display: flex;
+            @media only screen and (max-width: $tablet-size) {
+                flex-wrap: wrap;
+            }
+            justify-content: space-between;
+            align-items: center;
+
+            .logo {
+                width: 140px;
+                img { margin: 0; }
+                margin-right: 2em;
+            }
+
+            .nav-links {
+                display: inline-flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 100%;
+                list-style: none;
+                margin: 0;
+
+                li {
+                    margin: .5em;
+                }
+                li:first-child {
+                    margin-left: 0;
+                }
+                li:last-child {
+                    margin-right: 0;
+                }
+
+                a:hover {
+                    transition: text-shadow ease-in-out 0.25s;
+                    text-shadow: 2px 2px rgba(15, 44, 64, 0.15);
+                }
+
+                @media only screen and (max-width: $mobile-size) {
+                    flex-direction: column;
+                }
+                @media only screen and (max-width: $tablet-size) {
+                    &.closed {
+                        display: none;
+                    }
+                    &:not(.closed) {
+                        flex-basis: 100%;
+                        align-content: flex-end;
+                    }
+                }
+            }
+
+            .active {
+                text-decoration: underline;
+            }
+        }
+    }
+}

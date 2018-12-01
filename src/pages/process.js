@@ -2,17 +2,14 @@ import React from "react"
 import Layout from "../components/layout"
 import Header from "../components/header"
 import ContentBlock from "../components/contentblock"
-import Navbar from "../components/navbar"
+import Navigation from "../components/navigation"
 import Helmet from "react-helmet";
 import Link from "gatsby-link"
 
 export default () => {
   return (
     <Layout>
-      <Navbar
-      //blue = true means the navbar links will be blue. set to false for white (e.g. when used with a hero image like on index)
-        blue={true}
-      />
+      <Navigation blue={true} />
       <Helmet title="Process | Apsis Labs" />
       <Header
         title="Work With Us."
