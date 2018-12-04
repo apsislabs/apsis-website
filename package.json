@@ -7,8 +7,8 @@
     "serve": "gatsby serve",
     "push": "amplify init && amplify publish -c"
   },
-  "devDependencies":{
-    "@aws-amplify/cli": "^0.2.1-multienv.1"
+  "devDependencies": {
+    "@aws-amplify/cli": "^0.2.1-multienv.6"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.3.1",
