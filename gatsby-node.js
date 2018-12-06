@@ -11,7 +11,10 @@ exports.createPages = ({ actions, graphql }) => {
           graphql(
             `
               {
-                allMarkdownRemark(limit: 1000) {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] }
+                  limit: 1000
+                ) {
                   edges {
                     node {
                       id
@@ -24,6 +27,7 @@ exports.createPages = ({ actions, graphql }) => {
                         date
                         author
                         path
+                        date
                         image {
                           childImageSharp {
                             fluid(maxWidth: 800) {

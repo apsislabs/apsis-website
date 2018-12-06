@@ -4,6 +4,7 @@ title: Rebuilding With Gatsby
 author: "Mo"
 image: '../../images/posts/hal-gatewood.jpg'
 date: '2018-12-04'
+credit: "Hal Gatewood"
 ---
 
 

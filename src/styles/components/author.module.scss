@@ -1,8 +1,18 @@
 @import '../__variables';
 
 .bio {
+  border-top: 1px solid $gray-lighter;
+  margin-top: 80px;
   &__image{
-    width: 100%;
+    border-radius: 999em;
+    width: 100px;
+    height: 100px;
+    margin: ( -(50px) auto 0);
+
+    display: block;
+    border: 1px solid $gray-lighter;
+    background: white;
+    padding: 5px;
   }
   &__title{
     width: 100%;

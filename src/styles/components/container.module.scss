@@ -15,5 +15,10 @@
 
 a {
   text-decoration: none;
-  color: $apsis-gray;
+  color: $gray;
+  transition: color 0.2s linear;
+  &:hover {
+    text-decoration: none;
+    color: $apsis-blue;
+  }
 }

@@ -20,6 +20,7 @@ export default function Template({ data }) {
             src={post.frontmatter.image.childImageSharp.fluid.src}
             alt="generic stockphoto"
           />
+          <small className={BlogPostStyles.post__credit}>Image by: {post.frontmatter.credit}</small>
           <div className={BlogPostStyles.post__content}>
             <h1><div className={BlogPostStyles.post__title}>{post.frontmatter.title}</div></h1>
             <div
@@ -46,6 +47,7 @@ query BlogPostBySlug($slug: String!) {
     frontmatter {
       title
       author
+      credit
       image {
         childImageSharp {
           fluid(maxWidth: 800) {
