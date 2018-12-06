@@ -4,6 +4,11 @@
   display: flex;
   flex-direction: column;
   padding-left: 50px;
+
+  @media only screen and (max-width: $tablet-size) {
+    padding: 20px;
+    height: 800px;
+  }
 }
 
 .video {
@@ -26,10 +31,18 @@
   align-items: center;
   padding: 0px 200px;
 
+  @media only screen and (max-width: $tablet-size) {
+    padding: 200px 0px 420px 0px;
+  }
   @media only screen and (max-width: $desktop-size) {
     padding: 0px 10px;
   }
 
+  @media only screen and (min-width: $desktop-size) {
+    width: 100%;
+    display: flex;
+    max-width: 1430px;
+  }
   &__image{
     background-size: contain;
     background-position: center;
