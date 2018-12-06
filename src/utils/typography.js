@@ -32,7 +32,7 @@ const typography = new Typography({
         fontSize: '1.25rem',
         fontFamily: 'OpenSans-Regular, sans-serif',
         fontWeight: '300',
-      }
+      },
     })
   })
 export default typography

@@ -1,16 +1,40 @@
 @import '../__variables';
 
 .bio {
+  border-top: 1px solid $gray-lighter;
+  margin-top: 80px;
   &__image{
-    width: 100%;
+    border-radius: 999em;
+    width: 100px;
+    height: 100px;
+    margin: ( -(50px) auto 0);
+
+    display: block;
+    border: 1px solid $gray-lighter;
+    background: white;
+    padding: 5px;
   }
   &__title{
     width: 100%;
+
+    font-family: "Lora", serif;
+    line-height: 1.15;
+    font-size: 0.99975em;
+    text-align: center;
+    font-weight: bold;
+    color: #507192;
   }
   &__header{
     width: 100%;
   }
   &__content{
     width: 100%;
+
+    color: #2c3e50;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.75;
+    text-align: center;
+    padding-bottom: 4em;
   }
 }

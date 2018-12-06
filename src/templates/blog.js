@@ -36,32 +36,34 @@ const BlogPage = ({pageContext}) => {
           .map(({ node }) => {
             return (
               <ContentBlock vertical={true} key={node.id} >
-                <Link to={node.fields.slug}>
+                <Link to={node.fields.slug} className={BlogPostStyles.preview__link}>
                   <div className={BlogPostStyles.preview__imageWrapper}>
                     <img
                       className={BlogPostStyles.preview__headerImage}
                       src={node.frontmatter.image.childImageSharp.fluid.src} alt="generic stock of something semi related to blog post"
                     />
                   </div>
-                  <p className={BlogPostStyles.preview__title}>
+                  <div className={BlogPostStyles.preview__title}>
                     <h1>{node.frontmatter.title}</h1>
-                  </p>
+                  </div>
                 <p>{node.excerpt}</p>
                 </Link>
               </ContentBlock>
             );
           })}
         </div>
-        { !first &&
-          <div className="previousLink">
-            <NavLink test={first} url={previousUrl} text="Go to Previous Page" />
-          </div>
-        }
-        { !last &&
-          <div className="nextLink">
-            <NavLink test={last} url={nextUrl} text="Go to Next Page" />
-          </div>
-        }
+        <div className={BlogPostStyles.paginator}>
+          { !first &&
+            <div className={BlogPostStyles.paginator__previous}>
+              <NavLink test={first} url={previousUrl} text="prev" />
+            </div>
+          }
+          { !last &&
+            <div className={BlogPostStyles.paginator__next}>
+              <NavLink test={last} url={nextUrl} text="next" />
+            </div>
+          }
+        </div>
       <HireUsFooter />
     </Layout>
   );
@@ -71,7 +73,9 @@ export default BlogPage;
 
 export const pageQuery = graphql`
 query {
-  blogPosts : allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___title] }) {
+  blogPosts : allMarkdownRemark(
+    sort: {fields: [frontmatter___date], order: DESC},    
+  ) {
     edges {
       node {
         excerpt(pruneLength: 250)
@@ -82,6 +86,7 @@ query {
         frontmatter {
           title
           path
+          date
           image {
             childImageSharp {
               fluid(maxWidth: 800) {

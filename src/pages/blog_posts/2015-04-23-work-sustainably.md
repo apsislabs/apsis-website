@@ -1,7 +1,7 @@
 ---
 path: "/blog_posts/work-sustainably"
 title: Work Sustainably
-author: "noah"
+author: "Noah"
 image: '../../images/posts/jack-straw-office.jpg'
 date: '2015-04-23'
 ---

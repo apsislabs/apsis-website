@@ -1,6 +1,6 @@
 ---
 path: "/blog_posts/communicating-estimates"
-author: noah
+author: Noah
 title: Communicating Software Estimates
 image: '../../images/posts/time-train-station-clock-deadline.jpg'
 credit: Ryan McGuire, Gratisopgraphy

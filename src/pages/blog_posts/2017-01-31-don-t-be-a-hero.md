@@ -1,6 +1,6 @@
 ---
 path: "/blog_posts/dont-be-a-hero"
-author: "wyatt"
+author: "Wyatt"
 title: "Don't be a Hero"
 image: '../../images/posts/hero.jpg'
 credit: Henry Hustava

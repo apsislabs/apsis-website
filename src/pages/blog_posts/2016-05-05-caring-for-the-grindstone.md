@@ -1,6 +1,6 @@
 ---
 path: "/blog_posts/caring-for-grindstone"
-author: wyatt
+author: Wyatt
 title: Caring for the Grindstone
 image: '../../images/posts/office.jpg'
 credit: Vladimir Kudinov

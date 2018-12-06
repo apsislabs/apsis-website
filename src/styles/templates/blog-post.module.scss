@@ -1,18 +1,59 @@
+@import '../__variables';
+
 .post {
   padding-top: 180px;
   width: 100%;
+  
   &__content {
     margin: 0px 20px;
   }
   &__title {
     padding-bottom: 40px;
     text-align: left;
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    white-space: nowrap;
   }
 
   &__headerImage {
+    transition: all .2s ease-in-out;
     width: 100%;
     height: 100%;
     margin-bottom: 40px;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__credit {
+    width: 100%;
+    position: relative;
+    top: -20px;
+    padding-bottom: 20px;
+    color: $gray-lighter;
+    text-transform: uppercase;
+    font-size: .6em;
+    text-align: right;
+  }
+
+  hr {
+    width: 30%;
+  }
+
+  ol {
+    font-size: .75em !important;
+    margin: 1.5rem 0;
+    padding: 0;
+    color: #c8d1d6;
+    
+    p {
+      color: #2c3e50;
+    }
+
+    blockquote {
+      padding: 0 0 0 1.5em;
+      border-left: 3px solid #c8d1d6;
+    }
   }
 }
 
@@ -37,26 +78,36 @@
     position: relative;
     color: #000;
     text-decoration: none;
-    
-    &:before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: #000;
-      visibility: hidden;
-      -webkit-transform: scaleX(0);
-      transform: scaleX(0);
-      -webkit-transition: all 0.3s ease-in-out 0s;
-      transition: all 0.3s ease-in-out 0s;
+  }
+
+  &__link {
+    color: $apsis-gray !important;
+    h1{
+      transition: color 0.2s linear;
+      &:hover {
+        text-decoration: underline;
+        color: $apsis-blue;
+      }
     }
-    &:hover:before {
-      visibility: visible;
-      -webkit-transform: scaleX(1);
-      transform: scaleX(1);
-    }
+  }
+}
+
+.paginator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+  &__previous {
+    padding: 5px 15px;
+    margin: 10px;
+    border: 1px solid $gray;
+    border-radius: 4px;
+  }
+  &__next {
+    padding: 5px 15px;
+    margin: 10px;
+    border: 1px solid $gray;
+    border-radius: 4px;
   }
 }
 

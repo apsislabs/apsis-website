@@ -1,6 +1,6 @@
 ---
 path: "/blog_posts/books-i-kept"
-author: wyatt
+author: Wyatt
 title: The Books I Kept
 image: '../../images/posts/books.jpg'
 credit: Patrick Tomasso

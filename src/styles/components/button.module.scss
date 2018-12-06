@@ -39,11 +39,23 @@
   &__blue {
     background-color: $apsis-blue;
     color: white;
+    &:hover{
+      // pointer-events: none;
+      // text-decoration: none;
+      color: white !important;
+    }
   }
 
   &__white {
     background-color: white;
     color: $apsis-blue;
+    &:hover{
+      // text-decoration: none;
+      // color: white !important;
+      color: $apsis-blue !important;
+
+      // pointer-events: none;
+    }
   }
 
   &__gray {
