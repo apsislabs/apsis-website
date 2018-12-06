@@ -12,7 +12,7 @@ import HireUsFooter from "../components/Footer/hireusfooter"
 import Navigation from "../components/navigation"
 import Helmet from "react-helmet";
 import {Animated} from "react-animated-css";
-import { Player } from 'video-react';
+// import { Player } from 'video-react';
 import Button from 'gatsby-link'
 
 const blueWideButtonClasses = `${buttonStyles.button__blue} ${buttonStyles.button__wide}`;
@@ -43,6 +43,13 @@ class PortfolioPage extends React.Component {
                             }
                         }
                         tb: file(relativePath: { eq: "images/portfolio/thinkingbaseball/iphone_frame.png" }) {
+                            childImageSharp {
+                                fluid(maxWidth: 300) {
+                                    src
+                                }
+                            }
+                        }
+                        tbImg: file(relativePath: { eq: "images/portfolio/thinkingbaseball/tb_home.png" }) {
                             childImageSharp {
                                 fluid(maxWidth: 300) {
                                     src
@@ -144,7 +151,8 @@ class PortfolioPage extends React.Component {
                                     className={portfolioStyles.container__image}
                                     style={{backgroundImage: `url(${data.tb.childImageSharp.fluid.src})`}}
                                 >
-                                    <Player
+                                    <img src={data.tbImg.childImageSharp.fluid.src} />
+                                    {/* <Player
                                         className={portfolioStyles.video}
                                         preload={'auto'}
                                         autoPlay={true}
@@ -152,7 +160,7 @@ class PortfolioPage extends React.Component {
                                         controls={false}
                                     >
                                         <source src={data.tbVideo.publicURL} />
-                                    </Player>
+                                    </Player> */}
                                 </div>
                                 <div className={portfolioStyles.content}>
                                     <h2>ThinkingBaseball {data.tbVideo.publicUrl}</h2>
