@@ -14,7 +14,7 @@ Use an existing post as a reference, they live in `src/pages/blog_posts`
 
 Note: Doesn't currently work on windows with the beta multi environment cli for amplify unless you install globally
 
-* `npm amplify init` select dev or prod
+* `npx amplify init` select dev or prod
 * `npm amplify push`
 
 ## Deploy Code:
