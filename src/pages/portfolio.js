@@ -5,16 +5,15 @@ import DiagonalBackground from "../components/diagonalbackground"
 import OpenSource from "../components/OpenSource/OpenSource"
 import ContentBlock from "../components/contentblock"
 import buttonStyles from "../styles/components/button.module.scss"
-import heroStyles from "../styles/components/hero.module.scss"
 import portfolioStyles from "../styles/pages/portfolio.module.scss"
 import Img from "gatsby-image"
 import { StaticQuery, graphql } from 'gatsby'
 import HireUsFooter from "../components/Footer/hireusfooter"
 import Navigation from "../components/navigation"
 import Helmet from "react-helmet";
-import {Collapse} from 'react-collapse';
 import {Animated} from "react-animated-css";
 import { Player } from 'video-react';
+import Button from 'gatsby-link'
 
 const blueWideButtonClasses = `${buttonStyles.button__blue} ${buttonStyles.button__wide}`;
 
@@ -86,6 +85,16 @@ class PortfolioPage extends React.Component {
                             imgSrc={data.portfolioHero.childImageSharp.fluid.src}
                         >
                             <Animated animationIn="fadeInUp">
+                                <h1>Building Your Applications</h1>
+                                <h3>From the cloud to your phone.</h3>
+                            </Animated>
+                            <Button
+                                className={blueWideButtonClasses}
+                                to="/process"
+                            >
+                                See Our Process
+                            </Button>
+                            {/* <Animated animationIn="fadeInUp">
                                 <h1>Building :daily</h1>
                                 <h3>Rethinking how developers take notes.</h3>
                             </Animated>
@@ -94,24 +103,27 @@ class PortfolioPage extends React.Component {
                                 onClick={this.toggleExpand}
                             >
                                 Read the Case Study.
-                            </div>
+                            </div> */}
 
 
-                            <Collapse
+                            {/* <Collapse
                                 isOpened={this.state.expanded}
                                 className={heroStyles.hero__expanded}
                             >
                                 <ContentBlock
                                     vertical={true}
                                 >
-                                    <Img
-                                        fluid={data.daily.childImageSharp.fluid}
-                                        alt="Daily, a to do app for developers"
-                                    />
-                                    <h2>:daily</h2>
-                                        Sed tincidunt venenatis nisi et iaculis. Nunc urna lectus, rutrum sit amet lorem eu, luctus pharetra est. Curabitur a tincidunt tortor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras a efficitur nibh. Nulla eu dolor eu ex porttitor tincidunt. Aliquam porta euismod nisl, eget iaculis magna mollis eget.
+                                    <div className={portfolioStyles.daily}>
+                                        <Img
+                                            className={portfolioStyles.daily__image}
+                                            fluid={data.daily.childImageSharp.fluid}
+                                            alt="Daily, a to do app for developers"
+                                        />
+                                        <h2>:daily</h2>
+                                            Sed tincidunt venenatis nisi et iaculis. Nunc urna lectus, rutrum sit amet lorem eu, luctus pharetra est. Curabitur a tincidunt tortor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras a efficitur nibh. Nulla eu dolor eu ex porttitor tincidunt. Aliquam porta euismod nisl, eget iaculis magna mollis eget.
+                                    </div>
                                 </ContentBlock>
-                            </Collapse>
+                            </Collapse> */}
                         </Hero>
                         <ContentBlock vertical={true}>
                             <div className={portfolioStyles.verticalContainer}>
