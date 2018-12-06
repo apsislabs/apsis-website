@@ -8,13 +8,13 @@ Good tool to have: Gatsby CLI.
 To run: `gatsby develop` (with Gatsby CLI) or `npm run develop`
 
 ## Adding a Blog Post
-Use an existing post as a reference, they live in src/pages/blog_posts
+Use an existing post as a reference, they live in `src/pages/blog_posts`
 
 ## Deploy Infrastructure
 
 Note: Doesn't currently work on windows with the beta multi environment cli for amplify unless you install globally
 
-* `npx amplify init` select dev or prod
+* `npm amplify init` select dev or prod
 * `npm amplify push`
 
 ## Deploy Code:
