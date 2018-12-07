@@ -19,7 +19,7 @@ function NextArrow(props) {
       />
     );
   }
-  
+
   function PrevArrow(props) {
     const { style, onClick } = props;
     return (
@@ -74,7 +74,7 @@ class QuoteBlock extends React.Component {
           };
         return (
         <div className={quoteblockStyles.testimonial}>
-            <h2>What Our Clients Say</h2>
+            <h2>What Our Partners Say</h2>
             <div>
                 <img src={icon} alt="open quotemark"/>
             </div>

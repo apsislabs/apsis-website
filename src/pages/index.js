@@ -84,7 +84,7 @@ class IndexPage extends React.Component {
                             className={blueWideButtonClasses}
                             to="/services"
                         >
-                            Our services
+                            Our Services
                         </Button>
                     </div>
                 </ContentBlock>
