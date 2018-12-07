@@ -5,7 +5,7 @@ export default props => (
     <div className={howweworkStyles.container}>  
         <div className={howweworkStyles.container__content}>
             <div className={howweworkStyles.container__title}>
-                <h2>How we work</h2>
+                <h2>How We Work</h2>
             </div>
             <div className={howweworkStyles.container__header}>
                 <i className="fas fa-rocket"/>
