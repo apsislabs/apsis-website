@@ -87,7 +87,7 @@ export default () => (
                 />
                 <TeamPlayer
                     img={data.nic.childImageSharp.fluid}
-                    name="Nic Villasenor"
+                    name="Nic Villaseñor"
                     title="Director of Operations"
                 />
                 <div className={teamgridStyles.photo}/>
