@@ -6,35 +6,25 @@ import Slider from "react-slick";
 function NextArrow(props) {
     const { style, onClick } = props;
     return (
-      <div
-      className='fas fa-angle-right fa-2x'
-      style={{ ...style,
-        display: "block",
-        position: 'absolute',
-        color: '#DAE1E6',
-        top: '2em',
-        right: '-1.5em'
-     }}
-      onClick={onClick}
-      />
+        <div
+        className={`fas fa-angle-right fa-2x ${quoteblockStyles.arrow} ${quoteblockStyles.arrow__next}`}
+        style={style}
+        onClick={onClick}
+        />
     );
-  }
+}
 
-  function PrevArrow(props) {
+function PrevArrow(props) {
     const { style, onClick } = props;
     return (
-      <div
-      className='fas fa-angle-left fa-2x'
-      style={{ ...style,
-        display: "block",
-        position: 'absolute',
-        left: '-4rem',
-        color: '#DAE1E6',
-        top: '2em' }}
-      onClick={onClick}
-      />
+        <div
+            className={`fas fa-angle-left fa-2x ${quoteblockStyles.arrow} ${quoteblockStyles.arrow__prev}`}
+            style={style}
+            onClick={onClick}
+        />
     );
-  }
+}
+
 class QuoteBlock extends React.Component {
     constructor(props) {
         super(props);
@@ -70,14 +60,23 @@ class QuoteBlock extends React.Component {
             slidesToShow: 1,
             slidesToScroll: 1,
             nextArrow: <NextArrow />,
-            prevArrow: <PrevArrow />
+            prevArrow: <PrevArrow />,
+            responsive: [
+                {
+                    breakpoint: 375,
+                    settings: {
+                        arrows: false,
+                        swipe: true,
+                        swipeToSlide: true,
+                        adaptiveHeight: true,
+                    }
+                }
+            ]
           };
         return (
         <div className={quoteblockStyles.testimonial}>
             <h2>What Our Partners Say</h2>
-            <div>
-                <img src={icon} alt="open quotemark"/>
-            </div>
+            <img className={quoteblockStyles.quotes} src={icon} alt="open quotemark"/>
             <div className={quoteblockStyles.testimonial__container}>
                     <Slider {...settings}>
                         {

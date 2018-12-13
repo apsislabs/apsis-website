@@ -1,13 +1,42 @@
 @import '../__variables';
 
 .testimonial {
-    max-width: 70%;
-    margin: 0px auto;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding: 0 1em;
 
+    @media only screen and (min-width: $tablet-size) {
+        text-align: center;
+        width: 70%;
+        margin: 0 auto;
+    }
     @media only screen and (min-width: $desktop-size) {
         max-width: 700px;
     }
+
+    h2 {
+        margin-bottom: 0;
+    }
+
+    .arrow {
+        display: block;
+        position: absolute;
+        color: #DAE1E6;
+        top: 2em;
+        &__next {
+            right: -1.5em;
+        }
+        &__prev {
+            left: -4rem;
+        }
+    }
+
+    .quotes {
+        margin: $app-padding 0 $app-padding/2 0;
+    }
+
     i {
         color: $gray-lighter;
         padding-top: 55px;
@@ -32,7 +61,7 @@
     &__container {
         align-items: center;
         color: $gray;
-        padding: 20px 0px;
+        padding-bottom: 20px;
         i {
             padding: 0px 80px;
         }

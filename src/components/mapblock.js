@@ -104,7 +104,7 @@ class MapBlock extends React.Component {
                             Home to nature lovers and national research centers, Boulder, CO is undoubtedly the sunniest city we reside in. If you need a hand with that dog training app you've been thinking about, come meet us downtown before your afternoon run up Sanitas.
                         </div>
                         <div className={mapblockStyles.tabcontent} id="syracuse">
-                            On the outskirts of Syracuse, two doors down from farmland, at the very edge of the Finger Lakes wine region sits Cazenovia, NY where we’ve stationed our very best New York engineer. With easy access to Syracuse, Rochester , Albany and  more we can easily get an in-person look at your next project. Get big city talent right here in Central New York.                        </div>
+                            On the outskirts of Syracuse, two doors down from farmland, at the very edge of the Finger Lakes wine region sits Cazenovia, NY where we’ve stationed our very best New York engineer. With easy access to Syracuse, Rochester, Albany and  more we can easily get an in-person look at your next project. Get big city talent right here in Central New York.                        </div>
                     </div>
                 </div>
             </div>

@@ -22,14 +22,10 @@
     text-decoration: none;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     color: white;
-    align-content: space-between;
-    padding: 0px 180px 0px 180px;
-    .links {
-      right: 180px;
-      position: absolute;
-    }
+    padding: 0 $app-padding;
     a {
       color: white;
       padding: 10px;
@@ -39,23 +35,11 @@
       }
     }
 
-    @media only screen and (min-width: $mobile-size) and (max-width: $desktop-size) {
-      padding: 2px;
-      .links {
-        position: flex;
-        right: 0px;
-      }
-    }
-
-    @media only screen and (max-width: $mobile-size) {
+    @media only screen and (max-width: $tablet-size) {
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       text-align: center;
-      padding: 2px;
-      .links {
-        position: relative !important;
-        right: 0px;
-      }
+      padding: $small-padding 0;
     }
   }
 

@@ -6,21 +6,26 @@
   filter: drop-shadow(0px 10px 5px rgba(0,0,0,0.1));
 
   .hero {
-      clip-path: polygon(
-        0 0,
-        100% 0,
-        100% 80%,
-        0 calc(100% - 5vw)
-      );
-      // clip-path: polygon(0 16%, 100% 0%, 100% 86%, 0 calc(100% - 5vw));
-
-      width: 100%;
+      -webkit-clip-path: map-get($hero-clip-path, mobile);
+      clip-path: map-get($hero-clip-path, mobile);
       height: 100%;
+      margin: $app-padding $app-padding $app-padding $app-padding;
       padding-bottom: 5vw;
       max-height: 90vh;
       box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(15, 44, 64, .45);
       background-size: cover;
       background-repeat: no-repeat;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(89,109,121,0.5);
+        z-index: 0
+      }
 
     &__expandable {
       max-height: none;
@@ -41,6 +46,8 @@
 
     &__content{
       padding: 20% 10%;
+      position: relative;
+      z-index: 1;
     }
 
     h1 {
@@ -56,6 +63,10 @@
       text-shadow: 0 2px 4px rgba(15, 44, 64, 0.45);
       color: $base-bg-color;
     }
+
+    @media only screen and (max-width: $mobile-size) {
+      margin: 0 0 $app-padding;
+    }
   }
 
   @media only screen and (max-width: $mobile-size) {
@@ -65,5 +76,20 @@
     h1, h2, h3, h4, h5 {
       text-align: center;
     }
+  }
+
+  @media only screen and (min-width: $tablet-size) {
+    -webkit-clip-path: map-get($hero-clip-path, tablet);
+    clip-path: map-get($hero-clip-path, tablet);
+  }
+
+  @media only screen and (min-width: $desktop-size) {
+    -webkit-clip-path: map-get($hero-clip-path, desktop);
+    clip-path: map-get($hero-clip-path, desktop);
+  }
+
+  @media only screen and (min-width: $largedesktop-size) {
+    -webkit-clip-path: map-get($hero-clip-path, largedesktop);
+    clip-path: map-get($hero-clip-path, largedesktop);
   }
 }
