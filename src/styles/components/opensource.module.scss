@@ -8,6 +8,11 @@
   margin: 0 auto;
   width: 100%;
 
+  @media only screen and (max-width: $mobile-size) {
+    padding: 0 1em;
+    text-align: left;
+  }
+
   &__header {
     align-items: center;
     width: 100%;

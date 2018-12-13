@@ -9,7 +9,7 @@ const blueWideButtonClasses = `${buttonStyles.button__blue} ${buttonStyles.butto
 export default () => (
     <div className={serviceStyles.service}>
         <Service
-            icon="far fa-compass"
+            icon="far fa-fw fa-compass"
             title="Web Development"
         >
             <ul>
@@ -19,7 +19,7 @@ export default () => (
             </ul>
         </Service>
         <Service
-            icon="fas fa-mobile-alt"
+            icon="fas fa-fw fa-mobile-alt"
             title="Mobile Development"
         >
             <ul>
@@ -29,7 +29,7 @@ export default () => (
             </ul>
         </Service>
         <Service
-            icon="fas fa-sitemap"
+            icon="fas fa-fw fa-sitemap"
             title="Operations & Strategy"
         >
             <ul>

@@ -3,7 +3,7 @@
 .service {
   display: flex;
   flex-direction: row;
-  
+
   .serviceCard {
     width: 250px;
     padding: 20px 0px 10px;
@@ -14,6 +14,7 @@
       flex-direction: row;
       font-size: 18px;
       font-weight: bold;
+      align-items: center;
     }
   }
 
@@ -24,12 +25,12 @@
 
   i {
     color: $gray-lighter;
-    padding-right: 10px;
+    margin-right: 10px;
   }
 
   ul {
     list-style: none;
-    padding-left: 0px;
+    padding-left: 1.75em;
     margin-left: 0px;
   }
 

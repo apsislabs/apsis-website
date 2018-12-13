@@ -151,7 +151,7 @@ class PortfolioPage extends React.Component {
                                     className={portfolioStyles.container__image}
                                     style={{backgroundImage: `url(${data.tb.childImageSharp.fluid.src})`}}
                                 >
-                                    <img src={data.tbImg.childImageSharp.fluid.src} />
+                                    <img src={data.tbImg.childImageSharp.fluid.src} alt='Thinking Baseball' />
                                     {/* <Player
                                         className={portfolioStyles.video}
                                         preload={'auto'}

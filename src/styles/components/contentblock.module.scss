@@ -27,7 +27,7 @@
   @media only screen and (max-width: $desktop-size) {
     flex-direction: column;
     align-content: center;
-    padding-left: 1em;
+    padding: 0 1em;
     &__title {
       width: 100%;
     }
