@@ -13,7 +13,7 @@ const typography = new Typography({
       },
       'h2': {
         fontFamily: 'Lora-Bold, serif',
-        fontSize: '1.5rem'
+        fontSize: '2rem'
       },
       'h3': {
         fontFamily: 'Lora-Bold, serif',
