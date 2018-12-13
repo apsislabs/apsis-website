@@ -2,7 +2,7 @@ import React from "react"
 import howweworkStyles from "../styles/components/howwework.module.scss"
 
 export default props => (
-    <div className={howweworkStyles.container}>  
+    <div className={howweworkStyles.container}>
         <div className={howweworkStyles.container__content}>
             <div className={howweworkStyles.container__title}>
                 <h2>How We Work</h2>
@@ -35,7 +35,7 @@ export default props => (
             <div className={howweworkStyles.container__paragraph}>
                 Sometimes you need a little extra help, but it’s hard to find a well-defined project or feature that you can hand off. That’s okay: we’re experts at augmenting existing engineering orgs. We specialize in slotting into your development workflow – either as part of your existing structure, or even bringing structure where it’s sorely needed.
                 <p/>
-                We can lend expertise in a specific new technology, help your team transition to the cloud, or just close some tickets that have been on your backlog for 18 months. If you need a helping hand — even for a short while — we’re here to provide leadership and expertise to get the job done.       
+                We can lend expertise in a specific new technology, help your team transition to the cloud, or just close some tickets that have been on your backlog for 18 months. If you need a helping hand — even for a short while — we’re here to provide leadership and expertise to get the job done.
             </div>
         </div>
     </div>
