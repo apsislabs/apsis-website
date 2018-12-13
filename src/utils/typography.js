@@ -2,7 +2,7 @@ import Typography from "typography"
 
 const typography = new Typography({
     baseFontSize: '16px',
-    baseLineHeight: 1.45,
+    baseLineHeight: 1.6125,
     headerFontFamily: ['Lora', 'serif'],
     bodyFontFamily: ['OpenSans', 'sans-serif'],
     bodyColor: '#4a4a4a',
@@ -13,7 +13,7 @@ const typography = new Typography({
       },
       'h2': {
         fontFamily: 'Lora-Bold, serif',
-        fontSize: '1.5rem'
+        fontSize: '2rem'
       },
       'h3': {
         fontFamily: 'Lora-Bold, serif',

@@ -5,7 +5,11 @@
 }
 
 @media only screen and (max-width: $mobile-size) {
+  .serviceButton {
+    margin: 0 auto;
+  }
   .heroButton {
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     width: 10em;

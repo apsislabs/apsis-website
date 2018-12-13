@@ -2,7 +2,23 @@ import React from "react"
 import mapblockStyles from "../styles/components/mapblock.module.scss"
 import Map from "google-map-react"
 import {Animated} from "react-animated-css";
+import { cl } from '../utils/helpers';
 
+const locations = {
+    seattle: [
+        { text: "Seattle, WA", lat: 47.6062, lng: -122.3321 }
+    ],
+    portlands: [
+        { text: "Portland, OR", lat: 45.5122, lng: -122.6587 },
+        { text: "Portland, ME", lat: 43.6891, lng: - 70.2568 }
+    ],
+    boulder: [
+        { text: "Boulder, CO", lat: 40.0150, lng: -105.2705 }
+    ],
+    syracuse: [
+        { text: "Syracuse, NY", lat: 43.0481, lng: -76.1474 }
+    ],
+};
 
 const Marker = () => (
     <Animated animationIn="pulse">
@@ -15,40 +31,24 @@ class MapBlock extends React.Component {
         super(props)
         this.state = {
             cityName: "seattle",
-            latitude: 47.6062,
-            longitude: -122.3321,
         }
         this.changeLocation = this.changeLocation.bind(this);
     }
 
-    changeLocation(e, lat, lng, cityName){
-        this.setState({latitude: lat, longitude: lng});
-        var i, tabcontent, tablinks;
-
-        tabcontent = document.getElementsByClassName(mapblockStyles.tabcontent);
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-
-        tablinks = document.getElementsByClassName(mapblockStyles.tabs__tablinks);
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(` ${mapblockStyles.tabcontent__active}`, "");
-        }
-
-        document.getElementById(cityName).style.display = "block";
-        e.currentTarget.className += ` ${mapblockStyles.tabcontent__active}`;
-        this.setState({latitude: lat, longitude: lng, cityName})
+    changeLocation(e, cityName){
+        this.setState({ cityName });
     }
 
-    componentDidMount(){
-        var i, tabcontent;
-        tabcontent = document.getElementsByClassName(mapblockStyles.tabcontent);
-        for (i = 1; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
+    get mapCenter() {
+        const current = locations[this.state.cityName];
+        return {
+            lat: current.map(x => x.lat).reduce((a, b) => a + b, 0) / current.length,
+            lng: current.map(x => x.lng).reduce((a, b) => a + b, 0) / current.length,
+        };
+    }
 
-        document.getElementById(this.state.cityName).style.display = "block";
-        document.getElementById(`${this.state.cityName}-tab`).className += ` ${mapblockStyles.tabcontent__active}`;
+    isCurrent(city) {
+        return this.state.cityName == city;
     }
 
     render() {
@@ -59,20 +59,12 @@ class MapBlock extends React.Component {
                 <div className={mapblockStyles.mapBlock__map} id="map">
                     <Map
                         bootstrapURLKeys={{ key: 'AIzaSyCF7DHtzwCN8X7ZStPCJwsGsO9aH8-Uiq4' }}
-                        center={{lat: this.state.latitude, lng: this.state.longitude}}
+                        center={this.mapCenter}
                         defaultZoom={10}
                         className={mapblockStyles.mapBlock__map}
                         zoom={this.state.cityName === "portlands" ? 3 : 10}
                     >
-                    <Marker
-                        lat={this.state.latitude + .03}
-                        lng={this.state.longitude}
-                        text={this.state.cityName}
-                    />
-                    { this.state.cityName === "portlands" && <Marker
-                        lat={43.6591 + .03}
-                        lng={-70.2568}
-                    />   }
+                        {locations[this.state.cityName].map((props, ix) => <Marker key={ix} {...props}/>)}
                     </Map>
                 </div>
 
@@ -80,31 +72,32 @@ class MapBlock extends React.Component {
                     <div className={mapblockStyles.tabs}>
                         <ul>
                             <li>
-                                <span id="seattle-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, 47.6062, -122.3321, "seattle")}>Seattle, WA</span>
+                                <span className={cl(mapblockStyles.tabs__tablinks, this.isCurrent("seattle") && mapblockStyles.active)} onClick={(e) => this.setState({ cityName: "seattle"})}>Seattle, WA</span>
                             </li>
                             <li>
-                                <span id="portlands-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, 45.5122, -122.6587, "portlands")}>The Portlands</span>
+                                <span className={cl(mapblockStyles.tabs__tablinks, this.isCurrent("portlands") && mapblockStyles.active)} onClick={(e) => this.setState({ cityName: "portlands" })}>The Portlands</span>
                             </li>
                             <li>
-                                <span id="boulder-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, 40.0150, -105.2705, "boulder")}>Boulder, CO</span>
+                                <span className={cl(mapblockStyles.tabs__tablinks, this.isCurrent("boulder") && mapblockStyles.active)} onClick={(e) => this.setState({ cityName: "boulder" })}>Boulder, CO</span>
                             </li>
                             <li>
-                                <span id="syracuse-tab" className={mapblockStyles.tabs__tablinks} data-toggle="tab" onClick={(e) => this.changeLocation(e, 43.0481, -76.1474, "syracuse")}>Syracuse, NY</span>
+                                <span className={cl(mapblockStyles.tabs__tablinks, this.isCurrent("syracuse") && mapblockStyles.active)} onClick={(e) => this.setState({ cityName: "syracuse" })}>Syracuse, NY</span>
                             </li>
                         </ul>
                     </div>
                     <div className={mapblockStyles.mapBlock__content}>
-                        <div className={mapblockStyles.tabcontent} id="seattle">
+                        { this.isCurrent("seattle") && <div className={mapblockStyles.tabcontent}>
                             Mission Control: our two founders (Wyatt and Noah) are based out of Seattle, WA. While the City by the Sound offers no shortage of developer talent, if you’re looking for top-notch engineers for your next project, you can find us in our University District offices.
-                        </div>
-                        <div className={mapblockStyles.tabcontent} id="portlands">
+                        </div> }
+                        {this.isCurrent("portlands") && <div className={mapblockStyles.tabcontent}>
                             With team members in both Portland, OR and Portland, ME, the arguments over which office was Portland #1 threatened to tear our small team apart. So we compromised. Whether you’re Best Coast or Beast Coast, if you’re looking for development services in a Portland — any Portland — you can find our engineers at a coffee shop or coworking space near you.
-                        </div>
-                        <div className={mapblockStyles.tabcontent} id="boulder">
+                        </div>}
+                        { this.isCurrent("boulder") && <div className={mapblockStyles.tabcontent}>
                             Home to nature lovers and national research centers, Boulder, CO is undoubtedly the sunniest city we reside in. If you need a hand with that dog training app you've been thinking about, come meet us downtown before your afternoon run up Sanitas.
-                        </div>
-                        <div className={mapblockStyles.tabcontent} id="syracuse">
-                            On the outskirts of Syracuse, two doors down from farmland, at the very edge of the Finger Lakes wine region sits Cazenovia, NY where we’ve stationed our very best New York engineer. With easy access to Syracuse, Rochester , Albany and  more we can easily get an in-person look at your next project. Get big city talent right here in Central New York.                        </div>
+                        </div>}
+                        {this.isCurrent("syracuse") && <div className={mapblockStyles.tabcontent}>
+                            On the outskirts of Syracuse, two doors down from farmland, at the very edge of the Finger Lakes wine region sits Cazenovia, NY where we’ve stationed our very best New York engineer. With easy access to Syracuse, Rochester, Albany and  more we can easily get an in-person look at your next project. Get big city talent right here in Central New York.
+                        </div>}
                     </div>
                 </div>
             </div>
