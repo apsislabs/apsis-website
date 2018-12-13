@@ -47,15 +47,17 @@
   &__locations {
     display: flex;
     flex-direction: row;
-    padding: 20px 0px;
+    padding: $small-padding 0px;
     width: 100%;
     max-width: 1025px;
+    @media only screen and (max-width: $mobile-size) {
+      padding: $small-padding 1em;
+    }
   }
 
   .tabcontent{
     font-size: 1.125rem;
     max-width: 795px;
-    display: none;
     &__active {
       display: block;
       color: $apsis-blue;
@@ -70,7 +72,7 @@
 
     &__tablinks{
       cursor:pointer;
-      .active {
+      &.active {
         color: $apsis-blue;
         display: block;
       }

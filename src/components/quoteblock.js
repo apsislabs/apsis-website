@@ -69,6 +69,7 @@ class QuoteBlock extends React.Component {
                         swipe: true,
                         swipeToSlide: true,
                         adaptiveHeight: true,
+                        dots: true,
                     }
                 }
             ]
