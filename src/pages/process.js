@@ -51,7 +51,7 @@ export default () => {
         <h2>Quality and Satisfaction</h2>
         <p>Your experience and results will be fantastic. Here’s how we know:</p>
         <ul>
-          <li>Our top priority is quality product development. While speed and cost are important considerations, we do not compromise on on the quality of our design and our coding standards. We build products that we (and you) can stand by and be proud of.</li>
+          <li>Our top priority is quality product development. While speed and cost are important considerations, we do not compromise on the quality of our design and our coding standards. We build products that we (and you) can stand by and be proud of.</li>
           <li>Our developers come fresh to every project. Each of our senior developers codes for only to 20 to 25 hours per week to make sure that every bit of work you pay for has our full engagement.</li>
           <li>We don’t bill you if we discover a gap in our knowledge. We eat the cost of our own mistakes. We pride ourselves on doing right by our customers.</li>
           <li> We work the way you do. If you already have tools in place for communicating, managing code, or your projects we will use those tools so we can easily integrate into your team.</li>
