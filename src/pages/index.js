@@ -14,33 +14,32 @@ import OpenSource from "../components/OpenSource/OpenSource";
 import ServiceList from "../components/Services/servicelist";
 import buttonStyles from "../styles/components/button.module.scss";
 import indexStyles from "../styles/pages/index.module.scss";
+import cn from "classnames";
 
-const blueWideButtonClasses = `${buttonStyles.button__blue} ${
-  buttonStyles.button__wide
-}`;
-
-const grayWideButtonClasses = `${buttonStyles.button__gray} ${
-  buttonStyles.button__wide
-}`;
-
-const HomeHero = props => (
-  <Hero displayname="Hero" imgSrc={props.data.hero.childImageSharp.fluid.src}>
-    <Animated animationIn="fadeInUp">
-      <h1>Need an app? We can help.</h1>
-      <h3>
-        We are developers focused on efficient solutions to real world problems.
-      </h3>
-    </Animated>
-    <span className={indexStyles.heroButton}>
-      <Button className={blueWideButtonClasses} to="/services">
-        Our Process
-      </Button>
-      <Button className={grayWideButtonClasses} to="/contact">
-        Hire Us
-      </Button>
-    </span>
-  </Hero>
-);
+const HomeHero = props => {
+  return (
+    <Hero displayname="Hero" imgSrc={props.data.hero.childImageSharp.fluid.src}>
+      <Animated animationIn="fadeInUp">
+        <h1>Need an app? We can help.</h1>
+        <h3>
+          We are developers focused on efficient solutions to real world
+          problems.
+        </h3>
+      </Animated>
+      <span className={indexStyles.heroButton}>
+        <Button className={buttonStyles.button} to="/services">
+          Our Process
+        </Button>
+        <Button
+          className={cn(buttonStyles.button, buttonStyles.buttonPrimary)}
+          to="/contact"
+        >
+          Hire Us
+        </Button>
+      </span>
+    </Hero>
+  );
+};
 
 class IndexPage extends React.Component {
   render() {
@@ -53,7 +52,10 @@ class IndexPage extends React.Component {
       clientDragonFoundry,
       clientColumbia,
       clientCallidus,
-      clientPicturiffic
+      clientPicturiffic,
+      clientArkatechture,
+      clientThinkingBaseball,
+      clientCoverMyTest
     } = this.props.data;
 
     const topClients = [
@@ -160,7 +162,10 @@ class IndexPage extends React.Component {
           </div>
 
           <div className={indexStyles.serviceButton}>
-            <Button className={blueWideButtonClasses} to="/services">
+            <Button
+              className={cn(buttonStyles.button, buttonStyles.buttonPrimary)}
+              to="/services"
+            >
               Our Services
             </Button>
           </div>

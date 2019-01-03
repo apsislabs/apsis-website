@@ -1,69 +1,48 @@
 @import "../variables";
+@import "../mixins";
 
 .button {
-  &__wide {
-    cursor: pointer;
-    white-space: nowrap;
-    border-radius: 4px;
-    text-align: center;
-    padding: 7px 40px;
-    display: inline-block;
-    margin: 5px 15px 0px 0px;
-    max-width: 260px;
-    height: 2.25em;
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: lowercase;
+  text-rendering: optimizeLegibility;
+  border-radius: $border-radius;
+  padding: $padding-xs $padding-sm;
+  box-shadow: $box_shadow;
+  transition: background $transition_duration, box-shadow $transition_duration,
+    color $transition_duration;
+  user-select: none;
 
-    &:hover {
-      transition: background-color ease-in-out 0.25s, color ease-in-out 0.25s,
-        border-color ease-in-out 0.25s, box-shadow ease-in-out 0.25s;
-      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1),
-        0 4px 8px 0 rgba(15, 44, 64, 0.15);
-    }
+  @include button-variant($button-color, $text-color);
 
-    @media only screen and (max-width: $mobile-size) {
-      width: 100%;
-    }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    pointer-events: none;
+    opacity: 0.65;
   }
 
-  &__short {
-    cursor: pointer;
-    white-space: nowrap;
-    border-radius: 4px;
-    padding: 7px 12px;
-    display: inline-block;
-    height: 2.25em;
-
-    &:hover {
-      transition: background-color ease-in-out 0.25s, color ease-in-out 0.25s,
-        border-color ease-in-out 0.25s, box-shadow ease-in-out 0.25s;
-      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1),
-        0 4px 8px 0 rgba(15, 44, 64, 0.15);
-    }
+  + .button {
+    margin-left: $extra-small-padding;
   }
 
-  &__blue {
-    background-color: $apsis-blue;
-    color: white;
-    &:hover {
-      // pointer-events: none;
-      // text-decoration: none;
-      color: white !important;
-    }
+  //== Variants
+
+  &--large {
+    padding: $padding-sm $padding-base;
   }
 
-  &__white {
-    background-color: white;
-    color: $apsis-blue;
-    &:hover {
-      // text-decoration: none;
-      // color: white !important;
-      color: $apsis-blue !important;
-
-      // pointer-events: none;
-    }
+  &--white {
+    @include button-variant(white, white);
   }
 
-  &__gray {
-    background-color: $button-color;
-    color: $apsis-dark;
+  &--primary {
+    @include button-variant($apsis-blue, white);
   }
 }

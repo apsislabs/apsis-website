@@ -4,8 +4,8 @@ import Service from "./serviceitem";
 import buttonStyles from "../../styles/components/button.module.scss";
 import Button from "gatsby-link";
 
-const blueWideButtonClasses = `${buttonStyles.button__blue} ${
-  buttonStyles.button__wide
+const blueWideButtonClasses = `${buttonStyles["button--blue"]} ${
+  buttonStyles.buttonLarge
 }`;
 
 export default () => (

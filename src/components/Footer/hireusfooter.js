@@ -3,8 +3,8 @@ import hireusfooterStyles from "../../styles/components/hireusfooter.module.scss
 import Button from "gatsby-link";
 import buttonStyles from "../../styles/components/button.module.scss";
 
-const grayShortButtonClasses = `${buttonStyles.button__gray} ${
-  buttonStyles.button__short
+const grayShortButtonClasses = `${buttonStyles.buttonGray} ${
+  buttonStyles.buttonShort
 }`;
 
 export default () => (

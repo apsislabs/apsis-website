@@ -5,6 +5,7 @@ import buttonStyles from "../styles/components/button.module.scss";
 import Button from "gatsby-link";
 import Img from "gatsby-image";
 import Headroom from "react-headroom";
+import cn from "classnames";
 
 const query = graphql`
   query logoQuery {
@@ -41,10 +42,6 @@ function ApsisLogo({ blue }) {
   return <StaticQuery query={query} render={render} />;
 }
 
-function cl(...classes) {
-  return classes.filter(x => x).join(" ");
-}
-
 class Navigation extends Component {
   constructor() {
     super(...arguments);
@@ -68,7 +65,7 @@ class Navigation extends Component {
       { open, animate } = this.state;
     return (
       <div
-        className={cl(
+        className={cn(
           styles.navigation,
           animate ? styles.animate : null,
           blue ? styles.blue : styles.white,
@@ -87,7 +84,7 @@ class Navigation extends Component {
                 <ApsisLogo blue={blue} />
               </Link>
               <i onClick={() => this.toggleMenu()} className="fas fa-bars" />
-              <ul className={cl(styles.navLinks, !open && styles.closed)}>
+              <ul className={cn(styles.navLinks, !open && styles.closed)}>
                 <ListLink to="/services">Our Services</ListLink>
                 <ListLink to="/team">Our Team</ListLink>
                 <ListLink to="/portfolio">Our Work</ListLink>
@@ -95,11 +92,9 @@ class Navigation extends Component {
                 <li>
                   <Button
                     to="/contact"
-                    className={cl(
-                      blue
-                        ? buttonStyles.button__blue
-                        : buttonStyles.button__white,
-                      buttonStyles.button__short
+                    className={cn(
+                      blue ? buttonStyles.buttonBlue : buttonStyles.buttonWhite,
+                      buttonStyles.buttonShort
                     )}
                   >
                     Hire Us

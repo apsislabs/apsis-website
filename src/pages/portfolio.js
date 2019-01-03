@@ -15,8 +15,8 @@ import { Animated } from "react-animated-css";
 // import { Player } from 'video-react';
 import Button from "gatsby-link";
 
-const blueWideButtonClasses = `${buttonStyles.button__blue} ${
-  buttonStyles.button__wide
+const blueWideButtonClasses = `${buttonStyles["button--blue"]} ${
+  buttonStyles.buttonLarge
 }`;
 
 class PortfolioPage extends React.Component {

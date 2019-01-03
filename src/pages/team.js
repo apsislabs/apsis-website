@@ -12,8 +12,8 @@ import Button from "gatsby-link";
 import ContentBlock from "../components/contentblock";
 import { cl } from "../utils/helpers";
 
-const blueWideButtonClasses = `${buttonStyles.button__blue} ${
-  buttonStyles.button__wide
+const blueWideButtonClasses = `${buttonStyles["button--blue"]} ${
+  buttonStyles.buttonLarge
 }`;
 
 class TeamPage extends React.Component {

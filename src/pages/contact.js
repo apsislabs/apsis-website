@@ -8,9 +8,10 @@ import contactStyles from "../styles/pages/contact.module.scss";
 import buttonStyles from "../styles/components/button.module.scss";
 import Link from "gatsby-link";
 
-const shortWideButton = `${buttonStyles.button__blue} ${
-  buttonStyles.button__wide
+const shortWideButton = `${buttonStyles["button--blue"]} ${
+  buttonStyles.buttonLarge
 }`;
+
 export default () => (
   <Layout>
     <Helmet title="Work With Us | Apsis Labs" />

@@ -8,11 +8,16 @@ $apsis-gray: #4a5359;
 $base-bg-color: #fefefe;
 $barely-blue: #ededef;
 $ruby-red: #a92020;
+$text-color: #4a5359;
+$shadow: rgba(#0f2c40, 0.15);
+$shadow_rim: rgba(0, 0, 0, 0.01);
 
 $gray-darker: darken($apsis-dark, 15%);
 $gray: lighten($apsis-gray, 30%);
 $gray-lighter: lighten($apsis-gray, 45%);
 $gray-lightest: lighten($apsis-gray, 65%);
+
+$box_shadow: 0 1px 1px 0 $shadow, 0 1px 4px 0 $shadow_rim;
 
 // App Colors
 $button-color: $barely-blue;
@@ -42,8 +47,11 @@ $text-color: $apsis-dark;
 $subheading-color: lighten($apsis-dark, 20%);
 $mobile-modular-scale-base: $modular-scale-base * 0.75;
 
+//== Transitions
+
+$transition_duration: 0.15s;
+
 //== Sizes
-//
 
 $app-padding: 40px;
 $small-padding: $app-padding / 2;
@@ -64,6 +72,7 @@ $padding-base: $grid-unit-base;
 $padding-sm: $padding-base / 2;
 $padding-lg: $padding-base * 2;
 $padding-xs: $padding-sm / 2;
+$border-radius: 4px;
 
 //== Media Queries
 //

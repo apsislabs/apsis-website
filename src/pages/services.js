@@ -13,8 +13,8 @@ import Button from "gatsby-link";
 import { Animated } from "react-animated-css";
 import Tools from "../components/tools";
 
-const blueWideButtonClasses = `${buttonStyles.button__blue} ${
-  buttonStyles.button__wide
+const blueWideButtonClasses = `${buttonStyles["button--blue"]} ${
+  buttonStyles.buttonLarge
 }`;
 
 export default () => (
