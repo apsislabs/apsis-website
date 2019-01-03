@@ -1,12 +1,11 @@
-import React from "react"
-import teamStyles from "../../styles/components/teamgrid.module.scss"
-import Img from "gatsby-image"
+import React from "react";
+import teamStyles from "../../styles/components/teamgrid.module.scss";
+import Img from "gatsby-image";
 
-export default (props) => (
-    <div className={teamStyles.photo}>
-        <Img fluid={props.img}
-        critical={true} />
-        <div className={teamStyles.photo__name}>{props.name}</div>
-        <div className={teamStyles.photo__title}>{props.title}</div>
-    </div>
-)
+export default props => (
+  <div className={teamStyles.photo}>
+    <Img fluid={props.img} critical={true} />
+    <div className={teamStyles.photo__name}>{props.name}</div>
+    <div className={teamStyles.photo__title}>{props.title}</div>
+  </div>
+);
