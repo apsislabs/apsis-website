@@ -46,8 +46,8 @@ $mobile-modular-scale-base: $modular-scale-base * 0.75;
 //
 
 $app-padding: 40px;
-$small-padding: 20px;
-$extra-small-padding: 10px;
+$small-padding: $app-padding / 2;
+$extra-small-padding: $small-padding / 2;
 $sidebar-width: 260px;
 $container-width: 720px;
 $screen-min-width: 260px;

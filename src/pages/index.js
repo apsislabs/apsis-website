@@ -44,26 +44,42 @@ const HomeHero = props => (
 
 class IndexPage extends React.Component {
   render() {
+    const {
+      clientWeber,
+      clientNatera,
+      clientTray,
+      clientBoku
+    } = this.props.data;
+
+    const clients = [
+      {
+        alt: "Weber Shandwick",
+        fluid: clientWeber.childImageSharp.fluid,
+        url: "https://www.webershandwick.com/"
+      },
+      {
+        alt: "Natera",
+        fluid: clientNatera.childImageSharp.fluid,
+        url: "https://www.natera.com"
+      },
+      {
+        alt: "tray.io",
+        fluid: clientTray.childImageSharp.fluid,
+        url: "https://www.tray.io"
+      },
+      {
+        alt: "boku",
+        fluid: clientBoku.childImageSharp.fluid,
+        url: "https://www.boku.com"
+      }
+    ];
     return (
       <Layout>
         <Helmet title="Apsis Labs | A Seattle Software Development Company" />
+
         <Navigation blue={false} />
         <HomeHero {...this.props} />
-
-        <Clients
-          clientOne={this.props.data.clientWeber.childImageSharp.fluid}
-          clientOneAlt="Weber Shandwick"
-          clientOneUrl="https://www.webershandwick.com/"
-          clientTwo={this.props.data.clientNatera.childImageSharp.fluid}
-          clientTwoAlt="Natera"
-          clientTwoUrl="https://www.natera.com/"
-          clientThree={this.props.data.clientTray.childImageSharp.fluid}
-          clientThreeAlt="Tray.io"
-          clientThreeUrl="https://tray.io/"
-          clientFour={this.props.data.clientBoku.childImageSharp.fluid}
-          clientFourAlt="Boku"
-          clientFourUrl="https://www.boku.com/"
-        />
+        <Clients clients={clients} />
 
         <ContentBlock title="Your industry is our business." vertical={false}>
           Our craft is software development but our specialty is understanding
@@ -144,7 +160,7 @@ export default IndexPage;
 export const fluidImage = graphql`
   fragment fluidImage on File {
     childImageSharp {
-      fluid(maxWidth: 140) {
+      fluid(maxWidth: 240) {
         ...GatsbyImageSharpFluid_tracedSVG
       }
     }
