@@ -133,7 +133,6 @@ class IndexPage extends React.Component {
 
         <Navigation blue={false} />
         <HomeHero {...this.props} />
-        <Clients clients={topClients} />
 
         <ContentBlock title="Your industry is our business." vertical={false}>
           <p>
@@ -156,6 +155,8 @@ class IndexPage extends React.Component {
             Our Services
           </Button>
         </ContentBlock>
+
+        <Clients clients={topClients} />
 
         <DiagonalBackground>
           <OpenSource />
