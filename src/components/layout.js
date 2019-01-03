@@ -3,6 +3,7 @@ import Container from "./container";
 import Footer from "./Footer/footer";
 import favicon from "../images/favicons/favicon.ico";
 import Helmet from "react-helmet";
+
 class Layout extends Component {
   render() {
     return (

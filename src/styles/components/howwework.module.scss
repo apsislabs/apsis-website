@@ -25,7 +25,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: $extra-small-padding;
+    margin-bottom: $padding-xs;
     h4 {
       margin-bottom: 0;
     }
@@ -36,7 +36,7 @@
   }
 
   &__paragraph {
-    margin-bottom: $app-padding;
+    margin-bottom: $padding-base;
   }
 
   &__content {

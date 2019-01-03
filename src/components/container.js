@@ -30,7 +30,6 @@ export default ({ children }) => (
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
     />
-    {/* <link rel="stylesheet" href="https://video-react.github.io/assets/video-react.css" /> */}
     <meta name="viewport" content="width=device-width, initial-scale=1" />{" "}
     {children}
   </div>

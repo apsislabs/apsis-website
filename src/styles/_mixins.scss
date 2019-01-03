@@ -3,6 +3,12 @@
   margin-bottom: $m;
 }
 
+@mixin container() {
+  max-width: $container-width;
+  padding: $padding-base;
+  margin: 0 auto;
+}
+
 @mixin button-variant($color, $text) {
   color: $text;
   background-color: $color;

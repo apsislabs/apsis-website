@@ -2,11 +2,11 @@
 @import "../mixins";
 
 .clients {
-  @include blockify($app-padding);
+  @include blockify($padding-base);
   text-align: center;
 
   &__logo {
-    margin: $small-padding $app-padding;
+    margin: $padding-sm $padding-base;
   }
 
   @media only screen and (min-width: $desktop-size) {
@@ -16,7 +16,7 @@
     align-items: center;
 
     &__logo {
-      margin: $app-padding;
+      margin: $padding-base;
     }
   }
 }

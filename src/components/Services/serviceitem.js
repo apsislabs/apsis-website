@@ -1,12 +1,14 @@
 import React from "react";
 import serviceStyles from "../../styles/components/servicelist.module.scss";
+import cn from "classnames";
 
 export default props => (
-  <div className={serviceStyles.serviceCard}>
-    <div className={serviceStyles.serviceCard__header}>
-      <i className={props.icon} />
+  <div className={serviceStyles.service__card}>
+    <div className={serviceStyles.service__header}>
+      <i className={cn(props.icon, serviceStyles.service__icon)} />
       {props.title}
     </div>
-    <div>{props.children}</div>
+
+    {props.children}
   </div>
 );

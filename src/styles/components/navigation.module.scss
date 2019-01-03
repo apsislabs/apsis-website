@@ -70,11 +70,11 @@
   header {
     max-width: $max-app-width;
     margin: 0 auto;
-    padding: $app-padding/2 $app-padding;
+    padding: $padding-base/2 $padding-base;
 
     nav.nav {
       @media only screen and (min-width: $tablet-size + 1) {
-        padding: $app-padding / 2;
+        padding: $padding-base / 2;
       }
       display: flex;
       @media only screen and (max-width: $tablet-size) {

@@ -1,3 +1,4 @@
+import cn from "classnames";
 import { graphql } from "gatsby";
 import Button from "gatsby-link";
 import React from "react";
@@ -14,7 +15,6 @@ import OpenSource from "../components/OpenSource/OpenSource";
 import ServiceList from "../components/Services/servicelist";
 import buttonStyles from "../styles/components/button.module.scss";
 import indexStyles from "../styles/pages/index.module.scss";
-import cn from "classnames";
 
 const HomeHero = props => {
   return (
@@ -136,15 +136,25 @@ class IndexPage extends React.Component {
         <Clients clients={topClients} />
 
         <ContentBlock title="Your industry is our business." vertical={false}>
-          Our craft is software development but our specialty is understanding
-          your business, your processes, and your priorities. A robust
-          understanding of your business goals is crucial for us to determine
-          how to serve you best. We take the time to ensure you’re not paying
-          extra for something that’s over-engineered. We want to strike the
-          right balance among the factors that are important to you: effective
-          features and functionality, budget, speed, technology maintenance
-          costs, and more.
+          <p>
+            Our craft is software development but our specialty is understanding
+            your business, your processes, and your priorities. A robust
+            understanding of your business goals is crucial for us to determine
+            how to serve you best. We take the time to ensure you’re not paying
+            extra for something that’s over-engineered. We want to strike the
+            right balance among the factors that are important to you: effective
+            features and functionality, budget, speed, technology maintenance
+            costs, and more.
+          </p>
+
           <ServiceList />
+
+          <Button
+            className={cn(buttonStyles.buttonBlue, buttonStyles.button)}
+            to="/services"
+          >
+            Our Services
+          </Button>
         </ContentBlock>
 
         <DiagonalBackground>

@@ -3,7 +3,7 @@
 .container {
   width: 100%;
   background: $apsis-blue;
-  padding: $app-padding;
+  padding: $padding-base;
   @media only screen and (min-width: $tablet-size) {
     height: 10.625rem;
     margin-top: 130px;

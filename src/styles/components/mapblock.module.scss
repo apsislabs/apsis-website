@@ -47,11 +47,11 @@
   &__locations {
     display: flex;
     flex-direction: row;
-    padding: $small-padding 0px;
+    padding: $padding-sm 0px;
     width: 100%;
     max-width: 1025px;
     @media only screen and (max-width: $mobile-size) {
-      padding: $small-padding 1em;
+      padding: $padding-sm 1em;
     }
   }
 
