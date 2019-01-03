@@ -42,7 +42,7 @@ class MapBlock extends React.Component {
   }
 
   isCurrent(city) {
-    return this.state.cityName == city;
+    return this.state.cityName === city;
   }
 
   render() {
