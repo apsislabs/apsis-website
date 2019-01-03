@@ -1,0 +1,72 @@
+@import "../variables";
+@import "../mixins";
+
+$navbar_transition: 0.35s;
+$navbar_padding: $padding-sm;
+$nav-icon-size: 16px;
+$navbar-height: 60px;
+
+.navicon {
+  display: block;
+  position: relative;
+  width: $nav-icon-size;
+  height: $nav-icon-size;
+
+  &:before,
+  &:after,
+  &__bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.15s 0s ease-in-out, top 0.15s 0.15s ease-in-out;
+
+    transform-origin: 50% 50%;
+    background: $apsis-dark;
+    display: block;
+    width: 100%;
+    content: "";
+    height: 2px;
+  }
+
+  &__bar {
+    transition: opacity 0.15s 0.15s ease-in-out;
+    top: 7px;
+  }
+
+  &:after {
+    top: 14px;
+  }
+
+  // Variants
+  //
+
+  &--white {
+    &:before,
+    &:after,
+    .navicon__bar {
+      background: white;
+    }
+  }
+
+  &--open {
+    &:before,
+    &:after,
+    .navicon__bar {
+      top: 7px;
+      transition: transform 0.15s 0.15s ease-in-out, top 0.15s 0s ease-in-out;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+
+    .navicon__bar {
+      transition: opacity 0s 0.15s ease-in-out;
+      opacity: 0;
+    }
+  }
+}

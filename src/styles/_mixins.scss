@@ -29,3 +29,11 @@
     box-shadow: inset 0 1px 10px transparentize(black, 0.75);
   }
 }
+
+@mixin delay-each($n, $delay: 150ms) {
+  @for $i from 1 through $n {
+    &:nth-child(#{$i}) {
+      transition-delay: $delay + ($i * 50ms);
+    }
+  }
+}

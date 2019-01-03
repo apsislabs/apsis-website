@@ -26,17 +26,23 @@ const HomeHero = props => {
           problems.
         </h3>
       </Animated>
-      <span className={indexStyles.heroButton}>
-        <Button className={buttonStyles.button} to="/services">
-          Our Process
-        </Button>
-        <Button
-          className={cn(buttonStyles.button, buttonStyles.buttonPrimary)}
-          to="/contact"
-        >
-          Hire Us
-        </Button>
-      </span>
+
+      <Button
+        className={cn(buttonStyles.button, buttonStyles.buttonBlock)}
+        to="/services"
+      >
+        Our Process
+      </Button>
+      <Button
+        className={cn(
+          buttonStyles.button,
+          buttonStyles.buttonPrimary,
+          buttonStyles.buttonBlock
+        )}
+        to="/contact"
+      >
+        Hire Us
+      </Button>
     </Hero>
   );
 };

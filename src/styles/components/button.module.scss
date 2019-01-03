@@ -4,6 +4,7 @@
 .button {
   display: inline-block;
   margin-bottom: 0;
+  margin-right: $padding-xs;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -22,6 +23,11 @@
     box-shadow: $box_shadow_hover;
   }
 
+  &:last-child,
+  &:last-of-type {
+    margin-right: 0;
+  }
+
   @include button-variant($button-color, $text-color);
 
   &.disabled,
@@ -31,14 +37,35 @@
     opacity: 0.65;
   }
 
-  + .button {
-    margin-left: $padding-xs;
+  //== Icons
+
+  > .fab,
+  > .fa,
+  > .fas {
+    margin-right: $padding-xs;
   }
 
   //== Variants
 
+  &--block {
+    margin: 0;
+    margin-bottom: $padding-sm;
+    width: 100%;
+
+    @media only screen and (min-width: $tablet-size) {
+      width: auto;
+      margin-right: $padding-xs;
+      margin-bottom: 0;
+    }
+  }
+
   &--large {
     padding: $padding-sm $padding-base;
+  }
+
+  &--sm {
+    padding: $padding-xs / 2 $padding-xs;
+    font-size: $font-size-sm;
   }
 
   &--white {
