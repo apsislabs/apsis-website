@@ -1,33 +1,42 @@
 import React from "react";
 import quoteblockStyles from "../styles/components/quoteblock.module.scss";
-import icon from "../images/quote_icon.svg";
 import Slider from "react-slick";
+import cn from "classnames";
 
-function NextArrow(props) {
-  const { style, onClick } = props;
-  return (
-    <div
-      className={`fas fa-angle-right fa-2x ${quoteblockStyles.arrow} ${
-        quoteblockStyles.arrow__next
-      }`}
-      style={style}
-      onClick={onClick}
-    />
+const Arrow = ({ dir, style, onClick }) => {
+  const arrowClasses = cn(
+    "fas",
+    `fa-angle-${dir}`,
+    "fa-fw",
+    "fa-2x",
+    quoteblockStyles.arrow
   );
-}
 
-function PrevArrow(props) {
-  const { style, onClick } = props;
+  return <div className={arrowClasses} style={style} onClick={onClick} />;
+};
+
+const NextArrow = props => <Arrow dir="right" {...props} />;
+const PrevArrow = props => <Arrow dir="left" {...props} />;
+
+const Quote = ({ quote, ...props }) => {
   return (
-    <div
-      className={`fas fa-angle-left fa-2x ${quoteblockStyles.arrow} ${
-        quoteblockStyles.arrow__prev
-      }`}
-      style={style}
-      onClick={onClick}
-    />
+    <div {...props}>
+      <blockquote className={quoteblockStyles.testimonial__quote}>
+        {quote.text}
+      </blockquote>
+
+      <cite>
+        <span className={quoteblockStyles.testimonial__attribution}>
+          {quote.attribution}
+        </span>
+
+        <span className={quoteblockStyles.testimonial__title}>
+          {quote.title} @ {quote.company}
+        </span>
+      </cite>
+    </div>
   );
-}
+};
 
 class QuoteBlock extends React.Component {
   constructor(props) {
@@ -81,32 +90,17 @@ class QuoteBlock extends React.Component {
         }
       ]
     };
+
     return (
-      <div className={quoteblockStyles.testimonial}>
-        <h2>What Our Partners Say</h2>
-        <img
-          className={quoteblockStyles.quotes}
-          src={icon}
-          alt="open quotemark"
-        />
-        <div className={quoteblockStyles.testimonial__container}>
+      <div className={quoteblockStyles.quoteblock}>
+        <h3 className={quoteblockStyles.quoteblock__title}>
+          What Our Partners Say
+        </h3>
+
+        <div className={quoteblockStyles.quoteblock__container}>
           <Slider {...settings}>
             {this.state.quotes.map(function(quote, i) {
-              return (
-                <div key={i}>
-                  <div className={quoteblockStyles.testimonial__quote}>
-                    {quote.text}
-                  </div>
-                  <cite>
-                    <span className={quoteblockStyles.testimonial__attribution}>
-                      {quote.attribution}
-                    </span>
-                    <span className={quoteblockStyles.testimonial__title}>
-                      {quote.title} @ {quote.company}
-                    </span>
-                  </cite>
-                </div>
-              );
+              return <Quote key={i} quote={quote} />;
             })}
           </Slider>
         </div>
