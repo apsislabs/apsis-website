@@ -1,3 +1,4 @@
+import cn from "classnames";
 import React from "react";
 import Layout from "../components/layout";
 import HireUsFooter from "../components/Footer/hireusfooter";
@@ -10,7 +11,6 @@ import styles from "../styles/components/shared.module.scss";
 import buttonStyles from "../styles/components/button.module.scss";
 import Button from "gatsby-link";
 import ContentBlock from "../components/contentblock";
-import { cl } from "../utils/helpers";
 
 const blueWideButtonClasses = `${buttonStyles["button--blue"]} ${
   buttonStyles.buttonLarge
@@ -45,7 +45,7 @@ class TeamPage extends React.Component {
           </p>
         </Header>
         <TeamGrid />
-        <div className={cl(styles.paddingBottom, styles.sidesSmallPadding)}>
+        <div className={cn(styles.paddingBottom, styles.sidesSmallPadding)}>
           <ContentBlock vertical={true} title="Knowledge and Experience">
             <p>
               We hire senior developers only. Each of our team members comes

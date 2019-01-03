@@ -2,7 +2,7 @@ import React from "react";
 import mapblockStyles from "../styles/components/mapblock.module.scss";
 import Map from "google-map-react";
 import { Animated } from "react-animated-css";
-import { cl } from "../utils/helpers";
+import cn from "classnames";
 
 const locations = {
   seattle: [{ text: "Seattle, WA", lat: 47.6062, lng: -122.3321 }],
@@ -71,7 +71,7 @@ class MapBlock extends React.Component {
             <ul>
               <li>
                 <span
-                  className={cl(
+                  className={cn(
                     mapblockStyles.tabs__tablinks,
                     this.isCurrent("seattle") && mapblockStyles.active
                   )}
@@ -82,7 +82,7 @@ class MapBlock extends React.Component {
               </li>
               <li>
                 <span
-                  className={cl(
+                  className={cn(
                     mapblockStyles.tabs__tablinks,
                     this.isCurrent("portlands") && mapblockStyles.active
                   )}
@@ -93,7 +93,7 @@ class MapBlock extends React.Component {
               </li>
               <li>
                 <span
-                  className={cl(
+                  className={cn(
                     mapblockStyles.tabs__tablinks,
                     this.isCurrent("boulder") && mapblockStyles.active
                   )}
@@ -104,7 +104,7 @@ class MapBlock extends React.Component {
               </li>
               <li>
                 <span
-                  className={cl(
+                  className={cn(
                     mapblockStyles.tabs__tablinks,
                     this.isCurrent("syracuse") && mapblockStyles.active
                   )}
