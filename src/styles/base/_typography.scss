@@ -12,6 +12,14 @@ body {
   margin: 1.5rem 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $font-family-serif;
+}
+
 .h1 {
   font-size: ms(5);
   letter-spacing: -2px;
@@ -71,9 +79,9 @@ body {
 
 .hr {
   width: 20%;
-  margin: 2em 0;
+  margin: $padding-base auto;
   border: 0;
-  border-top: 1px solid $gray-lighter;
+  border-top: 1px solid $border-color;
 }
 
 .blockquote {

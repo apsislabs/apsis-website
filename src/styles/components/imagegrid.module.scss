@@ -1,0 +1,28 @@
+@import "../variables", "../extensions";
+@import "../mixins";
+
+.image_grid {
+  @include blockify($padding-base);
+  text-align: center;
+
+  &__title {
+    margin: 0;
+  }
+
+  &__images {
+    max-width: 100%;
+    @extend %centered-row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__image {
+    margin: $padding-sm $padding-base;
+  }
+
+  @media only screen and (min-width: $desktop-size) {
+    &__image {
+      margin: $padding-base;
+    }
+  }
+}

@@ -4,7 +4,7 @@ import Button from "gatsby-link";
 import React from "react";
 import { Animated } from "react-animated-css";
 import Helmet from "react-helmet";
-import Clients from "../components/clients";
+import ImageGrid from "../components/image_grid";
 import ContentBlock from "../components/contentblock";
 import DiagonalBackground from "../components/diagonalbackground";
 import About from "../components/Footer/about";
@@ -20,6 +20,7 @@ const HomeHero = props => {
     <Hero displayname="Hero" imgSrc={props.data.hero.childImageSharp.fluid.src}>
       <Animated animationIn="fadeInUp">
         <h1>Need an app? We can help.</h1>
+
         <p class="lede">
           We are developers focused on efficient solutions to real world
           problems.
@@ -162,7 +163,7 @@ class IndexPage extends React.Component {
           </Button>
         </ContentBlock>
 
-        <Clients clients={topClients} />
+        <ImageGrid images={topClients} />
 
         <DiagonalBackground>
           <OpenSource />
@@ -186,8 +187,8 @@ class IndexPage extends React.Component {
           </Button>
         </ContentBlock>
 
-        <Clients clients={secondaryClients} />
-        <Clients client={tertiaryClients} />
+        <ImageGrid images={secondaryClients} />
+        <ImageGrid images={tertiaryClients} />
 
         <About
           fluid={this.props.data.building.childImageSharp.fluid}

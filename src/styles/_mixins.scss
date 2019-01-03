@@ -6,7 +6,7 @@
 @mixin container() {
   width: 100%;
   max-width: $container-width;
-  padding: $padding-base;
+  padding: 0 $padding-base;
   margin: 0 auto;
 }
 
