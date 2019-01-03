@@ -1,4 +1,4 @@
-@import '../__variables';
+@import "../__variables";
 
 .card {
   background: $gray-lightest;
@@ -34,10 +34,13 @@
 
   &:hover {
     border-radius: 2px;
-    transform: scale(1.01); transition: transform ease-in-out 0.25s;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(15, 44, 64, 0.15);
+    transform: scale(1.01);
+    transition: transform ease-in-out 0.25s;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1),
+      0 4px 8px 0 rgba(15, 44, 64, 0.15);
     border: solid 1px #7994a6;
-    background-image: linear-gradient(to bottom, $base-bg-color, $base-bg-color), linear-gradient(105deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.05));
+    background-image: linear-gradient(to bottom, $base-bg-color, $base-bg-color),
+      linear-gradient(105deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.05));
     .red {
       color: $ruby-red;
     }

@@ -1,4 +1,4 @@
-@import '../__variables';
+@import "../__variables";
 
 .mapBlock {
   margin: 0 auto;
@@ -17,16 +17,16 @@
     left: 50%;
     top: 50%;
     margin: -20px 0 0 -20px;
-      &:after {
-        content: '';
-        width: 14px;
-        height: 14px;
-        margin: 8px 0 0 8px;
-        background: $gray-lightest;
-        position: absolute;
-        border-radius: 50%;
-      }
+    &:after {
+      content: "";
+      width: 14px;
+      height: 14px;
+      margin: 8px 0 0 8px;
+      background: $gray-lightest;
+      position: absolute;
+      border-radius: 50%;
     }
+  }
   &__map {
     height: 527px;
     width: 100%;
@@ -35,7 +35,7 @@
     margin-bottom: 20px;
 
     border-radius: 5px;
-    z-index:0;
+    z-index: 0;
   }
 
   &__content {
@@ -55,7 +55,7 @@
     }
   }
 
-  .tabcontent{
+  .tabcontent {
     font-size: 1.125rem;
     max-width: 795px;
     &__active {
@@ -70,8 +70,8 @@
     font-weight: bold;
     font-size: 1.125rem;
 
-    &__tablinks{
-      cursor:pointer;
+    &__tablinks {
+      cursor: pointer;
       &.active {
         color: $apsis-blue;
         display: block;
@@ -90,14 +90,15 @@
       }
       &.active > a {
         color: $apsis-blue;
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           color: $apsis-blue;
         }
       }
     }
   }
   @media (max-width: 750px) {
-    &__map{
+    &__map {
       width: 100%;
     }
     .tabs {

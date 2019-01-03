@@ -1,53 +1,55 @@
+import { graphql } from "gatsby";
+import Button from "gatsby-link";
 import React from "react";
-import Layout from "../components/layout";
-import Hero from "../components/hero";
+import { Animated } from "react-animated-css";
+import Helmet from "react-helmet";
 import Clients from "../components/clients";
 import ContentBlock from "../components/contentblock";
-import ServiceList from "../components/Services/servicelist";
 import DiagonalBackground from "../components/diagonalbackground";
-import OpenSource from "../components/OpenSource/OpenSource";
 import About from "../components/Footer/about";
-import indexStyles from "../styles/pages/index.module.scss";
-import buttonStyles from "../styles/components/button.module.scss";
-import Button from "gatsby-link";
-import { graphql } from "gatsby";
+import Hero from "../components/hero";
+import Layout from "../components/layout";
 import Navigation from "../components/navigation";
-import Helmet from "react-helmet";
-import { Animated } from "react-animated-css";
+import OpenSource from "../components/OpenSource/OpenSource";
+import ServiceList from "../components/Services/servicelist";
+import buttonStyles from "../styles/components/button.module.scss";
+import indexStyles from "../styles/pages/index.module.scss";
+
+const blueWideButtonClasses = `${buttonStyles.button__blue} ${
+  buttonStyles.button__wide
+}`;
+
+const grayWideButtonClasses = `${buttonStyles.button__gray} ${
+  buttonStyles.button__wide
+}`;
+
+const HomeHero = props => (
+  <Hero displayname="Hero" imgSrc={props.data.hero.childImageSharp.fluid.src}>
+    <Animated animationIn="fadeInUp">
+      <h1>Need an app? We can help.</h1>
+      <h3>
+        We are developers focused on efficient solutions to real world problems.
+      </h3>
+    </Animated>
+    <span className={indexStyles.heroButton}>
+      <Button className={blueWideButtonClasses} to="/services">
+        Our Process
+      </Button>
+      <Button className={grayWideButtonClasses} to="/contact">
+        Hire Us
+      </Button>
+    </span>
+  </Hero>
+);
 
 class IndexPage extends React.Component {
   render() {
-    const blueWideButtonClasses = `${buttonStyles.button__blue} ${
-      buttonStyles.button__wide
-    }`;
-    const grayWideButtonClasses = `${buttonStyles.button__gray} ${
-      buttonStyles.button__wide
-    }`;
-
     return (
       <Layout>
         <Helmet title="Apsis Labs | A Seattle Software Development Company" />
         <Navigation blue={false} />
-        <Hero
-          displayname="Hero"
-          imgSrc={this.props.data.hero.childImageSharp.fluid.src}
-        >
-          <Animated animationIn="fadeInUp">
-            <h1>Need an app? We can help.</h1>
-            <h3>
-              We are developers focused on efficient solutions to real world
-              problems.
-            </h3>
-          </Animated>
-          <span className={indexStyles.heroButton}>
-            <Button className={blueWideButtonClasses} to="/services">
-              Our Process
-            </Button>
-            <Button className={grayWideButtonClasses} to="/contact">
-              Hire Us
-            </Button>
-          </span>
-        </Hero>
+        <HomeHero {...this.props} />
+
         <Clients
           clientOne={this.props.data.clientWeber.childImageSharp.fluid}
           clientOneAlt="Weber Shandwick"
@@ -62,6 +64,7 @@ class IndexPage extends React.Component {
           clientFourAlt="Boku"
           clientFourUrl="https://www.boku.com/"
         />
+
         <ContentBlock title="Your industry is our business." vertical={false}>
           Our craft is software development but our specialty is understanding
           your business, your processes, and your priorities. A robust
@@ -73,9 +76,11 @@ class IndexPage extends React.Component {
           costs, and more.
           <ServiceList />
         </ContentBlock>
+
         <DiagonalBackground>
           <OpenSource />
         </DiagonalBackground>
+
         <ContentBlock title="Idea. Implement. Iterate." vertical={false}>
           <div>
             At Apsis we embrace a process we call “almost agile.” Based on the
@@ -85,12 +90,14 @@ class IndexPage extends React.Component {
             developers are organized based on your project needs, and work in
             small, focused sprints to maximize adaptability.
           </div>
+
           <div className={indexStyles.serviceButton}>
             <Button className={blueWideButtonClasses} to="/services">
               Our Services
             </Button>
           </div>
         </ContentBlock>
+
         <Clients
           clientOne={this.props.data.clientCascade.childImageSharp.fluid}
           clientOneAlt="Cascade Bicycle Club"
@@ -105,6 +112,7 @@ class IndexPage extends React.Component {
           clientFourAlt="Callidus Cloud"
           clientFourUrl="https://www.calliduscloud.com/"
         />
+
         <Clients
           clientOne={this.props.data.clientPicturiffic.childImageSharp.fluid}
           clientOneAlt="Picturiffic"
@@ -121,6 +129,7 @@ class IndexPage extends React.Component {
           clientFourAlt="Cover My Test"
           clientFourUrl="https://covermytest.com/"
         />
+
         <About
           fluid={this.props.data.building.childImageSharp.fluid}
           alt="Our Seattle Office"

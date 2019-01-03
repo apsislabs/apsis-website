@@ -1,4 +1,4 @@
-@import '../__variables';
+@import "../__variables";
 
 .footer {
   text-decoration: none;
@@ -6,7 +6,7 @@
   position: relative;
   bottom: 0px;
   color: $apsis-gray;
-  font-size: 	1.125rem;
+  font-size: 1.125rem;
 
   &__map {
     height: 350px;
@@ -29,8 +29,8 @@
     a {
       color: white;
       padding: 10px;
-      font-size: 	1.125rem;
-      &:hover{
+      font-size: 1.125rem;
+      &:hover {
         color: $apsis-blue;
       }
     }
@@ -75,14 +75,13 @@
     flex-direction: row;
     width: 150px;
     height: 72px;
-    font-size: 	1.125rem;
+    font-size: 1.125rem;
 
     a {
       font-size: 1.125rem;
-      &:hover{
+      &:hover {
         color: $apsis-blue;
       }
     }
   }
 }
-

@@ -1,105 +1,106 @@
-@import '../__variables';
+@import "../__variables";
 
 .testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  padding: 0 1em;
+
+  @media only screen and (min-width: $tablet-size) {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+  }
+  @media only screen and (min-width: $desktop-size) {
+    max-width: 700px;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  .arrow {
+    display: block;
+    position: absolute;
+    color: #dae1e6;
+    top: 2em;
+    &__next {
+      right: -1.5em;
+    }
+    &__prev {
+      left: -4rem;
+    }
+  }
+
+  .quotes {
+    margin: $app-padding 0 $app-padding/2 0;
+  }
+
+  i {
+    color: $gray-lighter;
+    padding-top: 55px;
+  }
+
+  cite {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: left;
-    padding: 0 1em;
+    padding-top: 3em;
+  }
+  &__attribution {
+    text-align: center;
+    font-weight: bold;
+    color: $apsis-gray;
+  }
 
-    @media only screen and (min-width: $tablet-size) {
-        text-align: center;
-        width: 70%;
-        margin: 0 auto;
-    }
-    @media only screen and (min-width: $desktop-size) {
-        max-width: 700px;
-    }
+  &__title {
+    font-weight: normal;
+    color: $gray;
+  }
 
-    h2 {
-        margin-bottom: 0;
-    }
-
-    .arrow {
-        display: block;
-        position: absolute;
-        color: #DAE1E6;
-        top: 2em;
-        &__next {
-            right: -1.5em;
-        }
-        &__prev {
-            left: -4rem;
-        }
-    }
-
-    .quotes {
-        margin: $app-padding 0 $app-padding/2 0;
-    }
-
+  &__container {
+    align-items: center;
+    color: $gray;
+    padding-bottom: 20px;
     i {
-        color: $gray-lighter;
-        padding-top: 55px;
+      padding: 0px 80px;
     }
+  }
 
-    cite {
-        display: flex;
-        flex-direction: column;
-        padding-top: 3em;
-    }
-    &__attribution {
-        text-align: center;
-        font-weight: bold;
-        color: $apsis-gray;
-    }
+  &__quote {
+    color: $apsis-gray;
+    align-self: center;
+    position: relative;
+    overflow: visible !important;
+    padding-bottom: 30px;
+    font-size: 1.375rem;
+    font-weight: 100;
+    width: 100%;
+    flex-direction: column;
+    border-bottom: 1px solid #dae1e6;
 
-    &__title {
-        font-weight: normal;
-        color: $gray;
+    &:after,
+    &:before {
+      top: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
     }
-
-    &__container {
-        align-items: center;
-        color: $gray;
-        padding-bottom: 20px;
-        i {
-            padding: 0px 80px;
-        }
+    &:after {
+      border-color: rgba(255, 255, 255, 0);
+      border-top-color: #ffffff;
+      border-width: 30px;
+      margin-left: -30px;
     }
-
-    &__quote {
-        color: $apsis-gray;
-        align-self: center;
-        position: relative;
-        overflow: visible !important;
-        padding-bottom: 30px;
-        font-size: 1.375rem;
-        font-weight: 100;
-        width: 100%;
-        flex-direction: column;
-        border-bottom: 1px solid #dae1e6;
-
-        &:after, &:before {
-            top: 100%;
-            left: 50%;
-            border: solid transparent;
-            content: " ";
-            height: 0;
-            width: 0;
-            position: absolute;
-            pointer-events: none;
-        }
-        &:after {
-            border-color: rgba(255, 255, 255, 0);
-            border-top-color: #ffffff;
-            border-width: 30px;
-            margin-left: -30px;
-        }
-        &:before {
-            border-color: rgba(218, 225, 230, 0);
-            border-top-color: #dae1e6;
-            border-width: 31px;
-            margin-left: -31px;
-        }
+    &:before {
+      border-color: rgba(218, 225, 230, 0);
+      border-top-color: #dae1e6;
+      border-width: 31px;
+      margin-left: -31px;
     }
+  }
 }

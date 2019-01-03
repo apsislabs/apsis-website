@@ -1,6 +1,6 @@
 //== Colors
 //
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Lora|Source Code Pro');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Lora|Source Code Pro");
 
 $apsis-blue: #2773a7;
 $apsis-dark: #2c3e50;
@@ -32,15 +32,15 @@ $font-size-base: 16px;
 $font-size-tablet: 18px;
 $font-size-desktop: 20px;
 
-$font-family-serif: 'Lora', serif;
-$font-family-sans: 'Open Sans', sans-serif;
-$font-family-fixed: 'Source Code Pro', monospace;
+$font-family-serif: "Lora", serif;
+$font-family-sans: "Open Sans", sans-serif;
+$font-family-fixed: "Source Code Pro", monospace;
 
 $line-height-base: 1.75;
 $grid-unit-base: floor(($font-size-base * $line-height-base));
 $text-color: $apsis-dark;
 $subheading-color: lighten($apsis-dark, 20%);
-$mobile-modular-scale-base: $modular-scale-base * .75;
+$mobile-modular-scale-base: $modular-scale-base * 0.75;
 
 //== Sizes
 //
@@ -82,15 +82,43 @@ $small-diagonal-offset: 40px;
 $large-diagonal-offset: 80px;
 
 $hero-clip-path: (
-    mobile: polygon(0 0, 100% 0, 100% calc(100% - #{$small-diagonal-offset}), 0 100%),
-    tablet: polygon(0 0, 100% 0, 100% calc(100% - #{$small-diagonal-offset}), 0 100%),
-    desktop: polygon(0 0, 100% 0, 100% calc(100% - #{$large-diagonal-offset}), 0 100%),
-    largedesktop: polygon(0 0, 100% 0, 100% calc(100% - #{$large-diagonal-offset}), 0 100%)
+  mobile:
+    polygon(0 0, 100% 0, 100% calc(100% - #{$small-diagonal-offset}), 0 100%),
+  tablet:
+    polygon(0 0, 100% 0, 100% calc(100% - #{$small-diagonal-offset}), 0 100%),
+  desktop:
+    polygon(0 0, 100% 0, 100% calc(100% - #{$large-diagonal-offset}), 0 100%),
+  largedesktop:
+    polygon(0 0, 100% 0, 100% calc(100% - #{$large-diagonal-offset}), 0 100%)
 );
 
 $diagonal-clip-path: (
-    mobile: polygon(0 $small-diagonal-offset, 100% 0%, 100% calc(100% - #{$small-diagonal-offset}), 0 100%),
-    tablet: polygon(0 $small-diagonal-offset, 100% 0%, 100% calc(100% - #{$small-diagonal-offset}), 0 100%),
-    desktop: polygon(0 $large-diagonal-offset, 100% 0%, 100% calc(100% - #{$large-diagonal-offset}), 0 100%),
-    largedesktop: polygon(0 $large-diagonal-offset, 100% 0%, 100% calc(100% - #{$large-diagonal-offset}), 0 100%),
+  mobile:
+    polygon(
+      0 $small-diagonal-offset,
+      100% 0%,
+      100% calc(100% - #{$small-diagonal-offset}),
+      0 100%
+    ),
+  tablet:
+    polygon(
+      0 $small-diagonal-offset,
+      100% 0%,
+      100% calc(100% - #{$small-diagonal-offset}),
+      0 100%
+    ),
+  desktop:
+    polygon(
+      0 $large-diagonal-offset,
+      100% 0%,
+      100% calc(100% - #{$large-diagonal-offset}),
+      0 100%
+    ),
+  largedesktop:
+    polygon(
+      0 $large-diagonal-offset,
+      100% 0%,
+      100% calc(100% - #{$large-diagonal-offset}),
+      0 100%
+    )
 );

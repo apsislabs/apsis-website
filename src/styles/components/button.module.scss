@@ -1,8 +1,8 @@
-@import '../__variables';
+@import "../__variables";
 
 .button {
   &__wide {
-    cursor:pointer;
+    cursor: pointer;
     white-space: nowrap;
     border-radius: 4px;
     text-align: center;
@@ -13,8 +13,10 @@
     height: 2.25em;
 
     &:hover {
-      transition: background-color ease-in-out 0.25s, color ease-in-out 0.25s, border-color ease-in-out 0.25s, box-shadow ease-in-out 0.25s;
-      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(15, 44, 64, 0.15);
+      transition: background-color ease-in-out 0.25s, color ease-in-out 0.25s,
+        border-color ease-in-out 0.25s, box-shadow ease-in-out 0.25s;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1),
+        0 4px 8px 0 rgba(15, 44, 64, 0.15);
     }
 
     @media only screen and (max-width: $mobile-size) {
@@ -23,7 +25,7 @@
   }
 
   &__short {
-    cursor:pointer;
+    cursor: pointer;
     white-space: nowrap;
     border-radius: 4px;
     padding: 7px 12px;
@@ -31,15 +33,17 @@
     height: 2.25em;
 
     &:hover {
-      transition: background-color ease-in-out 0.25s, color ease-in-out 0.25s, border-color ease-in-out 0.25s, box-shadow ease-in-out 0.25s;
-      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(15, 44, 64, 0.15);
+      transition: background-color ease-in-out 0.25s, color ease-in-out 0.25s,
+        border-color ease-in-out 0.25s, box-shadow ease-in-out 0.25s;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1),
+        0 4px 8px 0 rgba(15, 44, 64, 0.15);
     }
   }
 
   &__blue {
     background-color: $apsis-blue;
     color: white;
-    &:hover{
+    &:hover {
       // pointer-events: none;
       // text-decoration: none;
       color: white !important;
@@ -49,7 +53,7 @@
   &__white {
     background-color: white;
     color: $apsis-blue;
-    &:hover{
+    &:hover {
       // text-decoration: none;
       // color: white !important;
       color: $apsis-blue !important;
