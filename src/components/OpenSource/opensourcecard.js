@@ -7,11 +7,10 @@ export default props => (
       <div className={opensourcecardStyles.card__icon}>
         <i className={`${props.icon} ${props.hover}`} />
       </div>
-      <div className={opensourcecardStyles.content}>
-        <div>
-          <strong>{props.title}</strong>
-        </div>
-        <span>{props.text}</span>
+
+      <div className={opensourcecardStyles.card__content}>
+        <h4 className={opensourcecardStyles.card__title}>{props.title}</h4>
+        <p>{props.text}</p>
       </div>
     </div>
   </a>

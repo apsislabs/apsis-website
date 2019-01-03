@@ -162,23 +162,21 @@ class IndexPage extends React.Component {
         </DiagonalBackground>
 
         <ContentBlock title="Idea. Implement. Iterate." vertical={false}>
-          <div>
+          <p>
             At Apsis we embrace a process we call “almost agile.” Based on the
             idea that the best proving ground for new software is real-world
             users, we focus on rapid development and deployment followed by
             iteration based on user feedback. Our small project teams of 2-3
             developers are organized based on your project needs, and work in
             small, focused sprints to maximize adaptability.
-          </div>
+          </p>
 
-          <div className={indexStyles.serviceButton}>
-            <Button
-              className={cn(buttonStyles.button, buttonStyles.buttonPrimary)}
-              to="/services"
-            >
-              Our Services
-            </Button>
-          </div>
+          <Button
+            className={cn(buttonStyles.button, buttonStyles.buttonPrimary)}
+            to="/services"
+          >
+            Our Services
+          </Button>
         </ContentBlock>
 
         <Clients clients={secondaryClients} />

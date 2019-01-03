@@ -4,6 +4,9 @@ import Footer from "./Footer/footer";
 import favicon from "../images/favicons/favicon.ico";
 import Helmet from "react-helmet";
 
+// Import our main SCSS File
+import "../styles/main.scss";
+
 class Layout extends Component {
   render() {
     return (

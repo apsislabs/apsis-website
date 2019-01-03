@@ -1,51 +1,48 @@
 @import "../variables";
+@import "../mixins";
 
 .card {
   background: $gray-lightest;
-  width: 444px;
-  height: 117px;
-  margin: 5px;
-  padding: 20px 0px 10px 0px;
   display: flex;
   flex-direction: row;
-  border-radius: 2px;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-  background-color: $base-bg-color;
-  border: solid 1px $button-color;
-  text-align: left;
+  align-items: center;
+  box-shadow: $box_shadow;
+  height: 100%;
+  width: 100%;
+  border-radius: $border-radius-sm;
+  padding: $padding-sm;
+  border: 1px solid transparent;
 
-  @media only screen and (max-width: $tablet-size) {
-    width: 95vw;
+  &:hover {
+    box-shadow: $box_shadow_hover;
+    border-color: $apsis-blue;
+    color: inherit;
+
+    .card__icon {
+      .red {
+        color: $ruby-red;
+      }
+      .js {
+        color: $js-yellow;
+      }
+    }
   }
-  .content {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    justify-content: center;
+
+  &__content {
+    font-size: $font-size-sm;
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0.25em;
+    font-weight: bold;
   }
 
   &__icon {
     font-size: 40px;
-    display: flex;
-    align-items: center;
-    margin: 30px;
-    color: $gray-lighter;
-  }
-
-  &:hover {
-    border-radius: 2px;
-    transform: scale(1.01);
-    transition: transform ease-in-out 0.25s;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1),
-      0 4px 8px 0 rgba(15, 44, 64, 0.15);
-    border: solid 1px #7994a6;
-    background-image: linear-gradient(to bottom, $base-bg-color, $base-bg-color),
-      linear-gradient(105deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.05));
-    .red {
-      color: $ruby-red;
-    }
-    .js {
-      color: #f7df1e;
-    }
+    margin-right: $padding-sm;
+    transition: color $transition_duration ease-in-out;
   }
 }
