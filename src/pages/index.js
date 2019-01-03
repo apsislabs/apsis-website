@@ -48,10 +48,15 @@ class IndexPage extends React.Component {
       clientWeber,
       clientNatera,
       clientTray,
-      clientBoku
+      clientBoku,
+      clientCascade,
+      clientDragonFoundry,
+      clientColumbia,
+      clientCallidus,
+      clientPicturiffic
     } = this.props.data;
 
-    const clients = [
+    const topClients = [
       {
         alt: "Weber Shandwick",
         fluid: clientWeber.childImageSharp.fluid,
@@ -73,13 +78,60 @@ class IndexPage extends React.Component {
         url: "https://www.boku.com"
       }
     ];
+
+    const secondaryClients = [
+      {
+        fluid: clientCascade.childImageSharp.fluid,
+        alt: "Cascade Bicycle Club",
+        url: "https://www.cascade.org/"
+      },
+      {
+        fluid: clientDragonFoundry.childImageSharp.fluid,
+        alt: "Dragon Foundry",
+        url: "http://www.dragonfoundry.com/"
+      },
+      {
+        fluid: clientColumbia.childImageSharp.fluid,
+        alt: "Columbia University",
+        url: "https://www.columbia.edu/"
+      },
+      {
+        fluid: clientCallidus.childImageSharp.fluid,
+        alt: "Callidus Cloud",
+        url: "https://www.calliduscloud.com/"
+      }
+    ];
+
+    const tertiaryClients = [
+      {
+        fluid: clientPicturiffic.childImageSharp.fluid,
+        alt: "Picturiffic",
+        url: "https://picturiffic.apsis.io/"
+      },
+      {
+        fluid: clientArkatechture.childImageSharp.fluid,
+        alt: "Arkatechture",
+        url: "https://www.arkatechture.com/"
+      },
+      {
+        fluid: clientThinkingBaseball.childImageSharp.fluid,
+        alt: "Thinking Baseball",
+        url: "https://www.thinkingbaseball.com/"
+      },
+      {
+        fluid: clientCoverMyTest.childImageSharp.fluid,
+        alt: "Cover My Test",
+        url: "https://covermytest.com/"
+      }
+    ];
+
     return (
       <Layout>
         <Helmet title="Apsis Labs | A Seattle Software Development Company" />
 
         <Navigation blue={false} />
         <HomeHero {...this.props} />
-        <Clients clients={clients} />
+        <Clients clients={topClients} />
 
         <ContentBlock title="Your industry is our business." vertical={false}>
           Our craft is software development but our specialty is understanding
@@ -114,37 +166,8 @@ class IndexPage extends React.Component {
           </div>
         </ContentBlock>
 
-        <Clients
-          clientOne={this.props.data.clientCascade.childImageSharp.fluid}
-          clientOneAlt="Cascade Bicycle Club"
-          clientOneUrl="https://www.cascade.org/"
-          clientTwo={this.props.data.clientDragonFoundry.childImageSharp.fluid}
-          clientTwoAlt="Dragon Foundry"
-          clientTwoUrl="http://www.dragonfoundry.com/"
-          clientThree={this.props.data.clientColumbia.childImageSharp.fluid}
-          clientThreeAlt="Columbia University"
-          clientThreeUrl="https://www.columbia.edu/"
-          clientFour={this.props.data.clientCallidus.childImageSharp.fluid}
-          clientFourAlt="Callidus Cloud"
-          clientFourUrl="https://www.calliduscloud.com/"
-        />
-
-        <Clients
-          clientOne={this.props.data.clientPicturiffic.childImageSharp.fluid}
-          clientOneAlt="Picturiffic"
-          clientOneUrl="https://picturiffic.apsis.io/"
-          clientTwo={this.props.data.clientArkatechture.childImageSharp.fluid}
-          clientTwoAlt="Arkatechture"
-          clientTwoUrl="https://www.arkatechture.com/"
-          clientThree={
-            this.props.data.clientThinkingBaseball.childImageSharp.fluid
-          }
-          clientThreeAlt="Thinking Baseball"
-          clientThreeUrl="https://www.thinkingbaseball.com/"
-          clientFour={this.props.data.clientCoverMyTest.childImageSharp.fluid}
-          clientFourAlt="Cover My Test"
-          clientFourUrl="https://covermytest.com/"
-        />
+        <Clients clients={secondaryClients} />
+        <Clients client={tertiaryClients} />
 
         <About
           fluid={this.props.data.building.childImageSharp.fluid}
