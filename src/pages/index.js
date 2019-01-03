@@ -14,25 +14,18 @@ import Navigation from "../components/navigation";
 import OpenSource from "../components/OpenSource/OpenSource";
 import ServiceList from "../components/Services/servicelist";
 import buttonStyles from "../styles/components/button.module.scss";
-import indexStyles from "../styles/pages/index.module.scss";
 
 const HomeHero = props => {
   return (
     <Hero displayname="Hero" imgSrc={props.data.hero.childImageSharp.fluid.src}>
       <Animated animationIn="fadeInUp">
         <h1>Need an app? We can help.</h1>
-        <h3>
+        <p class="lede">
           We are developers focused on efficient solutions to real world
           problems.
-        </h3>
+        </p>
       </Animated>
 
-      <Button
-        className={cn(buttonStyles.button, buttonStyles.buttonBlock)}
-        to="/services"
-      >
-        Our Process
-      </Button>
       <Button
         className={cn(
           buttonStyles.button,
@@ -42,6 +35,13 @@ const HomeHero = props => {
         to="/contact"
       >
         Hire Us
+      </Button>
+
+      <Button
+        className={cn(buttonStyles.button, buttonStyles.buttonBlock)}
+        to="/services"
+      >
+        Our Process
       </Button>
     </Hero>
   );

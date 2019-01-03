@@ -4,17 +4,14 @@ import heroStyles from "../styles/components/hero.module.scss";
 export default class Hero extends React.Component {
   render() {
     return (
-      <div className={heroStyles.hero_container}>
+      <div className={heroStyles.hero}>
         <div
-          className={
-            !this.props.fixedHeight
-              ? `${heroStyles.hero} ${heroStyles.hero__expandable}`
-              : `${heroStyles.hero}`
-          }
+          className={heroStyles.hero__image}
           style={{ backgroundImage: `url(${this.props.imgSrc})` }}
-          displayname="Hero"
         >
-          <div className={heroStyles.hero__content}>{this.props.children}</div>
+          <div className={heroStyles.hero__container}>
+            {this.props.children}
+          </div>
         </div>
       </div>
     );

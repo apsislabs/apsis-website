@@ -16,12 +16,15 @@ $gray: lighten($apsis-gray, 30%);
 $gray-lighter: lighten($apsis-gray, 45%);
 $gray-lightest: lighten($apsis-gray, 65%);
 
+$diagonal_bg: linear-gradient(to bottom, $gray-lightest, $barely-blue);
+
 $text-color: $apsis-dark;
 $button-color: $barely-blue;
 $border-color: $barely-blue;
 
 $shadow: rgba(#0f2c40, 0.15);
 $shadow_rim: rgba(0, 0, 0, 0.01);
+$simple_shadow: 0 1px 4px 0 $shadow_rim;
 $box_shadow: 0 1px 1px 0 $shadow, 0 1px 4px 0 $shadow_rim;
 $box_shadow_hover: 0 1px 2px 1px $shadow, 0 1px 5px 2px $shadow_rim;
 $text_shadow: 0 2px 4px $shadow;
@@ -36,7 +39,7 @@ $link-active-color: darken($apsis-blue, 15%);
 //== Typography
 
 $modular-scale-base: 1rem;
-$mobile-modular-scale-base: $modular-scale-base * 0.75;
+$mobile-modular-scale-base: $modular-scale-base * 0.85;
 
 $font-size-base: 16px;
 $font-size-sm: $font-size-base * 0.85;
@@ -58,8 +61,12 @@ $transition_duration: 0.15s;
 
 $padding-base: 40px;
 $padding-sm: $padding-base / 2;
-$padding-lg: $padding-base * 2;
 $padding-xs: $padding-sm / 2;
+
+$padding-lg: $padding-base * 2;
+$padding-xl: $padding-lg * 2;
+$padding-jumbo: $padding-xl * 2;
+
 $border-radius: 4px;
 $border-radius-sm: $border-radius / 2;
 

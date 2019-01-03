@@ -2,6 +2,7 @@
 @import "../mixins";
 
 .button {
+  font-weight: 500;
   display: inline-block;
   margin-bottom: 0;
   margin-right: $padding-xs;
@@ -28,7 +29,7 @@
     margin-right: 0;
   }
 
-  @include button-variant($button-color, $text-color);
+  @include button-variant($button-color, $apsis-dark);
 
   &.disabled,
   &[disabled],

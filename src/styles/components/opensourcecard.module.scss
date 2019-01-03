@@ -1,17 +1,20 @@
 @import "../variables";
 @import "../mixins";
+@import "../extensions";
 
 .card {
+  @extend %centered-row;
+  justify-content: flex-start;
+
   background: $gray-lightest;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   box-shadow: $box_shadow;
+  padding: $padding-sm;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-sm;
+
+  // Fill Container
   height: 100%;
   width: 100%;
-  border-radius: $border-radius-sm;
-  padding: $padding-sm;
-  border: 1px solid transparent;
 
   &:hover {
     box-shadow: $box_shadow_hover;

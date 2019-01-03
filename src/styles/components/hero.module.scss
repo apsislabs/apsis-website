@@ -1,20 +1,22 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
-@import "../variables";
+@import "~modularscale-sass/stylesheets/modularscale";
+@import "../variables", "../extensions";
 
-.hero_container {
-  filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.1));
+.hero {
+  filter: drop-shadow($simple_shadow);
+  height: 80vh;
 
-  .hero {
-    -webkit-clip-path: map-get($hero-clip-path, mobile);
-    clip-path: map-get($hero-clip-path, mobile);
+  @media only screen and (min-width: $tablet-size) {
+    margin: $padding-base;
+  }
+
+  &__image {
+    @extend %centered-row;
+    width: 100%;
     height: 100%;
-    margin: $padding-base $padding-base $padding-base $padding-base;
-    padding-bottom: 5vw;
-    max-height: 90vh;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1),
-      0 4px 8px 0 rgba(15, 44, 64, 0.45);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
+
     &::before {
       content: "";
       display: block;
@@ -27,76 +29,45 @@
       z-index: 0;
     }
 
-    &__expandable {
-      max-height: none;
-    }
-    &__expanded {
-      width: 100%;
-      height: 100%;
+    clip-path: map-get($hero-clip-path, mobile);
+
+    @media only screen and (min-width: $tablet-size) {
+      clip-path: map-get($hero-clip-path, tablet);
     }
 
-    &__image {
-      left: 0;
-      top: 0;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-      opacity: 0.75;
+    @media only screen and (min-width: $desktop-size) {
+      clip-path: map-get($hero-clip-path, desktop);
     }
 
-    &__content {
-      padding: 20% 10%;
-      position: relative;
-      z-index: 1;
+    @media only screen and (min-width: $largedesktop-size) {
+      clip-path: map-get($hero-clip-path, largedesktop);
+    }
+  }
+
+  &__container {
+    color: $white;
+    position: relative;
+    z-index: 1;
+    padding: $padding-sm;
+
+    @media only screen and (min-width: $tablet-size) {
+      padding: $padding-lg;
     }
 
     h1 {
-      font-size: 48px;
-      text-shadow: 0 2px 4px rgba(15, 44, 64, 0.45);
-      color: $base-bg-color;
+      font-size: ms(3);
+      margin-bottom: 0.125em;
+
       @media only screen and (max-width: $mobile-size) {
-        font-size: 32px;
+        font-size: ms(3, $mobile-modular-scale-base);
       }
     }
 
-    h3 {
-      font-family: "OpenSans", sans-serif;
-      font-size: 22px;
-      font-weight: 100;
-      text-shadow: 0 2px 4px rgba(15, 44, 64, 0.45);
-      color: $base-bg-color;
-    }
-
-    @media only screen and (max-width: $tablet-size) {
-      margin: 0 0 $padding-base;
-    }
-  }
-
-  @media only screen and (max-width: $mobile-size) {
-    h1 {
-      padding-top: 1em;
-    }
     h1,
     h2,
     h3,
-    h4,
-    h5 {
-      text-align: center;
+    h4 {
+      color: inherit;
     }
-  }
-
-  @media only screen and (min-width: $tablet-size) {
-    -webkit-clip-path: map-get($hero-clip-path, tablet);
-    clip-path: map-get($hero-clip-path, tablet);
-  }
-
-  @media only screen and (min-width: $desktop-size) {
-    -webkit-clip-path: map-get($hero-clip-path, desktop);
-    clip-path: map-get($hero-clip-path, desktop);
-  }
-
-  @media only screen and (min-width: $largedesktop-size) {
-    -webkit-clip-path: map-get($hero-clip-path, largedesktop);
-    clip-path: map-get($hero-clip-path, largedesktop);
   }
 }
