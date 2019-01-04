@@ -34,16 +34,15 @@ export default props => (
         text="HIPAA-compliant logging and access control for your ActiveRecord models."
       />
       <OpenSourceCard
-        icon="far fa-gem"
+        icon="fas fa-gem"
         title="Slayer"
         hover={redHover}
         url="https://github.com/apsislabs/slayer"
         text="A killer service layer for your Ruby application."
       />
       <OpenSourceCard
-        icon="fab fa-js-square"
+        icon="fab fa-wordpress"
         title="carpenter"
-        hover={jsHover}
         url="https://github.com/apsislabs/carpenter"
         text="Configuration-driven Custom Post Types for WordPress."
       />
