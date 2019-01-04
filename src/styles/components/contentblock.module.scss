@@ -3,8 +3,8 @@
 @import "../mixins";
 
 .contentBlock {
-  @include blockify($padding-base);
   @include container;
+  @include blockify($padding-base);
 
   &__title {
     font-family: $font-family-serif;
@@ -14,18 +14,19 @@
   @media only screen and (min-width: $desktop-size) {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
 
     &__header {
-      flex-grow: 1;
       margin-right: $padding-base;
     }
 
     &__title {
+      margin: 0 0 0.25em;
       width: 200px;
     }
 
     &__content {
-      flex-grow: 0;
     }
   }
 }

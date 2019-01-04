@@ -1,3 +1,4 @@
+import cn from "classnames";
 import React from "react";
 import opensourceStyles from "../../styles/components/opensource.module.scss";
 import buttonStyles from "../../styles/components/button.module.scss";
@@ -10,8 +11,8 @@ const jsHover = `${opensourcecardStyles.js}`;
 export default props => (
   <div className={opensourceStyles.opensource}>
     <header className={opensourceStyles.opensource__header}>
-      <h2>Open Source by Default</h2>
-      <p>
+      <h2 className="h4">Open Source by Default</h2>
+      <p class="lede">
         When we're not building for you, we build for the community. We've
         published over 20 open source projects. Here are a few of our favorites:
       </p>
@@ -51,7 +52,7 @@ export default props => (
     <footer className={opensourceStyles.opensource__footer}>
       <a
         href="https://github.com/apsislabs"
-        className={buttonStyles.button}
+        className={cn(buttonStyles.button, buttonStyles.buttonPrimary)}
         target="__apsis_open_source"
       >
         <span className="fab fa-github" /> See More of Our Work

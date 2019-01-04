@@ -1,4 +1,5 @@
 @import "../variables";
+@import "~modularscale-sass/stylesheets/modularscale";
 
 body {
   font-feature-settings: "liga", "pnum";
@@ -9,7 +10,7 @@ body {
 }
 
 .block-margins {
-  margin: 1.5rem 0;
+  margin: 0 0 1.5rem;
 }
 
 h1,
@@ -22,7 +23,6 @@ h5 {
 
 .h1 {
   font-size: ms(5);
-  letter-spacing: -2px;
 
   @media only screen and (max-width: $mobile-size) {
     font-size: ms(5, $mobile-modular-scale-base);
@@ -31,7 +31,6 @@ h5 {
 
 .h2 {
   font-size: ms(4);
-  letter-spacing: -1px;
 
   @media only screen and (max-width: $mobile-size) {
     font-size: ms(4, $mobile-modular-scale-base);
@@ -47,7 +46,6 @@ h5 {
 }
 
 .h4 {
-  //   color: $subheading-color;
   font-size: ms(2);
 
   @media only screen and (max-width: $mobile-size) {
@@ -56,7 +54,6 @@ h5 {
 }
 
 .h5 {
-  //   color: $subheading-color;
   font-size: ms(1);
 
   @media only screen and (max-width: $mobile-size) {
@@ -82,10 +79,14 @@ h5 {
   margin: $padding-base auto;
   border: 0;
   border-top: 1px solid $border-color;
+
+  @media only screen and (min-width: $desktop-size) {
+    margin: $padding-base * 2 auto;
+  }
 }
 
 .blockquote {
-  //   @extend .block-margins;
+  @extend .block-margins;
   padding: 0 0 0 1.5em;
   border-left: 3px solid $gray-lighter;
 
@@ -106,98 +107,91 @@ h5 {
   }
 }
 
-.typography {
-  h1 {
-    @extend .h1;
-  }
+h1 {
+  @extend .h1;
+}
 
-  h2 {
-    @extend .h2;
-  }
+h2 {
+  @extend .h2;
+}
 
-  h3 {
-    @extend .h3;
-  }
+h3 {
+  @extend .h3;
+}
 
-  h4 {
-    @extend .h4;
-  }
+h4 {
+  @extend .h4;
+}
 
-  h5 {
-    @extend .h5;
-  }
+h5 {
+  @extend .h5;
+}
 
-  //== Block Elements
-  //
+//== Block Elements
+//
 
-  p,
-  ul,
-  ol,
-  pre {
-    @extend .block-margins;
-  }
+p,
+ul,
+ol,
+pre {
+  @extend .block-margins;
+}
 
+ul,
+ol {
   ul,
   ol {
-    ul,
-    ol {
-      margin: 0 null;
-    }
+    margin: 0 null;
   }
+}
 
-  hr {
-    @extend .hr;
+hr {
+  @extend .hr;
+}
+
+sup {
+  font-weight: normal;
+}
+
+strong {
+  font-weight: 600;
+}
+
+iframe {
+  border: 0;
+}
+
+blockquote {
+  @extend .blockquote;
+}
+
+//== Paragraph Elements
+//
+
+p > pre,
+p > code {
+  font-family: $font-family-fixed;
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+  padding: 0 5px;
+  border-radius: 4px;
+}
+
+p > a {
+  @media only screen and (min-width: $tablet-size) {
+    white-space: nowrap;
   }
+}
 
-  sup {
-    font-weight: normal;
+p > img,
+figure > img {
+  max-width: 100%;
+}
 
-    a {
-      // @extend .link;
-    }
-  }
-
-  strong {
-    font-weight: 600;
-  }
-
-  iframe {
-    border: 0;
-  }
-
-  blockquote {
-    @extend .blockquote;
-  }
-
-  //== Paragraph Elements
-  //
-
-  p > pre,
-  p > code {
-    font-family: $font-family-fixed;
-    border: 1px solid #ccc;
-    background-color: #fafafa;
-    padding: 0 5px;
-    border-radius: 4px;
-  }
-
-  p > a {
-    // @extend .link--underline;
-    @media only screen and (min-width: $tablet-size) {
-      white-space: nowrap;
-    }
-  }
-
-  p > img,
-  figure > img {
-    max-width: 100%;
-  }
-
-  figure > figcaption {
-    font-size: 0.85em;
-    color: $apsis-gray;
-    text-align: center;
-    max-width: 80%;
-    margin: 0 auto;
-  }
+figure > figcaption {
+  font-size: 0.85em;
+  color: $apsis-gray;
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
 }

@@ -9,3 +9,11 @@
   @extend %centered-row;
   flex-direction: column;
 }
+
+%card {
+  background: $gray-lightest;
+  box-shadow: $box_shadow;
+  padding: $padding-sm;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-sm;
+}

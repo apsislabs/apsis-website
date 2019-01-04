@@ -5,7 +5,7 @@
 
   &__container {
     background-image: $diagonal_bg;
-    padding: $large-diagonal-offset 0;
+    padding: $large-diagonal-offset * 2 0;
     margin: $padding-lg 0;
 
     // -webkit-clip-path: map-get($diagonal-clip-path, mobile);

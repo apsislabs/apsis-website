@@ -1,6 +1,18 @@
+import cn from "classnames";
 import React, { Fragment } from "react";
 import serviceStyles from "../../styles/components/servicelist.module.scss";
-import Service from "./serviceitem";
+
+const Service = props => (
+  <div className={serviceStyles.service__card}>
+    <div className={serviceStyles.service__header}>
+      <i className={cn(props.icon, serviceStyles.service__icon)} />
+
+      {props.title}
+    </div>
+
+    {props.children}
+  </div>
+);
 
 export default () => (
   <Fragment>

@@ -179,13 +179,12 @@ class IndexPage extends React.Component {
             small, focused sprints to maximize adaptability.
           </p>
 
-          <Button
-            className={cn(buttonStyles.button, buttonStyles.buttonPrimary)}
-            to="/services"
-          >
+          <Button className={cn(buttonStyles.button)} to="/services">
             Our Services
           </Button>
         </ContentBlock>
+
+        <hr />
 
         <ImageGrid images={secondaryClients} />
         <ImageGrid images={tertiaryClients} />

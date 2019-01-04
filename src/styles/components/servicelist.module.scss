@@ -1,42 +1,29 @@
-@import "../variables";
+@import "../variables", "../mixins", "../extensions";
 
 .service {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @extend %centered-row;
+  flex-wrap: wrap;
+  margin-bottom: $padding-base;
 
   &__card {
-    width: 250px;
-    padding: 20px 0px 10px;
-    font-size: 18px;
+    padding: $padding-sm;
   }
 
   &__header {
-    display: flex;
-    flex-direction: row;
-    font-size: 18px;
+    @extend %centered-row;
     font-weight: bold;
-    align-items: center;
   }
 
   &__icon {
+    width: 20px;
     color: $gray-lighter;
+    margin-left: -30px;
     margin-right: 10px;
   }
 
   ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
-    padding-left: 1.75em;
-    margin-left: 0px;
-  }
-
-  li {
-    margin: 0px;
-  }
-
-  @media only screen and (min-width: $tablet-size) {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
   }
 }

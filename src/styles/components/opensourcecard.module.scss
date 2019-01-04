@@ -4,17 +4,10 @@
 
 .card {
   @extend %centered-row;
+  @extend %card;
+
   justify-content: flex-start;
-
-  background: $gray-lightest;
-  box-shadow: $box_shadow;
-  padding: $padding-sm;
-  border: 1px solid $border-color;
-  border-radius: $border-radius-sm;
-
-  // Fill Container
-  height: 100%;
-  width: 100%;
+  transition: border-color $transition_duration ease-in-out;
 
   &:hover {
     box-shadow: $box_shadow_hover;
@@ -39,8 +32,10 @@
   }
 
   &__title {
-    margin-bottom: 0.25em;
+    font-size: 1em;
+    margin: 0 0 0.25em;
     font-weight: bold;
+    font-family: $font-family-sans;
   }
 
   &__icon {
