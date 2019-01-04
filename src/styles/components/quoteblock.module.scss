@@ -1,11 +1,95 @@
+@import "~modularscale-sass/stylesheets/modularscale";
 @import "../variables", "../extensions", "../mixins";
 
+$arrow_size: 20px;
+$arrow_border_width: 1.5px;
+
+.arrow {
+  color: $apsis-gray;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+
+  &:hover {
+    color: $apsis-blue;
+  }
+
+  &--left {
+    left: 0;
+  }
+
+  &--right {
+    right: 0;
+  }
+
+  @media only screen and (min-width: $desktop-size) {
+    top: 45%;
+
+    &--left {
+      left: -1 * $padding-lg;
+    }
+
+    &--right {
+      right: -1 * $padding-lg;
+    }
+  }
+}
+
 .quoteblock {
-  @include container;
   @include blockify($padding-base);
 
   text-align: center;
 
+  &__header {
+    font-size: ms(1);
+  }
+
   &__container {
+    @include container-narrow;
+  }
+
+  &__quote {
+    position: relative;
+    margin: 0 0 $padding-base;
+    padding: $padding-base;
+    border: 0;
+    font-size: 1.125em;
+    border-bottom: 1px solid $border-color;
+
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+    }
+
+    &::before {
+      @include triangle(bottom, $arrow_size, $arrow_size, $border-color);
+      transform: translateX(-1 * $arrow_size / 2);
+    }
+
+    &::after {
+      @include triangle(
+        bottom,
+        $arrow_size - $arrow_border_width,
+        $arrow_size - $arrow_border_width,
+        white
+      );
+
+      transform: translateX((-1 * ($arrow_size / 2 - $arrow_border_width)));
+      top: calc(100% - $arrow_border_width);
+    }
+  }
+
+  &__attribution {
+    color: $apsis-blue;
+    display: block;
+    font-weight: bold;
+  }
+
+  &__title {
+    display: block;
   }
 }

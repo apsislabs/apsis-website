@@ -6,7 +6,7 @@
   height: 80vh;
 
   @media only screen and (min-width: $tablet-size) {
-    margin: $padding-base;
+    margin: $padding-base $padding-base $padding-lg;
   }
 
   &__image {
