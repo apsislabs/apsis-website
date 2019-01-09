@@ -12,7 +12,7 @@ export default props => (
   <div className={opensourceStyles.opensource}>
     <header className={opensourceStyles.opensource__header}>
       <h2 className="h4">Open Source by Default</h2>
-      <p class="lede">
+      <p className="lede">
         When we're not building for you, we build for the community. We've
         published over 20 open source projects. Here are a few of our favorites:
       </p>

@@ -1,0 +1,87 @@
+@import "../variables", "../extensions", "../mixins";
+
+$arrow_size: 16px;
+
+@mixin ib_arrow($dir) {
+  position: relative;
+
+  &::before {
+    @include triangle($dir, $arrow_size, $arrow_size, $border-color);
+    position: absolute;
+    top: 50%;
+    margin-top: -$arrow_size / 2;
+
+    @if $dir == left {
+      right: 100%;
+    }
+
+    @if $dir == right {
+      left: 100%;
+    }
+  }
+}
+
+.icon_block {
+  @include container();
+  @extend %centered-row;
+  flex-direction: column;
+  margin-bottom: $padding-lg;
+
+  &__content {
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  &__icon {
+    color: $gray;
+    transition: color $transition_duration ease-in-out;
+
+    margin-bottom: $padding-base;
+  }
+
+  &:hover {
+    .icon_block__icon {
+      color: $apsis-blue;
+    }
+  }
+
+  @media only screen and (min-width: $desktop-size) {
+    flex-direction: row;
+
+    &__icon {
+      margin: 0;
+    }
+
+    &--left {
+      flex-direction: row;
+
+      .icon_block__content {
+        position: relative;
+        padding-left: $padding-base;
+        margin-left: $padding-base;
+        border-left: 1px solid $border-color;
+
+        @include ib_arrow("left");
+      }
+    }
+
+    &--right {
+      flex-direction: row-reverse;
+      .icon_block__content {
+        padding-right: $padding-base;
+        margin-right: $padding-base;
+        border-right: 1px solid $border-color;
+
+        @include ib_arrow("right");
+      }
+    }
+
+    margin-bottom: $padding-lg;
+  }
+}

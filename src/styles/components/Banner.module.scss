@@ -1,0 +1,19 @@
+@import "../variables", "../extensions", "../mixins";
+@import "~modularscale-sass/stylesheets/modularscale";
+
+.banner {
+  @extend %centered-row;
+  justify-content: center;
+  background-color: $apsis-blue;
+  text-align: center;
+  padding: $padding-base $padding-lg;
+
+  &__text {
+    font-family: $font-family-serif;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+    margin-right: $padding-sm;
+    font-size: $font-size-lg;
+  }
+}

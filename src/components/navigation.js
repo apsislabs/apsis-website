@@ -72,7 +72,7 @@ class Navigation extends Component {
 
     const buttonClass = cn(
       buttonStyles.button,
-      buttonStyles.buttonSm,
+      buttonStyles.buttonSmall,
       buttonStyles.buttonPrimary
     );
 
@@ -102,7 +102,6 @@ class Navigation extends Component {
             <ListLink to="/services">Our Services</ListLink>
             <ListLink to="/team">Our Team</ListLink>
             <ListLink to="/portfolio">Our Work</ListLink>
-            <ListLink to="/blog">Blog</ListLink>
           </div>
 
           <Button to="/contact" className={buttonClass}>

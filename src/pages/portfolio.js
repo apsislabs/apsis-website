@@ -8,7 +8,7 @@ import buttonStyles from "../styles/components/button.module.scss";
 import portfolioStyles from "../styles/pages/portfolio.module.scss";
 import Img from "gatsby-image";
 import { StaticQuery, graphql } from "gatsby";
-import HireUsFooter from "../components/Footer/hireusfooter";
+import { Banner } from "../components/Footer/Banner";
 import Navigation from "../components/navigation";
 import Helmet from "react-helmet";
 import { Animated } from "react-animated-css";
@@ -250,7 +250,7 @@ class PortfolioPage extends React.Component {
               </div>
             </ContentBlock>
             <OpenSource />
-            <HireUsFooter />
+            <Banner />
           </Layout>
         )}
       />

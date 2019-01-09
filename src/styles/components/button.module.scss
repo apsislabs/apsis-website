@@ -14,7 +14,7 @@
   text-decoration: none;
   text-rendering: optimizeLegibility;
   border-radius: $border-radius;
-  padding: $padding-xs $padding-sm;
+  padding: $padding-xs $padding-base;
   box-shadow: $box_shadow;
   transition: background $transition_duration, box-shadow $transition_duration,
     color $transition_duration;
@@ -29,7 +29,7 @@
     margin-right: 0;
   }
 
-  @include button-variant($button-color, $apsis-dark);
+  @include button-variant(rgba($button-color, 0.95), $apsis-dark);
 
   &.disabled,
   &[disabled],
@@ -64,8 +64,8 @@
     padding: $padding-sm $padding-base;
   }
 
-  &--sm {
-    padding: $padding-xs / 2 $padding-xs;
+  &--small {
+    padding: $padding-xs / 2 $padding-sm;
     font-size: $font-size-sm;
   }
 

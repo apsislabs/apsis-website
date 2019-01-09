@@ -5,14 +5,14 @@ import React from "react";
 import { Animated } from "react-animated-css";
 import Helmet from "react-helmet";
 import ContentBlock from "../components/contentblock";
-import HireUsFooter from "../components/Footer/hireusfooter";
+import { Banner } from "../components/Footer/Banner";
 import Hero from "../components/hero";
-import HowWeWork from "../components/howwework";
 import ImageGrid from "../components/image_grid";
 import Layout from "../components/layout";
 import Navigation from "../components/navigation";
 import QuoteBlock from "../components/quoteblock";
 import buttonStyles from "../styles/components/button.module.scss";
+import { IconBlock } from "../components/IconBlock";
 
 const ServicesHero = ({ data }) => (
   <Hero displayname="Hero" imgSrc={data.hero.childImageSharp.fluid.src}>
@@ -115,9 +115,70 @@ const ServicesPage = data => {
       <QuoteBlock quotes={quotes} />
       <ImageGrid images={toolImages} />
 
-      <HowWeWork />
+      <section>
+        <h4 style={{ textAlign: "center" }}>How We Work</h4>
+        <IconBlock icon={"rocket"} title={"New Projects"}>
+          <p>
+            We love to work on new projects, as it’s a place where our
+            experience as entrepreneurs really shines. We’re experienced and
+            prepared to help at every step of a product’s lifecycle: from
+            standing at the whiteboard, to defining an initial MVP, to launching
+            a public beta — we’ve done it all. Because we work with a broad
+            array of technologies, we’re always ready to offer insight into new
+            trends, while ensuring your product will be built to last.
+          </p>
+          <p>
+            If you’re a startup looking to bring a proof of concept to find your
+            first round of funding, or an established business looking to enter
+            a new market, our passion for product development will ensure you
+            come away with a functional application that does what it needs to
+            and nothing more.
+          </p>
+        </IconBlock>
 
-      <HireUsFooter />
+        <IconBlock dir="right" icon={"university"} title={"Legacy Code"}>
+          <p>
+            For most businesses, there’s no escaping legacy code. Whether it’s a
+            solid application that’s been running your accounting team for
+            years, or your core product with weekly updates, someone’s got to
+            maintain it.
+          </p>
+          <p>
+            The bad news? This can mean digging through years of documentation,
+            hacky workarounds, and making sure you “don’t touch the javas”
+            because Dave’s machine is the only place they compile. The good
+            news? We love that stuff.
+          </p>
+          <p>
+            If you’re looking to bring an old code base up to date, or simply to
+            support legacy functionality, our team is here to help. We’ll work
+            with you to understand why things work the way they do, so changes
+            don’t bring your business to a screeching halt, and as we learn your
+            application’s quirks we can offer advice on best practices and
+            opportunities for improvement.
+          </p>
+        </IconBlock>
+
+        <IconBlock icon="magic" title={"Staff Augmentation"}>
+          <p>
+            Sometimes you need a little extra help, but it’s hard to find a
+            well-defined project or feature that you can hand off. That’s okay:
+            we're experts at augmenting existing engineering orgs. We specialize
+            in slotting into your development workflow – either as part of your
+            existing structure, or even bringing structure where it’s sorely
+            needed.
+          </p>
+          <p>
+            We can lend expertise in a specific new technology, help your team
+            transition to the cloud, or just close some tickets that have been
+            on your backlog for 18 months. If you need a helping hand — even for
+            a short while — we’re here to provide leadership and expertise to
+            get the job done.
+          </p>
+        </IconBlock>
+      </section>
+
+      <Banner />
     </Layout>
   );
 };

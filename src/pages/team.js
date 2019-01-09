@@ -1,7 +1,7 @@
 import cn from "classnames";
 import React from "react";
 import Layout from "../components/layout";
-import HireUsFooter from "../components/Footer/hireusfooter";
+import { Banner } from "../components/Footer/Banner";
 import Header from "../components/header";
 import MapBlock from "../components/mapblock";
 import TeamGrid from "../components/TeamGrid/teamgrid";
@@ -68,7 +68,7 @@ class TeamPage extends React.Component {
           longitude={this.state.longitude}
           cityName={this.state.cityName}
         />
-        <HireUsFooter />
+        <Banner />
       </Layout>
     );
   }

@@ -21,7 +21,7 @@ const HomeHero = props => {
       <Animated animationIn="fadeInUp">
         <h1>Need an app? We can help.</h1>
 
-        <p class="lede">
+        <p className="lede">
           We are developers focused on efficient solutions to real world
           problems.
         </p>
