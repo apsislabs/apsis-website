@@ -1,0 +1,21 @@
+@import "../variables", "../extensions", "../mixins";
+
+.container {
+  @include container();
+}
+
+.container--narrow {
+  @include container-narrow();
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}

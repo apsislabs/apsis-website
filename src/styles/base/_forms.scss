@@ -1,0 +1,42 @@
+@import "../variables", "../extensions", "../mixins";
+
+.form {
+  @include blockify($padding-base);
+
+  &__group {
+    display: block;
+    margin-bottom: 1em;
+
+    &--error {
+      .form__input {
+        border-color: $ruby-red;
+      }
+
+      .form__help {
+        color: $ruby-red;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    border: 1px solid $border-color;
+    padding: $padding-xs;
+    border-radius: $border-radius;
+  }
+
+  &__label {
+    font-weight: bold;
+    font-size: $font-size-sm;
+    margin-bottom: 0.5em;
+    display: block;
+  }
+
+  &__help {
+    font-size: $font-size-sm;
+    color: $apsis-gray;
+  }
+
+  &__message {
+  }
+}
